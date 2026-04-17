@@ -1,0 +1,11 @@
+f = open("numbers.txt")
+text = f.read()
+print(text)
+print(text[0])
+f.close()
+
+f = open("numbers.txt")
+text = f.readlines()
+print(text)
+print(text[0])
+f.close()
