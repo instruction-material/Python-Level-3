@@ -23,4 +23,3 @@
 
 
 # Write a function that takes in a list of lists that returns a new list of all the individual maxes from each list. Can you find a way to use the function that you already made that returns the maximum of a list?
-

@@ -9,29 +9,29 @@ A function that takes in two numbers, a and b, and returns a to the power of b (
 
 
 def product(a, b, c):
-	return a * b * c
+    return a * b * c
 
 
 def average(x, y):
-	return (x + y) / 2
+    return (x + y) / 2
 
 
 def countLetter(word, letter):
-	counter = 0
-	for i in range(len(word)):
-		if word[i] == letter:
-			counter += 1
-	return counter
+    counter = 0
+    for i in range(len(word)):
+        if word[i] == letter:
+            counter += 1
+    return counter
 
 
 # approach that is typically easier for students
 def countSeven(number):
-	number = str(number)
-	counter = 0
-	for i in range(len(number)):
-		if number[i] == '7':
-			counter += 1
-	return counter
+    number = str(number)
+    counter = 0
+    for i in range(len(number)):
+        if number[i] == '7':
+            counter += 1
+    return counter
 
 
 '''
@@ -47,28 +47,28 @@ def countSeven(number):
 
 
 def exponent(a, b):
-	answer = 1
-	for i in range(0, b):
-		answer *= a
-	return answer
+    answer = 1
+    for i in range(0, b):
+        answer *= a
+    return answer
 
 
 def factorial(n):
-	answer = 1
-	for i in range(1, n + 1):
-		answer *= i
-	return answer
+    answer = 1
+    for i in range(1, n + 1):
+        answer *= i
+    return answer
 
 
 def hailstone(n):
-	length = 1
-	while n != 1:
-		length += 1
-		if n % 2 == 0:
-			n /= 2
-		else:
-			n = 3 * n + 1
-	return length
+    length = 1
+    while n != 1:
+        length += 1
+        if n % 2 == 0:
+            n /= 2
+        else:
+            n = 3 * n + 1
+    return length
 
 
 print("product(2,3,5) =", product(2, 3, 5))

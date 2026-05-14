@@ -114,8 +114,8 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 packaging = ">=22.0"
-platformdirs = {version = ">=1.4.4", optional = true, markers = "extra == \"global\""}
-tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
+platformdirs = { version = ">=1.4.4", optional = true, markers = "extra == \"global\"" }
+tomli = { version = ">=2.0.1", markers = "python_version < \"3.11\"" }
 
 [package.extras]
 doc = ["tabulate (>=0.8.9)", "sphinx (>=4.5.0)"]
@@ -134,13 +134,13 @@ python-versions = ">=3.7"
 [package.dependencies]
 jedi = ">=0.17.2,<0.19.0"
 pluggy = ">=1.0.0"
-pyflakes = {version = ">=2.5.0,<2.6.0", optional = true, markers = "extra == \"pyflakes\""}
+pyflakes = { version = ">=2.5.0,<2.6.0", optional = true, markers = "extra == \"pyflakes\"" }
 python-lsp-jsonrpc = ">=1.0.0"
-rope = {version = ">0.10.5", optional = true, markers = "extra == \"rope\""}
+rope = { version = ">0.10.5", optional = true, markers = "extra == \"rope\"" }
 toml = ">=0.10.2"
 ujson = ">=3.0.0"
-whatthepatch = {version = ">=1.0.2,<2.0.0", optional = true, markers = "extra == \"yapf\""}
-yapf = {version = "*", optional = true, markers = "extra == \"yapf\""}
+whatthepatch = { version = ">=1.0.2,<2.0.0", optional = true, markers = "extra == \"yapf\"" }
+yapf = { version = "*", optional = true, markers = "extra == \"yapf\"" }
 
 [package.extras]
 all = ["autopep8 (>=1.6.0,<1.7.0)", "flake8 (>=5.0.0,<5.1.0)", "mccabe (>=0.7.0,<0.8.0)", "pycodestyle (>=2.9.0,<2.10.0)", "pydocstyle (>=2.0.0)", "pyflakes (>=2.5.0,<2.6.0)", "pylint (>=2.5.0)", "rope (>=0.10.5)", "yapf", "whatthepatch"]
@@ -165,7 +165,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-pytoolconfig = {version = ">=1.2.2", extras = ["global"]}
+pytoolconfig = { version = ">=1.2.2", extras = ["global"] }
 
 [package.extras]
 dev = ["pytest (>=7.0.1)", "pytest-timeout (>=2.1.0)", "build (>=0.7.0)", "pre-commit (>=2.20.0)"]

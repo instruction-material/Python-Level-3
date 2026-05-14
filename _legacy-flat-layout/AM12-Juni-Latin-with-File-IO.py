@@ -4,32 +4,32 @@ Bonus: can you make your program handle input that contains punctuation like inp
 """
 
 with open('input_no_punctuation.txt') as f:
-	lines = f.readlines()
-	lines = [x.strip() for x in lines]
+    lines = f.readlines()
+    lines = [x.strip() for x in lines]
 
 
 def translate(word):
-	newWord = ""
-	
-	for i in range(1, len(word)):
-		newWord += word[i]
-	
-	newWord += word[0] + 'ay'
-	
-	return newWord
+    newWord = ""
+
+    for i in range(1, len(word)):
+        newWord += word[i]
+
+    newWord += word[0] + 'ay'
+
+    return newWord
 
 
 l = []
 o = open("output.txt", "w+")
 
 for line in lines:
-	l.append(line.split())
+    l.append(line.split())
 
 for line in l:
-	a = ""
-	for word in line:
-		a += translate(word) + " "
-	o.write(a + "\n")
+    a = ""
+    for word in line:
+        a += translate(word) + " "
+    o.write(a + "\n")
 
 o.close()
 

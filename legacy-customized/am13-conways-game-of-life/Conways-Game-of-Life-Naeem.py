@@ -1,4 +1,4 @@
-import random, time
+import time
 
 
 # Creating Grid

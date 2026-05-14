@@ -5,7 +5,6 @@ Create a one-player Tic Tac Toe game. The program should first randomly select w
 import random
 import time
 
-
 BOARD_SIZE = 3
 TOP = 0
 MID = 1
@@ -15,31 +14,31 @@ RIGHT = 2
 
 
 def printBoard(board):
-	for row in range(BOARD_SIZE):
-		for col in range(BOARD_SIZE):
-			if col == RIGHT:
-				print(" " + board[row][col], end="")
-			else:
-				print(" " + board[row][col] + " |", end="")
-		if row != RIGHT:
-			print("\n-––+–––+–––")
-	print("\n")
+    for row in range(BOARD_SIZE):
+        for col in range(BOARD_SIZE):
+            if col == RIGHT:
+                print(" " + board[row][col], end="")
+            else:
+                print(" " + board[row][col] + " |", end="")
+        if row != RIGHT:
+            print("\n-––+–––+–––")
+    print("\n")
 
 
 # Check if a player has won the game
 def win(board, player):
-	for i in range(BOARD_SIZE):
-		# Horizontal wins
-		if board[i][LEFT] == player and board[i][MID] == player and board[i][RIGHT] == player:
-			return True
-		
-		# Vertical wins
-		if board[TOP][i] == player and board[MID][i] == player and board[BOTTOM][i] == player:
-			return True
-	
-	# Diagonal wins
-	return board[TOP][LEFT] == player and board[MID][MID] == player and board[BOTTOM][RIGHT] == player or \
-		board[TOP][RIGHT] == player and board[MID][MID] == player and board[BOTTOM][LEFT] == player
+    for i in range(BOARD_SIZE):
+        # Horizontal wins
+        if board[i][LEFT] == player and board[i][MID] == player and board[i][RIGHT] == player:
+            return True
+
+        # Vertical wins
+        if board[TOP][i] == player and board[MID][i] == player and board[BOTTOM][i] == player:
+            return True
+
+    # Diagonal wins
+    return board[TOP][LEFT] == player and board[MID][MID] == player and board[BOTTOM][RIGHT] == player or \
+        board[TOP][RIGHT] == player and board[MID][MID] == player and board[BOTTOM][LEFT] == player
 
 
 """
@@ -81,11 +80,11 @@ def win(board, player):
 
 # Simple AI algorithm - program just plays a spot randomly.
 def randomPlayerMove(board):
-	while True:
-		row = random.randint(TOP, BOTTOM)
-		column = random.randint(LEFT, RIGHT)
-		if board[row][column] == ' ':
-			return [row, column]
+    while True:
+        row = random.randint(TOP, BOTTOM)
+        column = random.randint(LEFT, RIGHT)
+        if board[row][column] == ' ':
+            return [row, column]
 
 
 # return random.choice([(row, column) for row in range(TOP, BOARD_SIZE) for column in range(LEFT, BOARD_SIZE) if board[row][column] == ' '])
@@ -93,17 +92,17 @@ def randomPlayerMove(board):
 
 # Check if the board is full
 def finished(board):  # return all(cell != ' ' for row in board for cell in row)
-	for row in range(BOARD_SIZE):
-		for col in range(BOARD_SIZE):
-			if board[row][col] == ' ':
-				return False
-	return True
+    for row in range(BOARD_SIZE):
+        for col in range(BOARD_SIZE):
+            if board[row][col] == ' ':
+                return False
+    return True
 
 
 # Set up the board
 board = []  # board = [[' ' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 for _ in range(BOARD_SIZE):
-	board.append([' ' for _ in range(BOARD_SIZE)])
+    board.append([' ' for _ in range(BOARD_SIZE)])
 
 """
 for _ in range(BOARD_SIZE):
@@ -116,52 +115,52 @@ for _ in range(BOARD_SIZE):
 tie = False
 player = 'X'
 if random.randint(0, 1):
-	print("The coin flip shows that the computer (O) goes first!")
-	player = 'O'
+    print("The coin flip shows that the computer (O) goes first!")
+    player = 'O'
 else:
-	print("The coin flip shows that you (X) will go first!")
+    print("The coin flip shows that you (X) will go first!")
 
 input("Press Enter to begin!")
 
 while True:
-	printBoard(board)
-	
-	# User goes
-	if player == 'X':
-		# While loop to make sure user puts in valid numbers
-		while True:
-			row = int(input("Pick a row to play: "))
-			col = int(input("Pick a column to play: "))
-			if (-1 < row < BOARD_SIZE) and (-1 < col < BOARD_SIZE) and board[row][col] == " ":
-				board[row][col] = player
-				break
-			print("Not a valid move, try again")
-	
-	# Computer goes
-	elif player == 'O':
-		time.sleep(1)
-		play = randomPlayerMove(board)
-		board[play[0]][play[1]] = player
-	
-	# Check if someone has won
-	if win(board, player):
-		break
-	# Check if all game spots are taken
-	if finished(board):
-		tie = True
-		break
-	
-	# Changes turns
-	if player == 'X':
-		player = 'O'
-	else:
-		player = 'X'
+    printBoard(board)
+
+    # User goes
+    if player == 'X':
+        # While loop to make sure user puts in valid numbers
+        while True:
+            row = int(input("Pick a row to play: "))
+            col = int(input("Pick a column to play: "))
+            if (-1 < row < BOARD_SIZE) and (-1 < col < BOARD_SIZE) and board[row][col] == " ":
+                board[row][col] = player
+                break
+            print("Not a valid move, try again")
+
+    # Computer goes
+    elif player == 'O':
+        time.sleep(1)
+        play = randomPlayerMove(board)
+        board[play[0]][play[1]] = player
+
+    # Check if someone has won
+    if win(board, player):
+        break
+    # Check if all game spots are taken
+    if finished(board):
+        tie = True
+        break
+
+    # Changes turns
+    if player == 'X':
+        player = 'O'
+    else:
+        player = 'X'
 
 printBoard(board)
 if tie:
-	print("Well, there was a tie!")
+    print("Well, there was a tie!")
 else:
-	if player == 'X':
-		print("Wow! You won!")
-	else:
-		print("Well, the Random Player won.")
+    if player == 'X':
+        print("Wow! You won!")
+    else:
+        print("Well, the Random Player won.")

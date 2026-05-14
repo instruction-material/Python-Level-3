@@ -6,7 +6,6 @@ Write a program that reads in a text file containing a coordinate pair of number
 
 import time
 
-
 GRID_HEIGHT = 30
 GRID_WIDTH = 60
 
@@ -14,10 +13,10 @@ GRID_WIDTH = 60
 # (Pretty important to have the y-axis be 30 so that the animation covers the entire screen on repl)
 grid = []
 for row in range(GRID_HEIGHT):
-	line = []
-	for col in range(GRID_WIDTH):
-		line.append(False)
-	grid.append(line)
+    line = []
+    for col in range(GRID_WIDTH):
+        line.append(False)
+    grid.append(line)
 
 # Reading files of coordinates
 f = open("repeat.in")
@@ -26,87 +25,87 @@ f.close()
 
 coords = []
 for line in data:
-	line = [int(coord) for coord in line.split()]
-	coords.append(line)
+    line = [int(coord) for coord in line.split()]
+    coords.append(line)
 
 # Setting file coordinates to be True/Alive, everything else initialized as False/Dead
 for point in coords:
-	grid[point[0]][point[1]] = True
+    grid[point[0]][point[1]] = True
 
 
 # Function to print the board with O for Alive and - for Dead
 def printBoard(game):
-	for row in game:
-		for boolean in row:
-			if boolean:
-				print("O", end="")
-			else:
-				print("-", end="")
-		print("")
+    for row in game:
+        for boolean in row:
+            if boolean:
+                print("O", end="")
+            else:
+                print("-", end="")
+        print("")
 
 
 # Function to count neighbors Alive or Dead and return result based on Conway's rules.
 def neighbors(grid, alive, row, col):
-	countAlive = 0
-	if col - 1 >= 0 and row - 1 >= 0 and grid[row - 1][col - 1]:
-		countAlive += 1
-	if row - 1 >= 0 and grid[row - 1][col]:
-		countAlive += 1
-	if col + 1 < len(grid[0]) and row - 1 >= 0 and grid[row - 1][col + 1]:
-		countAlive += 1
-	if col - 1 >= 0 and grid[row][col - 1]:
-		countAlive += 1
-	if col + 1 < len(grid[0]) and grid[row][col + 1]:
-		countAlive += 1
-	if col - 1 >= 0 and row + 1 < len(grid) and grid[row + 1][col - 1]:
-		countAlive += 1
-	if row + 1 < len(grid) and grid[row + 1][col]:
-		countAlive += 1
-	if col + 1 < len(grid[0]) and row + 1 < len(grid) and grid[row + 1][col + 1]:
-		countAlive += 1
-	
-	# Rule 1: Any live cell with fewer than two live neighbours dies, as if by underpopulation.
-	if alive and countAlive < 2:
-		return False
-	
-	# Rule 2: Any live cell with two or three live neighbours lives on to the next generation.
-	elif alive and countAlive < 4:
-		return True
-	
-	# Rule 3: Any live cell with more than three live neighbours dies, as if by overpopulation.
-	elif alive:
-		return False
-	
-	# Rule 4: Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-	if not alive and countAlive == 3:
-		return True
-	
-	# Otherwise, return original
-	return alive
+    countAlive = 0
+    if col - 1 >= 0 and row - 1 >= 0 and grid[row - 1][col - 1]:
+        countAlive += 1
+    if row - 1 >= 0 and grid[row - 1][col]:
+        countAlive += 1
+    if col + 1 < len(grid[0]) and row - 1 >= 0 and grid[row - 1][col + 1]:
+        countAlive += 1
+    if col - 1 >= 0 and grid[row][col - 1]:
+        countAlive += 1
+    if col + 1 < len(grid[0]) and grid[row][col + 1]:
+        countAlive += 1
+    if col - 1 >= 0 and row + 1 < len(grid) and grid[row + 1][col - 1]:
+        countAlive += 1
+    if row + 1 < len(grid) and grid[row + 1][col]:
+        countAlive += 1
+    if col + 1 < len(grid[0]) and row + 1 < len(grid) and grid[row + 1][col + 1]:
+        countAlive += 1
+
+    # Rule 1: Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+    if alive and countAlive < 2:
+        return False
+
+    # Rule 2: Any live cell with two or three live neighbours lives on to the next generation.
+    elif alive and countAlive < 4:
+        return True
+
+    # Rule 3: Any live cell with more than three live neighbours dies, as if by overpopulation.
+    elif alive:
+        return False
+
+    # Rule 4: Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+    if not alive and countAlive == 3:
+        return True
+
+    # Otherwise, return original
+    return alive
 
 
 input(
-	"Welcome to Conway's Game of Life. We start with a 30x60 grid \nof cells, either alive or dead. Here are the rules:\n\t1) Any live cell with fewer than two live neighbors \n\t   dies, as if by underpopulation.\n\t2) Any live cell with two or three live neighbors \n\t   lives on to the next generation.\n\t3) Any live cell with more than three live neighbors \n\t   dies, as if by overpopulation.\n\t4) Any dead cell with exactly three live neighbors \n\t   becomes a live cell, as if by reproduction.\nPress Enter to continue:")
+    "Welcome to Conway's Game of Life. We start with a 30x60 grid \nof cells, either alive or dead. Here are the rules:\n\t1) Any live cell with fewer than two live neighbors \n\t   dies, as if by underpopulation.\n\t2) Any live cell with two or three live neighbors \n\t   lives on to the next generation.\n\t3) Any live cell with more than three live neighbors \n\t   dies, as if by overpopulation.\n\t4) Any dead cell with exactly three live neighbors \n\t   becomes a live cell, as if by reproduction.\nPress Enter to continue:")
 printBoard(grid)
 input("Press Enter to start:")
 while True:
-	print("\033c")
-	newGrid = []
-	for _ in range(30):
-		line = []
-		for _ in range(60):
-			line.append(False)
-		newGrid.append(line)
-	
-	for row in range(GRID_HEIGHT):
-		for col in range(GRID_WIDTH):
-			newGrid[row][col] = neighbors(grid, grid[row][col], row, col)
-	
-	printBoard(newGrid)
-	grid = newGrid
-	
-	# Pause for animation to take effect
-	time.sleep(0.5)
+    print("\033c")
+    newGrid = []
+    for _ in range(30):
+        line = []
+        for _ in range(60):
+            line.append(False)
+        newGrid.append(line)
+
+    for row in range(GRID_HEIGHT):
+        for col in range(GRID_WIDTH):
+            newGrid[row][col] = neighbors(grid, grid[row][col], row, col)
+
+    printBoard(newGrid)
+    grid = newGrid
+
+    # Pause for animation to take effect
+    time.sleep(0.5)
 
 """
 import time

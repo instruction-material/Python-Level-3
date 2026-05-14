@@ -6,9 +6,9 @@ What is the base case? (This would be the smallest possible input that we could 
 
 
 def recursive_factorial(num):
-	if num == 0:
-		return 1
-	return num * recursive_factorial(num - 1)
+    if num == 0:
+        return 1
+    return num * recursive_factorial(num - 1)
 
 
 print(recursive_factorial(5))

@@ -1,6 +1,5 @@
 import random
 
-
 # Functions
 
 # Func-1: Ask the user for a word. Then print out the middle letters of the word (not including the first and last)
@@ -17,9 +16,9 @@ print()
 
 # Recursion-2: Write a function that takes in a number of rows of a pyramid and returns the number of bowling pins needed to make a pyramid with that number of rows. 
 def numPins(rows):
-	if rows <= 1:
-		return rows
-	return rows + numPins(rows - 1)
+    if rows <= 1:
+        return rows
+    return rows + numPins(rows - 1)
 
 
 print("The number of pins for 2 rows:", numPins(2))
@@ -27,12 +26,12 @@ print("The number of pins for 2 rows:", numPins(2))
 
 # Recursion-3: Write a recursive function to calculate the nth Lucas number. The Lucas numbers are very similar to the Fibonacci numbers because each Lucas number is the sum of the previous two. The only difference is that the Lucas number sequence starts with 2 1 instead of 0 1. The first few Lucas numbers are:  2 1 3 4 7 11 ...
 def Lucas(n):
-	if n == 1:
-		return 2
-	elif n == 2:
-		return 1
-	else:
-		return Lucas(n - 1) + Lucas(n - 2)
+    if n == 1:
+        return 2
+    elif n == 2:
+        return 1
+    else:
+        return Lucas(n - 1) + Lucas(n - 2)
 
 
 print("The fourth Lucas number is:", Lucas(4))
@@ -40,10 +39,10 @@ print("The fourth Lucas number is:", Lucas(4))
 
 # Recursion-4: What will be printed if we call strangeFunction(4)?
 def strangeFunction(n):
-	print(n)
-	if n > 2:
-		strangeFunction(n - 1)
-		strangeFunction(n - 2)
+    print(n)
+    if n > 2:
+        strangeFunction(n - 1)
+        strangeFunction(n - 2)
 
 
 # strangeFunction(4)
@@ -73,18 +72,18 @@ print()
 # makeWord("ti#ger") -> "tger"
 # makeWord("t###") -> ""
 def makeWord(keystrokes):
-	stack = []
-	# loop through the keystrokes
-	for key in keystrokes:
-		if key != "#":  # if the key is not a backspace, add it to the word
-			stack.append(key)
-		elif len(stack) > 0:  # if the key is a backspace and stack isn't empty, pop the last letter
-			stack.pop()
-	# turn the stack into a string
-	word = ""
-	for letter in stack:
-		word += letter
-	return word
+    stack = []
+    # loop through the keystrokes
+    for key in keystrokes:
+        if key != "#":  # if the key is not a backspace, add it to the word
+            stack.append(key)
+        elif len(stack) > 0:  # if the key is a backspace and stack isn't empty, pop the last letter
+            stack.pop()
+    # turn the stack into a string
+    word = ""
+    for letter in stack:
+        word += letter
+    return word
 # alternative way to turn list into string in python
 # return "".join(stack)
 # print("makeWord('ti#ger') ->", makeWord("ti#ger"))

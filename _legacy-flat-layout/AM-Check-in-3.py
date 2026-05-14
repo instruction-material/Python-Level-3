@@ -12,13 +12,13 @@
 
 # Change the bubbleSort() function below to be more efficient (so that there's an early cutoff).
 def bubbleSort(lst):
-	for i in range(len(lst) - 1):
-		for j in range(len(lst) - i - 1):
-			if lst[j] > lst[j + 1]:
-				temp = lst[j]
-				lst[j] = lst[j + 1]
-				lst[j + 1] = temp
-	return lst
+    for i in range(len(lst) - 1):
+        for j in range(len(lst) - i - 1):
+            if lst[j] > lst[j + 1]:
+                temp = lst[j]
+                lst[j] = lst[j + 1]
+                lst[j + 1] = temp
+    return lst
 
 
 # What is the time complexity of Bubble Sort? Can you describe the best and worst case scenarios
@@ -37,15 +37,15 @@ def bubbleSort(lst):
 
 # The function merge() combines two sorted lists together. Finish the incomplete merge() function below
 def merge(listA, listB):
-	result = []
-	while len(listA) > 0 and len(listB) > 0:
-		# YOUR CODE HERE
-		if listA[0] < listB[0]:
-			result.append(listA.pop(0))
-		else:
-			result.append(listB.pop(0))
-	
-	return result + listA + listB
+    result = []
+    while len(listA) > 0 and len(listB) > 0:
+        # YOUR CODE HERE
+        if listA[0] < listB[0]:
+            result.append(listA.pop(0))
+        else:
+            result.append(listB.pop(0))
+
+    return result + listA + listB
 
 
 # What is the time complexity of Merge Sort? Can you describe the best and worst case scenarios?
@@ -62,20 +62,20 @@ def merge(listA, listB):
 
 # The function partition() takes in a list and pivot is incomplete. Finish implementing the function below
 def partition(lst, pivot):
-	less = []
-	eq = []
-	great = []
-	
-	# YOUR CODE HERE
-	for num in lst:
-		if num < pivot:
-			less.append(num)
-		elif num == pivot:
-			eq.append(num)
-		else:
-			great.append(num)
-	
-	return less, eq, great
+    less = []
+    eq = []
+    great = []
+
+    # YOUR CODE HERE
+    for num in lst:
+        if num < pivot:
+            less.append(num)
+        elif num == pivot:
+            eq.append(num)
+        else:
+            great.append(num)
+
+    return less, eq, great
 
 
 # What is the time complexity of Quicksort, can you describe best and worst case scenarios?
@@ -94,7 +94,7 @@ word = input("Please enter a word: ")
 o = open("AM-Check-in-3.txt", "w+")
 
 for i in word:
-	o.write(i + "\n")
+    o.write(i + "\n")
 
 o.close()
 
@@ -108,10 +108,10 @@ lines = [line.strip() for line in lines]
 f.close()
 
 for letter in lines:
-	if letter in d:
-		d[letter] += 1
-	else:
-		d[letter] = 1
+    if letter in d:
+        d[letter] += 1
+    else:
+        d[letter] = 1
 print(d)
 
 # What's the difference between read() and readlines()?

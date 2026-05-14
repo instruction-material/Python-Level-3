@@ -8,13 +8,14 @@
 
 # Change the bubbleSort() function below to be more efficient.
 def bubbleSort(lst):
-  for i in range(0, len(lst)):
-    for j in range(0, len(lst)-1):
-      if lst[j] > lst[j+1]:
-        temp = lst[j]
-        lst[j] = lst[j+1]
-        lst[j+1] = temp
-  return lst
+    for i in range(0, len(lst)):
+        for j in range(0, len(lst) - 1):
+            if lst[j] > lst[j + 1]:
+                temp = lst[j]
+                lst[j] = lst[j + 1]
+                lst[j + 1] = temp
+    return lst
+
 
 # What is the time complexity of Bubble Sort?
 
@@ -31,12 +32,13 @@ def bubbleSort(lst):
 
 # The function merge() combines two sorted lists together. Finish the incomplete merge() function below
 def merge(listA, listB):
-  result = []
-  while len(listA) > 0 and len(listB) > 0:
-    #YOUR CODE HERE
-    pass
-  
-  return 
+    result = []
+    while len(listA) > 0 and len(listB) > 0:
+        # YOUR CODE HERE
+        pass
+
+    return
+
 
 # Test your function here
 
@@ -51,13 +53,13 @@ def merge(listA, listB):
 
 # The function partition() takes in a list and pivot is incomplete. Finish implementing the function below
 def partition(lst, pivot):
-  less = []   
-  eq = [] 
-  great = []
+    less = []
+    eq = []
+    great = []
 
-  # YOUR CODE HERE
+    # YOUR CODE HERE
 
-  return less, eq, great
+    return less, eq, great
 
 # Test your function here
 

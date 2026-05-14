@@ -5,14 +5,14 @@ Write a recursive function that takes in an integer n and returns the nth Fibona
 
 # Recursive solution
 def fibonacci(n):
-	# Base cases
-	if n <= 1:
-		return 0
-	if n == 2:
-		return 1
-	
-	# Recursive calls
-	return fibonacci(n - 2) + fibonacci(n - 1)
+    # Base cases
+    if n <= 1:
+        return 0
+    if n == 2:
+        return 1
+
+    # Recursive calls
+    return fibonacci(n - 2) + fibonacci(n - 1)
 
 
 n = int(input("\n\nEnter n, where n will represent the nth Fibonacci number: "))
@@ -23,8 +23,8 @@ a = 0
 b = 1
 
 for _ in range(1, n):
-	c = a + b
-	a = b
-	b = c
+    c = a + b
+    a = b
+    b = c
 
 print(a)

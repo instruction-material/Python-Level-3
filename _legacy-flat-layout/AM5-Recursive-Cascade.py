@@ -5,9 +5,9 @@ Write a recursive function that takes in a string, and then creates a “stairca
 
 # Make a cascade function: cascade takes in a string, s, and prints out first the first char, then the first 2, then the first 3 … until all of s is printed
 def cascade(s):
-	if len(s) > 1:
-		cascade(s[:-1])
-	print(s)
+    if len(s) > 1:
+        cascade(s[:-1])
+    print(s)
 
 
 word = "lemmings"
@@ -16,13 +16,12 @@ cascade(word)
 
 # Now, make the inverse cascade: first “dog”, then “do”, then “d”
 def inverse_cascade(s):
-	print(s)
-	if len(s) > 1:
-		inverse_cascade(s[:-1])
+    print(s)
+    if len(s) > 1:
+        inverse_cascade(s[:-1])
 
 
 inverse_cascade(word)
-
 
 # If you want to do the full recursive cascade in one go, instead of splitting
 # it into two functions, one version would look like this:

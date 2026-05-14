@@ -5,7 +5,6 @@ Write a program that first prints a numbered list of instructions that the assis
 import datetime
 import random
 
-
 print("Welcome to Juni Assistant!")
 
 funFacts = ["The first oranges weren’t orange.",
@@ -22,25 +21,25 @@ name = ""
 keepGoing = True
 
 while keepGoing:
-	choice = input(
-		"\nHow can I help you?\n 1. What time is it?\n 2. What is the date?\n 3. Remember my name\n 4. What is my name?\n 5. Fun fact\n 6. Tell me a joke.\n 7. Quit\n")
-	
-	currentDT = datetime.datetime.now()
-	
-	if choice[0] == "1":
-		print(str(currentDT.hour) + ":" + str(currentDT.minute))
-	elif choice[0] == "2":
-		print(str(currentDT.month) + "/" + str(currentDT.day) + "/" + str(currentDT.year))
-	elif choice[0] == "3":
-		name = input("Please type in your name: ")
-	elif choice[0] == "4":
-		print("Your name is " + name)
-	elif choice[0] == "5":
-		print(funFacts[random.randint(0, len(funFacts) - 1)])
-	elif choice[0] == "6":
-		print(jokes[random.randint(0, len(funFacts) - 1)])
-	elif choice[0] == "7":
-		print("Goodbye!")
-		keepGoing = False
-	else:
-		print("I'm sorry, I don't recognize that command.")
+    choice = input(
+        "\nHow can I help you?\n 1. What time is it?\n 2. What is the date?\n 3. Remember my name\n 4. What is my name?\n 5. Fun fact\n 6. Tell me a joke.\n 7. Quit\n")
+
+    currentDT = datetime.datetime.now()
+
+    if choice[0] == "1":
+        print(str(currentDT.hour) + ":" + str(currentDT.minute))
+    elif choice[0] == "2":
+        print(str(currentDT.month) + "/" + str(currentDT.day) + "/" + str(currentDT.year))
+    elif choice[0] == "3":
+        name = input("Please type in your name: ")
+    elif choice[0] == "4":
+        print("Your name is " + name)
+    elif choice[0] == "5":
+        print(funFacts[random.randint(0, len(funFacts) - 1)])
+    elif choice[0] == "6":
+        print(jokes[random.randint(0, len(funFacts) - 1)])
+    elif choice[0] == "7":
+        print("Goodbye!")
+        keepGoing = False
+    else:
+        print("I'm sorry, I don't recognize that command.")

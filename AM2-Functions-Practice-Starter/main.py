@@ -22,4 +22,3 @@
 #     if n is an even number, cut n in half
 #     otherwise, make n equal to three times itself, plus one
 # Ex: 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1, so an input of 10 would give an output of 7 (since there are 7 numbers in total)
-

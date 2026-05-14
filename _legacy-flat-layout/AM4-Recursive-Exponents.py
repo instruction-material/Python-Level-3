@@ -6,9 +6,9 @@ Again, think about the base cases and what should happen to the original input w
 
 
 def exponent(base, power):
-	if power == 0:
-		return 1
-	return base * exponent(base, power - 1)
+    if power == 0:
+        return 1
+    return base * exponent(base, power - 1)
 
 
 print(exponent(3, 4))

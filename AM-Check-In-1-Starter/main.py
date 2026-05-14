@@ -1,5 +1,3 @@
-import random
-
 # FUNCTIONS
 
 # Ask the user for a word. Print out the middle letters of the word (not including the first and last)
@@ -17,10 +15,10 @@ import random
 
 # What will be printed if we call strangeFunction(4)?
 def strangeFunction(n):
-  print(n)
-  if n > 2:
-    strangeFunction(n-1)
-    strangeFunction(n-2)
+    print(n)
+    if n > 2:
+        strangeFunction(n - 1)
+        strangeFunction(n - 2)
 # Once you have an answer, uncomment the next line to test if it is correct!
 # strangeFunction(4)
 
@@ -40,5 +38,3 @@ def strangeFunction(n):
 # makeWord("ok##") -> ""
 # makeWord("ti#ger") -> "tger"
 # makeWord("t###") -> ""
-
-

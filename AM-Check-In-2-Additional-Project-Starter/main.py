@@ -1,14 +1,9 @@
-import random
-import time
-import copy
-
-# Algorithm Comparison 
+# Algorithm Comparison
 
 # You can copy a list with this line of code: list2 = copy.deepcopy(list1)
 # You can sort a list in reverse if you write list2.sort(reverse=True)
 
 # Copy over your functions for insertion sort and selection sort here. 
-
 
 
 # create a variable for n

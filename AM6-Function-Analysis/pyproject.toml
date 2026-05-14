@@ -9,7 +9,7 @@ python = ">=3.8.0,<3.9"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"
-replit-python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1.5.9"}
+replit-python-lsp-server = { extras = ["yapf", "rope", "pyflakes"], version = "^1.5.9" }
 urllib3 = "1.26.15"
 
 [build-system]

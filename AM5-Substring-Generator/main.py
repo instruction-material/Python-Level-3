@@ -1,20 +1,21 @@
 def getSubstrings(string):
-  if len(string) == 0:
-    return [string]
-  substrings = [string]
+    if len(string) == 0:
+        return [string]
+    substrings = [string]
 
-  newSubstrings = substrings
+    newSubstrings = substrings
 
-  result1 = getSubstrings(string[1:])
-  for substr in result1:
-    newSubstrings.append(substr)
-  
-  result2 = getSubstrings(string[:-1])
-  for substr in result2:
-    newSubstrings.append(substr)
+    result1 = getSubstrings(string[1:])
+    for substr in result1:
+        newSubstrings.append(substr)
 
-  setSubs = set(newSubstrings) #convert to set to delete duplicates
-  substrings = list(setSubs) #convert back to list
-  return substrings
+    result2 = getSubstrings(string[:-1])
+    for substr in result2:
+        newSubstrings.append(substr)
+
+    setSubs = set(newSubstrings)  # convert to set to delete duplicates
+    substrings = list(setSubs)  # convert back to list
+    return substrings
+
 
 print(getSubstrings("abcde"))

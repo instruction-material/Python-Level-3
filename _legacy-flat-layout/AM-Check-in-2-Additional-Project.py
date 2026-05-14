@@ -18,29 +18,29 @@ import time
 # Copy over your functions for insertion sort and selection sort here. 
 
 def selectionSort2(lst):
-	for i in range(len(lst)):
-		minItem = lst[i]
-		minItemI = i
-		for j in range(i, len(lst)):
-			if lst[j] < minItem:
-				minItem = lst[j]
-				minItemI = j
-		
-		temp = lst[i]
-		lst[i] = minItem
-		lst[minItemI] = temp
-	return lst
+    for i in range(len(lst)):
+        minItem = lst[i]
+        minItemI = i
+        for j in range(i, len(lst)):
+            if lst[j] < minItem:
+                minItem = lst[j]
+                minItemI = j
+
+        temp = lst[i]
+        lst[i] = minItem
+        lst[minItemI] = temp
+    return lst
 
 
 def insertionSort2(lst):
-	for i in range(len(lst)):
-		j = i
-		while j != 0 and lst[j] < lst[j - 1]:
-			temp = lst[j - 1]
-			lst[j - 1] = lst[j]
-			lst[j] = temp
-			j -= 1
-	return lst
+    for i in range(len(lst)):
+        j = i
+        while j != 0 and lst[j] < lst[j - 1]:
+            temp = lst[j - 1]
+            lst[j - 1] = lst[j]
+            lst[j] = temp
+            j -= 1
+    return lst
 
 
 # create a variable for n
@@ -49,7 +49,7 @@ n = 2000
 # generate a list with n random numbers in it
 nums = []
 for i in range(n):
-	nums.append(random.randint(1, n * 10))
+    nums.append(random.randint(1, n * 10))
 # make 3 copies of the list with copy.deepcopy(list1)
 nums2 = copy.deepcopy(nums)
 nums3 = copy.deepcopy(nums)

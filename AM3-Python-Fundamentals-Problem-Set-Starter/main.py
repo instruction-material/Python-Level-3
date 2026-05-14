@@ -44,4 +44,3 @@
 
 
 # (16) Write a function that takes in a list of distinct numbers and return the list with the smallest and largest numbers swapped.
-

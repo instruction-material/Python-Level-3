@@ -4,10 +4,10 @@ Write a function that takes in a list and a target value, and looks for that val
 
 
 def linearSearch(arr, val):
-	for item in arr:
-		if item == val:
-			return True
-	return False
+    for item in arr:
+        if item == val:
+            return True
+    return False
 
 
 nums = [1, 2, 3, 4, 5]

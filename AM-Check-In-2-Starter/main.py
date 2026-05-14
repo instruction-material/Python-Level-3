@@ -11,24 +11,29 @@
 
 # Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the Big-O of weirdFunction? 
 def weirdFunction(nums):
-  if len(nums) % 2 == 1:
-    print("There are an odd amount of numbers")
-  else:
-    for i in range(len(nums)):
-      print(i, nums[i])
+    if len(nums) % 2 == 1:
+        print("There are an odd amount of numbers")
+    else:
+        for i in range(len(nums)):
+            print(i, nums[i])
 
-# What is the time complexity of function1? Let n be the length of nums. 
+
+# What is the time complexity of function1? Let n be the length of nums.
 def function1(nums):
-  for num in nums:
-    for i in range(3):
-      print(i,num)
+    for num in nums:
+        for i in range(3):
+            print(i, num)
+
+
 # function1([12,45,23,67])
 
 # What is the time complexity of function2?
 def function2(n):
-  print(n)
-  if n > 2:
-    function2(n//2)
+    print(n)
+    if n > 2:
+        function2(n // 2)
+
+
 # function2(50)
 
 
@@ -49,19 +54,19 @@ def function2(n):
 
 # list1 = [2, 5, 10, 3, 6, 1]
 # What will list1 look after 2 passes of Selection Sort?
-  # Ans: 
-  
+# Ans:
+
 # The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
 def selectionSort(lst):
-  for i in range(len(lst)):
-    maxItem = lst[i]
-    maxItemI = i
-    for j in range(i, len(lst)):
-      # YOUR CODE HERE
-      pass
-    
-    
-  return lst
+    for i in range(len(lst)):
+        maxItem = lst[i]
+        maxItemI = i
+        for j in range(i, len(lst)):
+            # YOUR CODE HERE
+            pass
+
+    return lst
+
 
 # What is the time complexity of Selection Sort?
 
@@ -72,16 +77,16 @@ def selectionSort(lst):
 
 # list2 = [3, 7, 2, 5, 10, 1]
 # What will list2 look like after 3 passes of Insertion Sort?
-  # Ans: 
+# Ans:
 
 # Finish the incomplete insertionSort() function below
 def insertionSort(lst):
-  for i in range(len(lst)):
-    j = i
-    #YOUR CODE HERE
-    
-  return lst
+    for i in range(len(lst)):
+        j = i
+        # YOUR CODE HERE
+
+    return lst
 
 # What is the time complexity of Insertion Sort?
 
-# What is the worst case scenario for Insertion Sort? What is the best case? 
+# What is the worst case scenario for Insertion Sort? What is the best case?
