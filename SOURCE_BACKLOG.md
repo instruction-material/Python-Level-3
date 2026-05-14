@@ -8,7 +8,6 @@ material, and how the student or tutor verifies it.
 
 | Folder                          | Classification            | Action                                                                                                                        |
 |---------------------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `_legacy-flat-layout`           | legacy-or-archive         | Legacy/archive material. Preserve for reference; do not link as active coursework without explicit migration.                 |
 | `AM-Binary-Search-Animation`    | inactive-source-candidate | Inactive/promotable source. Do not link until the course text, starter/solution role, and verification expectation are added. |
 | `AM11-Counting-Sort`            | inactive-source-candidate | Inactive/promotable source. Do not link until the course text, starter/solution role, and verification expectation are added. |
 | `AM12-File-Writing`             | inactive-source-candidate | Inactive/promotable source. Do not link until the course text, starter/solution role, and verification expectation are added. |
@@ -17,4 +16,3 @@ material, and how the student or tutor verifies it.
 | `AM2-Writing-Analysis`          | inactive-source-candidate | Inactive/promotable source. Do not link until the course text, starter/solution role, and verification expectation are added. |
 | `AM3-Writing-Analysis-2`        | inactive-source-candidate | Inactive/promotable source. Do not link until the course text, starter/solution role, and verification expectation are added. |
 | `AM6-Function-Analysis-Starter` | covered-by-linked-variant | Covered by a linked starter/solution/update variant already used by the catalog.                                              |
-| `legacy-customized`             | legacy-or-archive         | Legacy/archive material. Preserve for reference; do not link as active coursework without explicit migration.                 |
