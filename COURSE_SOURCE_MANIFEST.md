@@ -34,7 +34,6 @@ Canonical source repository: `Python-Level-3`
 | `AM12-File-IO-and-Dictionaries` |
 | `AM12-Juni-Latin-with-File-IO` |
 | `AM13-Conways-Game-of-Life` |
-| `AM13-Priority-Queue` |
 | `AM13-Two-Player-Conways` |
 | `AM14-Tic-Tac-Toe-AI` |
 | `AM14-Tic-Tac-Toe-AI-Test` |
@@ -66,12 +65,12 @@ Canonical source repository: `Python-Level-3`
 
 ## Source Inventory
 
-- Active project folders: 45
-- Active linked folders: 45
-- Archived inactive/support folders: 7
-- Wrapper project folders: 45
-- Placeholder role folders awaiting a distinct counterpart: 34
+- Active project folders: 44
+- Active linked folders: 44
+- Archived inactive/support folders: 8
+- Wrapper project folders: 44
+- Placeholder role folders awaiting a distinct counterpart: 33
 - Complete starter/solution pairs with distinct migrated content: 11
-- Active source-like files excluding archive: 141
+- Active source-like files excluding archive: 138
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
