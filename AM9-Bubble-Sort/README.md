@@ -2,9 +2,16 @@
 
 Canonical source repository: `Python-Level-3`
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+Project goal: implement bubble sort, compare the basic and improved versions, and explain why the improved version can stop early when a list is already sorted.
 
 ## Structure
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+- `starter/` contains the implementation requirements.
+- `solution/` contains a reference implementation with an in-place sort, an early-exit sort, and a copy-returning helper.
+
+## Completion Checks
+
+- Sorts a list containing positive numbers, repeated values, and values that start out of order.
+- Preserves the original list when using the copy-returning helper.
+- Explains the nested-loop structure and the reason the inner loop can shrink after each pass.
+- Explains why the early-exit version is faster on an already sorted or nearly sorted list.
