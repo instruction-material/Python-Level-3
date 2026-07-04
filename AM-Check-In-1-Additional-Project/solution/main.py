@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # Write a recursive function that takes in a list of numbers and prints out the first number, then the sum of the first two numbers, then the sum of the first three numbers, and so on up to the sum of all of the numbers in the list.
 
 

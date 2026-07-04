@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # IMPORTANT: GIVE MORE SPACE FOR THE CONSOLE SO THE GAME CAN PROPERLY DISPLAY
 
 import time

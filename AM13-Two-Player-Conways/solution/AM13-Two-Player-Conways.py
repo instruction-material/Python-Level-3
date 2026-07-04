@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 """
 Read the description of the two player version of Conway’s Game of Life found at the bottom of this page. In essence, you will need to create a starting file for each player and then load it into a playing grid. Let each player take turns selecting a place where they want to add a cell, and a place where they want to remove a cell. After updating those locations, go through a single step of Conway’s four rules as explained in the previous project. Let each player continue taking turns until a player loses all of their cells.
 """

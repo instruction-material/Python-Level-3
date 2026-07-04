@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 def bubble_sort_in_place(values):
     """Sort values in place using the basic bubble sort algorithm."""
     for pass_index in range(len(values)):

@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 f = open("input_no_punctuation.txt")
 lines = f.readlines()
 lines = [x.strip() for x in lines]

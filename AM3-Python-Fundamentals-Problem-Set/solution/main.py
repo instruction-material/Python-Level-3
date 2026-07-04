@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # (1) Write a function that takes in a list of numbers and returns a list with every number doubled.
 def double(numbers):
     result = []

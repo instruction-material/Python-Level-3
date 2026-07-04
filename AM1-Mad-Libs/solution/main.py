@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # Example mad lib: http://www.madtakes.com/libs/176.html
 adjective = input("Enter an adjective: ")
 adjective2 = input("Enter another adjective: ")

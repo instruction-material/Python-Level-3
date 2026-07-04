@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # Function to print the board with O for Player 1, X for Player 2, and - for Dead
 def print_board(game):
     print(" ", end=" ")

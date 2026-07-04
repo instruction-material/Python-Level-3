@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # This is a helper function to handle the merging part of Merge Sort
 def merge(list_a, list_b):
     result = []

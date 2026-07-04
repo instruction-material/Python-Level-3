@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # List of baseball players with random stats
 p1 = ["B. Harper", 0.254, 27, 92]
 p2 = ["J. Soler", 0.256, 36, 91]

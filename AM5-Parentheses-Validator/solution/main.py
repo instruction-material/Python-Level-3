@@ -1,3 +1,8 @@
+###########################
+###   CODING STANDARD   ###
+###########################
+# Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 # iterative way
 def parentheses(brackets):
     dictionary = {"(": ")", "[": "]", "{": "}"}
