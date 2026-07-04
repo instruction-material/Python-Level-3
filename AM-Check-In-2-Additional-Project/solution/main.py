@@ -2,7 +2,6 @@ import copy
 import random
 import time
 
-
 # Algorithm Comparison
 
 # Copy in the code for each of the sorting functions that you have previously written, and write some tests to determine how fast each algorithm runs in a given scenario. Some possible scenarios to consider testing would be when the list to be sorted is already completely random, when it is already sorted, when it is sorted and reversed, and how many elements are in each of these lists (eg. n = 100, n = 1000, n = 2000, etc.). Can you think of any other scenarios?
@@ -12,6 +11,7 @@ import time
 # You can sort a list in reverse if you write list2.sort(reverse=True)
 
 # Copy over your functions for insertion sort and selection sort here.
+
 
 def selection_sort2(lst):
     for i in range(len(lst)):
@@ -78,8 +78,28 @@ insertion_sort2(nums4)
 stop_insert_reverse = time.time()
 
 # print results
-print("Selection sort time for n=" + str(n) + ": " + str(round(stop_select - start_select, 5)))
-print("Selection sort reversed time for n=" + str(n) + ": " + str(round(stop_select_reverse - start_select_reverse, 5)))
+print(
+    "Selection sort time for n="
+    + str(n)
+    + ": "
+    + str(round(stop_select - start_select, 5))
+)
+print(
+    "Selection sort reversed time for n="
+    + str(n)
+    + ": "
+    + str(round(stop_select_reverse - start_select_reverse, 5))
+)
 
-print("Insertion sort time for n=" + str(n) + ": " + str(round(stop_insert - start_insert, 5)))
-print("Insertion sort reversed time for n=" + str(n) + ": " + str(round(stop_insert_reverse - start_insert_reverse, 5)))
+print(
+    "Insertion sort time for n="
+    + str(n)
+    + ": "
+    + str(round(stop_insert - start_insert, 5))
+)
+print(
+    "Insertion sort reversed time for n="
+    + str(n)
+    + ": "
+    + str(round(stop_insert_reverse - start_insert_reverse, 5))
+)

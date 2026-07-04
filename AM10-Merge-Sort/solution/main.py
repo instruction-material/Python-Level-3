@@ -28,8 +28,8 @@ def split(lst):
     if n <= 1:
         print(lst)
     else:
-        split(lst[:n // 2])
-        split(lst[n // 2:])
+        split(lst[: n // 2])
+        split(lst[n // 2 :])
 
 
 # Merge Sort that uses the helper function merge
@@ -38,8 +38,8 @@ def merge_sort(lst):
     if n <= 1:  # An empty list (or a list containing one element) is a sorted list
         return lst
 
-    first_half = merge_sort(lst[:n // 2])
-    second_half = merge_sort(lst[n // 2:])
+    first_half = merge_sort(lst[: n // 2])
+    second_half = merge_sort(lst[n // 2 :])
     return merge(first_half, second_half)
 
 
@@ -49,8 +49,8 @@ def merge_sort2(lst):
     if n <= 1:
         return lst
 
-    first_half = merge_sort2(lst[:n // 2])
-    second_half = merge_sort2(lst[n // 2:])
+    first_half = merge_sort2(lst[: n // 2])
+    second_half = merge_sort2(lst[n // 2 :])
 
     result = []
     a_index = 0

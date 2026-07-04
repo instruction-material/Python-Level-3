@@ -33,7 +33,7 @@ def rec_parentheses(brackets):
     for i in range(len(brackets) - 1):
         check = brackets[i] + brackets[i + 1]
         if check == "()" or check == "{}" or check == "[]":
-            new_bracks = brackets[:i] + brackets[i + 2:]
+            new_bracks = brackets[:i] + brackets[i + 2 :]
             return rec_parentheses(new_bracks)
 
     return False

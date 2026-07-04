@@ -39,7 +39,7 @@ def bin_search_recur(lst, item):
         return True
     elif lst[mid] < item:
         # We already know that item is not at mid, so we exclude mid
-        return bin_search_recur(lst[mid + 1:], item)
+        return bin_search_recur(lst[mid + 1 :], item)
     else:
         return bin_search_recur(lst[:mid], item)
 

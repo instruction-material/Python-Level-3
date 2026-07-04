@@ -11,6 +11,7 @@
 # 2. O(sqrt(n))
 # 3. O(n!)
 
+
 # Time-3: Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the big-O of weirdFunction?
 def weird_function(nums):
     if len(nums) % 2 == 1:
@@ -24,6 +25,7 @@ def weird_function(nums):
 # weirdFunction([4,5,6]) (odd length)
 # weirdFunction([1,2,3,4,5,6]) (even length)
 # print()
+
 
 # Time-4: What is the time complexity of function1? Let n be the length of nums.
 def function1(nums):
@@ -101,7 +103,7 @@ def bin_search_recur(lst, item):
     if lst[mid] == item:
         return True
     elif lst[mid] < item:
-        return bin_search_recur(lst[mid + 1:], item)
+        return bin_search_recur(lst[mid + 1 :], item)
     else:
         return bin_search_recur(lst[:mid], item)
 
@@ -119,6 +121,7 @@ def bin_search_recur(lst, item):
 # list1 = [2, 5, 10, 3, 6, 1]
 # What will list1 look after 2 passes of Selection Sort?
 # Ans: list1 = [1, 2, 10, 3, 6, 5]
+
 
 # The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
 def selection_sort(lst):
@@ -151,6 +154,7 @@ def selection_sort(lst):
 # What will list2 look after 3 passes of Insertion Sort?
 # Ans: list2 = [2, 3, 5, 7, 10, 1]
 
+
 # Finish the incomplete insertionSort() function below
 def insertion_sort(lst):
     for i in range(len(lst)):
@@ -161,6 +165,7 @@ def insertion_sort(lst):
             lst[j] = temp
             j -= 1
     return lst
+
 
 # What is the time complexity of Insertion Sort? Can you describe the best and worst case scenarios?
 # Ans: O(n^2)

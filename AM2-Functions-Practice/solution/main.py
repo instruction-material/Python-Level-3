@@ -19,12 +19,12 @@ def count_seven(number):
     number = str(number)
     counter = 0
     for i in range(len(number)):
-        if number[i] == '7':
+        if number[i] == "7":
             counter += 1
     return counter
 
 
-'''
+"""
 Alternative (but recommended) approach
 def countSeven(number):
   counter = 0
@@ -33,7 +33,7 @@ def countSeven(number):
       counter += 1
     number = int(number/10)
   return counter
-'''
+"""
 
 
 def exponent(a, b):
@@ -63,7 +63,7 @@ def hailstone(n):
 
 print("product(2,3,5) =", product(2, 3, 5))
 print("average(2,3) =", average(2, 3))
-print("countLetter(\"bookkeeper\", \"e\") =", count_letter("bookkeeper", "e"))
+print('countLetter("bookkeeper", "e") =', count_letter("bookkeeper", "e"))
 print("countSeven(177877) =", count_seven(177877))
 print("exponent(2, 10) =", exponent(2, 10))
 print("factorial(4) =", factorial(4))

@@ -30,5 +30,5 @@ def insertion_sort2(lst):
 
 
 l = [random.randint(10, 99) for i in range(8)]
-print(l, end='\n\n')
+print(l, end="\n\n")
 print(insertion_sort1(l))

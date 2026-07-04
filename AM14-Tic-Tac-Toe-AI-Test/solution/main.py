@@ -108,7 +108,7 @@ def random_player_move(board):
 def finished(board):
     for i in range(3):
         for j in range(3):
-            if board[i][j] == ' ':
+            if board[i][j] == " ":
                 return False
     return True
 
@@ -123,21 +123,21 @@ for q in range(1000):
     for i in range(3):
         line = []
         for j in range(3):
-            line.append(' ')
+            line.append(" ")
         board.append(line)
 
     tie = False
-    player = 'X'
+    player = "X"
     flip = random.randint(1, 2)
     if flip == 1:
-        player = 'O'
+        player = "O"
 
     while True:
-        if player == 'X':
+        if player == "X":
             play = random_player_move(board)
             board[play[0]][play[1]] = player
 
-        elif player == 'O':
+        elif player == "O":
             play = ai_player_move(board)
             board[play[0]][play[1]] = player
 
@@ -147,15 +147,15 @@ for q in range(1000):
             tie = True
             break
 
-        if player == 'X':
-            player = 'O'
+        if player == "X":
+            player = "O"
         else:
-            player = 'X'
+            player = "X"
 
     if tie:
         ties += 1
     else:
-        if player == 'X':
+        if player == "X":
             random_play += 1
         else:
             computer += 1

@@ -3,7 +3,9 @@ low = 1
 high = 100
 num_guess = 0
 
-print("Think of a whole number between 1 and 100, and I'll try to guess it in 7 guesses!")
+print(
+    "Think of a whole number between 1 and 100, and I'll try to guess it in 7 guesses!"
+)
 
 while True:
     guess = (low + high) // 2

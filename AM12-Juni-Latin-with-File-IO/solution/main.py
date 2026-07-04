@@ -1,4 +1,4 @@
-f = open('input_no_punctuation.txt')
+f = open("input_no_punctuation.txt")
 lines = f.readlines()
 lines = [x.strip() for x in lines]
 f.close()
@@ -10,7 +10,7 @@ def translate(word):
     for i in range(1, len(word)):
         new_word += word[i]
 
-    new_word += word[0] + 'ay'
+    new_word += word[0] + "ay"
 
     return new_word
 

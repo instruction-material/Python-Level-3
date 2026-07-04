@@ -14,6 +14,7 @@ print()
 
 # RECURSION
 
+
 # Recursion-2: Write a function that takes in a number of rows of a pyramid and returns the number of bowling pins needed to make a pyramid with that number of rows.
 def num_pins(rows):
     if rows <= 1:
@@ -77,7 +78,9 @@ def make_word(keystrokes):
     for key in keystrokes:
         if key != "#":  # if the key is not a backspace, add it to the word
             stack.append(key)
-        elif len(stack) > 0:  # if the key is a backspace and stack isn't empty, pop the last letter
+        elif (
+            len(stack) > 0
+        ):  # if the key is a backspace and stack isn't empty, pop the last letter
             stack.pop()
     # turn the stack into a string
     word = ""
@@ -86,4 +89,6 @@ def make_word(keystrokes):
     return word
     # alternative way to turn list into string in python
     # return "".join(stack)
+
+
 # print("makeWord('ti#ger') ->", makeWord("ti#ger"))

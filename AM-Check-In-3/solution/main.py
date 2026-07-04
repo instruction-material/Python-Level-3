@@ -10,6 +10,7 @@
 # What does the list1 look like after 2 passes of Bubble Sort?
 # list1 = [2, 1, 4, 0, 8, 10]
 
+
 # Change the bubbleSort() function below to be more efficient (so that there's an early cutoff).
 def bubble_sort(lst):
     for i in range(len(lst) - 1):
@@ -35,6 +36,7 @@ def bubble_sort(lst):
 
 # What is Merge Sort? Can you describe how it works?
 
+
 # The function merge() combines two sorted lists together. Finish the incomplete merge() function below
 def merge(list_a, list_b):
     result = []
@@ -59,6 +61,7 @@ def merge(list_a, list_b):
 ###########################
 
 # What is Quicksort? Can you describe how it works?
+
 
 # The function partition() takes in a list and pivot is incomplete. Finish implementing the function below
 def partition(lst, pivot):

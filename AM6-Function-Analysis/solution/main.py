@@ -13,7 +13,7 @@ def f2(n):
 
 
 # O(n^2) - the outer loop does n/2 things, and the inner loop does
-# n/4 things, so in all there are (n^2)/8 things being done, but 
+# n/4 things, so in all there are (n^2)/8 things being done, but
 # we always drop constants and coefficients, so we just say O(n^2)
 def f3(n):
     k = 0
@@ -56,7 +56,7 @@ def f6(n):
 
 
 # O(n^3) - every loop repeats n times, and because they are nested,
-# we count the number of iterations by multiplying the amount of 
+# we count the number of iterations by multiplying the amount of
 # times that each loop runs
 def f7(n):
     for i in range(n):

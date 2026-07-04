@@ -101,7 +101,7 @@ def test_win(board, i, j, player):
 def finished(board):
     for i in range(3):
         for j in range(3):
-            if board[i][j] == ' ':
+            if board[i][j] == " ":
                 return False
     return True
 
@@ -111,15 +111,15 @@ board = []
 for i in range(3):
     line = []
     for j in range(3):
-        line.append(' ')
+        line.append(" ")
     board.append(line)
 
 tie = False
-player = 'X'
+player = "X"
 flip = random.randint(1, 2)
 if flip == 1:
     print("The coin flip shows that the computer (O) goes first!")
-    player = 'O'
+    player = "O"
 else:
     print("The coin flip shows that you (X) will go first!")
 
@@ -129,18 +129,22 @@ while True:
     print_board(board)
 
     # User goes
-    if player == 'X':
+    if player == "X":
         # While loop to make sure user puts in valid numbers
         while True:
             row = int(input("Pick a row to play: "))
             col = int(input("Pick a column to play: "))
-            if (-1 < row and row < 3) and (-1 < col and col < 3) and board[row][col] == " ":
+            if (
+                (-1 < row and row < 3)
+                and (-1 < col and col < 3)
+                and board[row][col] == " "
+            ):
                 board[row][col] = player
                 break
             print("Not a valid move, try again")
 
     # Computer goes
-    if player == 'O':
+    if player == "O":
         time.sleep(1)
         play = ai_player_move(board)
         board[play[0]][play[1]] = player
@@ -154,16 +158,16 @@ while True:
         break
 
     # Changes turns
-    if player == 'X':
-        player = 'O'
+    if player == "X":
+        player = "O"
     else:
-        player = 'X'
+        player = "X"
 
 print_board(board)
 if tie:
     print("Well, there was a tie!")
 else:
-    if player == 'X':
+    if player == "X":
         print("Wow! You won!")
     else:
         print("Well, the AI won.")

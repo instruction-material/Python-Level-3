@@ -166,7 +166,8 @@ for point in start:
 player_turn = True
 
 input(
-    "Welcome to Conway's 2-Player Game of Life. We start \nwith a 10x10 grid of cells, either alive or dead. \nHere are the rules:\n\t Each player starts with a square. Each turn they \nget to pick a position to grow a cell and pick a \nposition to kill an opponent cell. Each generation \npasses by following these rules:\n\t1) Any live cell with fewer than two live neighbors \n\t   dies, as if by underpopulation.\n\t2) Any live cell with two or three live neighbors \n\t   lives on to the next generation.\n\t3) Any live cell with more than three live neighbors \n\t   dies, as if by overpopulation.\n\t4) Any dead cell with exactly three live neighbors \n\t   becomes a live cell, as if by reproduction.\nPress Enter to continue:")
+    "Welcome to Conway's 2-Player Game of Life. We start \nwith a 10x10 grid of cells, either alive or dead. \nHere are the rules:\n\t Each player starts with a square. Each turn they \nget to pick a position to grow a cell and pick a \nposition to kill an opponent cell. Each generation \npasses by following these rules:\n\t1) Any live cell with fewer than two live neighbors \n\t   dies, as if by underpopulation.\n\t2) Any live cell with two or three live neighbors \n\t   lives on to the next generation.\n\t3) Any live cell with more than three live neighbors \n\t   dies, as if by overpopulation.\n\t4) Any dead cell with exactly three live neighbors \n\t   becomes a live cell, as if by reproduction.\nPress Enter to continue:"
+)
 print_board(grid)
 input("Press Enter to start: ")
 

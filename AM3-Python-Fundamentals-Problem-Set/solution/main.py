@@ -13,12 +13,12 @@ print(double([1, 2, 3]))
 def starts_with_a(words):
     result = []
     for word in words:
-        if word[0] == 'a':
+        if word[0] == "a":
             result.append(word)
     return result
 
 
-print(starts_with_a(['apple', 'banana', 'ant', 'orange']))
+print(starts_with_a(["apple", "banana", "ant", "orange"]))
 
 
 # (3) Write a function that takes in a list of numbers and returns the number of even numbers in the list.
@@ -77,8 +77,8 @@ all_squares(101)
 def largest_power_of_two(N):
     i = 0
     while True:
-        power_of_two = 2 ** i
-        if (power_of_two > N):
+        power_of_two = 2**i
+        if power_of_two > N:
             return i - 1
         i += 1
 
@@ -163,7 +163,7 @@ print(most_common_numbers([1, 2, 3]))
 
 # (13) Write a function that takes in a string and returns the string in reverse order.
 def reverse_string(str):
-    reverse_str = ''
+    reverse_str = ""
     for i in range(len(str) - 1, -1, -1):
         reverse_str += str[i]
     return reverse_str
@@ -176,12 +176,12 @@ print(reverse_string("hello"))
 def count_vowels(str):
     count = 0
     for i in str:
-        if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
+        if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
             count += 1
     return count
 
 
-print(count_vowels('mooncake'))
+print(count_vowels("mooncake"))
 
 
 # (15) Write a function that takes in a list of numbers and returns the number of numbers that appear exactly twice in the list.

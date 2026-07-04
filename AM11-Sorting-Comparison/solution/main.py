@@ -47,8 +47,8 @@ def merge_sort(lst):
     if n <= 1:
         return lst
 
-    first_half = merge_sort(lst[:n // 2])
-    second_half = merge_sort(lst[n // 2:])
+    first_half = merge_sort(lst[: n // 2])
+    second_half = merge_sort(lst[n // 2 :])
 
     result = []
     while len(first_half) > 0 and len(second_half) > 0:

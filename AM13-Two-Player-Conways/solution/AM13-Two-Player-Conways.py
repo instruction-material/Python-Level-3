@@ -34,11 +34,22 @@ def neighbors(grid, alive, i, j):
     """
 
     # Determine the states of the cell's neighbors
-    neighbor_coords = [(i - 1, j - 1), (i - 1, j), (i - 1, j + 1),
-                       (i, j - 1), (i, j + 1),
-                       (i + 1, j - 1), (i + 1, j), (i + 1, j + 1)]
+    neighbor_coords = [
+        (i - 1, j - 1),
+        (i - 1, j),
+        (i - 1, j + 1),
+        (i, j - 1),
+        (i, j + 1),
+        (i + 1, j - 1),
+        (i + 1, j),
+        (i + 1, j + 1),
+    ]
 
-    neighbors = [grid[x][y] for x, y in neighbor_coords if 0 <= x < len(grid) and 0 <= y < len(grid[0])]
+    neighbors = [
+        grid[x][y]
+        for x, y in neighbor_coords
+        if 0 <= x < len(grid) and 0 <= y < len(grid[0])
+    ]
     counts = {1: neighbors.count(1), 2: neighbors.count(2)}
     count_alive = sum(counts.values())
 
@@ -80,7 +91,10 @@ input("Press Enter to start: ")
 
 while True:
     # Create a new grid based on the current grid's state
-    grid = [[neighbors(grid, grid[i][j], i, j) for j in range(len(grid[0]))] for i in range(len(grid))]
+    grid = [
+        [neighbors(grid, grid[i][j], i, j) for j in range(len(grid[0]))]
+        for i in range(len(grid))
+    ]
 
     print_board(grid)
     o_count, x_count = count_board(grid)
