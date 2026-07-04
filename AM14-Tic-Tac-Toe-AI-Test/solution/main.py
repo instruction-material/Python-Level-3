@@ -1,7 +1,7 @@
 import random
 
 
-def printBoard(board):
+def print_board(board):
     for i in range(3):
         for j in range(3):
             if j == 2:
@@ -39,19 +39,19 @@ def win(board, player):
     return False
 
 
-# The AI is better than random now. It will check if it has a winning move and play it. 
+# The AI is better than random now. It will check if it has a winning move and play it.
 # It will also check if the opponent has a winning move and play to block.
-def AIPlayerMove(board):
+def ai_player_move(board):
     # Check if AI has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "O"):
+            if test_win(board, i, j, "O"):
                 return [i, j]
 
     # Checks if opponent has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "X"):
+            if test_win(board, i, j, "X"):
                 return [i, j]
 
     # If the center is open, play it
@@ -80,7 +80,7 @@ def AIPlayerMove(board):
 
 
 # See if a win is possible if the input player selects the input position
-def testWin(board, i, j, player):
+def test_win(board, i, j, player):
     # Create a new board and add the potential next move
     duplicate = []
     for a in range(3):
@@ -96,7 +96,7 @@ def testWin(board, i, j, player):
     return win(duplicate, player)
 
 
-def RandomPlayerMove(board):
+def random_player_move(board):
     while True:
         row = random.randint(0, 2)
         col = random.randint(0, 2)
@@ -114,7 +114,7 @@ def finished(board):
 
 
 ties = 0
-randomPlay = 0
+random_play = 0
 computer = 0
 
 for q in range(1000):
@@ -134,11 +134,11 @@ for q in range(1000):
 
     while True:
         if player == 'X':
-            play = RandomPlayerMove(board)
+            play = random_player_move(board)
             board[play[0]][play[1]] = player
 
         elif player == 'O':
-            play = AIPlayerMove(board)
+            play = ai_player_move(board)
             board[play[0]][play[1]] = player
 
         if win(board, player):
@@ -156,10 +156,10 @@ for q in range(1000):
         ties += 1
     else:
         if player == 'X':
-            randomPlay += 1
+            random_play += 1
         else:
             computer += 1
 
 print("TIES: " + str(ties))
-print("RANDOM WINS: " + str(randomPlay))
+print("RANDOM WINS: " + str(random_play))
 print("COMPUTER WINS: " + str(computer))

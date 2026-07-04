@@ -2,7 +2,7 @@ import random
 import time
 
 
-def printBoard(board):
+def print_board(board):
     for i in range(3):
         for j in range(3):
             if j == 2:
@@ -40,19 +40,19 @@ def win(board, player):
     return False
 
 
-# The AI is better than random now. It will check if it has a winning move and play it. 
+# The AI is better than random now. It will check if it has a winning move and play it.
 # It will also check if the opponent has a winning move and play to block.
-def AIPlayerMove(board):
+def ai_player_move(board):
     # Check if AI has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "O"):
+            if test_win(board, i, j, "O"):
                 return [i, j]
 
     # Checks if opponent has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "X"):
+            if test_win(board, i, j, "X"):
                 return [i, j]
 
     # If the center is open, play it
@@ -81,7 +81,7 @@ def AIPlayerMove(board):
 
 
 # See if a win is possible if the input player selects the input position
-def testWin(board, i, j, player):
+def test_win(board, i, j, player):
     # Create a new board and add the potential next move
     duplicate = []
     for a in range(3):
@@ -126,7 +126,7 @@ else:
 input("Press Enter to begin!")
 
 while True:
-    printBoard(board)
+    print_board(board)
 
     # User goes
     if player == 'X':
@@ -142,7 +142,7 @@ while True:
     # Computer goes
     if player == 'O':
         time.sleep(1)
-        play = AIPlayerMove(board)
+        play = ai_player_move(board)
         board[play[0]][play[1]] = player
 
     # Check if someone has won
@@ -159,7 +159,7 @@ while True:
     else:
         player = 'X'
 
-printBoard(board)
+print_board(board)
 if tie:
     print("Well, there was a tie!")
 else:

@@ -10,11 +10,11 @@ p8 = ["A. Rendon", .328, 29, 104]
 p9 = ["D. Lemahieu", .331, 22, 87]
 p10 = ["R. Acuna", .290, 36, 89]
 
-playerList = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+player_list = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
 
 
 # Slightly modified bubblesort to accomodate different areas. Returns the names in correct order rather than the list itself.
-def bubbleBaseball(players, stat):
+def bubble_baseball(players, stat):
     num = 0
     if stat == "Average":
         num = 1
@@ -34,7 +34,7 @@ def bubbleBaseball(players, stat):
     return names
 
 
-def printList(list1):
+def print_list(list1):
     for i in range(len(list1)):
         print("\t" + list1[i])
 
@@ -42,10 +42,10 @@ def printList(list1):
 import time
 
 print("Average Leaderboard:")
-printList(bubbleBaseball(playerList, "Average"))
+print_list(bubble_baseball(player_list, "Average"))
 time.sleep(2)
 print("\nHome Run Leaderboard:")
-printList(bubbleBaseball(playerList, "Home Run"))
+print_list(bubble_baseball(player_list, "Home Run"))
 time.sleep(2)
 print("\nRBI Leaderboard:")
-printList(bubbleBaseball(playerList, "RBI"))
+print_list(bubble_baseball(player_list, "RBI"))

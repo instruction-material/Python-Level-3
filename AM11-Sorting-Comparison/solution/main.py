@@ -3,23 +3,23 @@ from random import randint
 
 
 # O(1) space complexity, since we just modify the original list
-def selectionSort(lst):
+def selection_sort(lst):
     for i in range(len(lst)):
-        minItem = lst[0]
-        minItemI = 0
+        min_item = lst[0]
+        min_item_i = 0
         for j in range(i, len(lst)):
-            if lst[j] < minItem:
-                minItem = lst[j]
-                minItemI = j
+            if lst[j] < min_item:
+                min_item = lst[j]
+                min_item_i = j
 
         temp = lst[i]
-        lst[i] = minItem
-        lst[minItemI] = temp
+        lst[i] = min_item
+        lst[min_item_i] = temp
     return lst
 
 
 # Space complexity of O(1), since we modify the input list in-place
-def insertionSort(lst):
+def insertion_sort(lst):
     for i in range(len(lst)):
         j = i
         while j != 0 and lst[j] < lst[j - 1]:
@@ -31,7 +31,7 @@ def insertionSort(lst):
     return lst
 
 
-def bubbleSort(lst):
+def bubble_sort(lst):
     for i in range(len(lst) - 1, 0, -1):
         for j in range(0, i):
             if lst[j] > lst[j + 1]:
@@ -42,22 +42,22 @@ def bubbleSort(lst):
 
 
 # This is the integrated version that does not require a helper "merge" function
-def mergeSort(lst):
+def merge_sort(lst):
     n = len(lst)
     if n <= 1:
         return lst
 
-    firstHalf = mergeSort(lst[:n // 2])
-    secondHalf = mergeSort(lst[n // 2:])
+    first_half = merge_sort(lst[:n // 2])
+    second_half = merge_sort(lst[n // 2:])
 
     result = []
-    while len(firstHalf) > 0 and len(secondHalf) > 0:
-        if firstHalf[0] < secondHalf[0]:
-            result.append(firstHalf.pop(0))
+    while len(first_half) > 0 and len(second_half) > 0:
+        if first_half[0] < second_half[0]:
+            result.append(first_half.pop(0))
         else:
-            result.append(secondHalf.pop(0))
+            result.append(second_half.pop(0))
 
-    return result + firstHalf + secondHalf
+    return result + first_half + second_half
 
 
 # Helper function to partition the input list using the given index
@@ -83,16 +83,16 @@ def quicksort(lst):
     if n <= 1:
         return lst
 
-    pivotInd = randint(0, n - 1)
+    pivot_ind = randint(0, n - 1)
     # pivotInd = 0 is the initial "naive" choice
-    pivot = lst[pivotInd]
+    pivot = lst[pivot_ind]
 
     less, eq, great = partition(lst, pivot)
 
-    sortedLess = quicksort(less)
-    sortedGreat = quicksort(great)
+    sorted_less = quicksort(less)
+    sorted_great = quicksort(great)
 
-    return sortedLess + eq + sortedGreat
+    return sorted_less + eq + sorted_great
 
 
 """ This is a timing test on completely random lists """
@@ -103,19 +103,19 @@ for n in [100, 1000, 10000]:
     if n < 10000:
         lst = [randint(-10000, 10000) for _ in range(n)]
         start = time.time()
-        selectionSort(lst)
+        selection_sort(lst)
         end = time.time()
         print("Selection Sort:\t", round(end - start, 6), "seconds")
 
         lst = [randint(-10000, 10000) for _ in range(n)]
         start = time.time()
-        insertionSort(lst)
+        insertion_sort(lst)
         end = time.time()
         print("Insertion Sort:\t", round(end - start, 6), "seconds")
 
         lst = [randint(-10000, 10000) for _ in range(n)]
         start = time.time()
-        bubbleSort(lst)
+        bubble_sort(lst)
         end = time.time()
         print("Bubble Sort:\t", round(end - start, 6), "seconds")
     else:
@@ -125,7 +125,7 @@ for n in [100, 1000, 10000]:
 
     lst = [randint(-10000, 10000) for _ in range(n)]
     start = time.time()
-    mergeSort(lst)
+    merge_sort(lst)
     end = time.time()
     print("Merge Sort:\t\t", round(end - start, 6), "seconds")
 
@@ -147,7 +147,7 @@ for n in [100, 1000, 10000]:
         lst = [randint(-10000, 10000) for _ in range(n)]
         lst.sort()
         start = time.time()
-        selectionSort(lst)
+        selection_sort(lst)
         end = time.time()
         print("Selection Sort:\t", round(end - start, 6), "seconds")
     else:
@@ -156,7 +156,7 @@ for n in [100, 1000, 10000]:
     lst = [randint(-10000, 10000) for _ in range(n)]
     lst.sort()
     start = time.time()
-    insertionSort(lst)
+    insertion_sort(lst)
     end = time.time()
     print("Insertion Sort:\t", round(end - start, 6), "seconds")
 
@@ -164,7 +164,7 @@ for n in [100, 1000, 10000]:
         lst = [randint(-10000, 10000) for _ in range(n)]
         lst.sort()
         start = time.time()
-        bubbleSort(lst)
+        bubble_sort(lst)
         end = time.time()
         print("Bubble Sort:\t", round(end - start, 6), "seconds")
     else:
@@ -173,7 +173,7 @@ for n in [100, 1000, 10000]:
     lst = [randint(-10000, 10000) for _ in range(n)]
     lst.sort()
     start = time.time()
-    mergeSort(lst)
+    merge_sort(lst)
     end = time.time()
     print("Merge Sort:\t\t", round(end - start, 6), "seconds")
 
@@ -196,7 +196,7 @@ for n in [100, 1000, 10000]:
         lst.sort()
         lst.reverse()
         start = time.time()
-        selectionSort(lst)
+        selection_sort(lst)
         end = time.time()
         print("Selection Sort:\t", round(end - start, 6), "seconds")
 
@@ -204,7 +204,7 @@ for n in [100, 1000, 10000]:
         lst.sort()
         lst.reverse()
         start = time.time()
-        insertionSort(lst)
+        insertion_sort(lst)
         end = time.time()
         print("Insertion Sort:\t", round(end - start, 6), "seconds")
 
@@ -212,7 +212,7 @@ for n in [100, 1000, 10000]:
         lst.sort()
         lst.reverse()
         start = time.time()
-        bubbleSort(lst)
+        bubble_sort(lst)
         end = time.time()
         print("Bubble Sort:\t", round(end - start, 6), "seconds")
     else:
@@ -224,7 +224,7 @@ for n in [100, 1000, 10000]:
     lst.sort()
     lst.reverse()
     start = time.time()
-    mergeSort(lst)
+    merge_sort(lst)
     end = time.time()
     print("Merge Sort:\t\t", round(end - start, 6), "seconds")
 

@@ -1,5 +1,5 @@
 # Convert to binary, iterative method
-def toBinaryIterative(number):
+def to_binary_iterative(number):
     binary = ""
     while number > 1:
         # The new digit needs to go in front of the existing ones, so we can't use +=
@@ -9,15 +9,15 @@ def toBinaryIterative(number):
     return binary
 
 
-print(toBinaryIterative(6))
+print(to_binary_iterative(6))
 
 
-def toBinaryRecursive(number):
+def to_binary_recursive(number):
     if number <= 1:
         return str(number)
 
     # Rather than int(number/2), you could alternatively introduce number // 2
-    return toBinaryRecursive(int(number / 2)) + str(number % 2)
+    return to_binary_recursive(int(number / 2)) + str(number % 2)
 
 
-print(toBinaryRecursive(6))
+print(to_binary_recursive(6))

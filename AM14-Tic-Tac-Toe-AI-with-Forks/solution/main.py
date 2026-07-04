@@ -2,7 +2,7 @@ import random
 import time
 
 
-def printBoard(board):
+def print_board(board):
     for i in range(3):
         for j in range(3):
             if j == 2:
@@ -40,40 +40,40 @@ def win(board, player):
     return False
 
 
-# The AI is better than random now. It will check if it has a winning move and play it. 
+# The AI is better than random now. It will check if it has a winning move and play it.
 # It will also check if the opponent has a winning move and play to block.
-def AIPlayerMove(board):
+def ai_player_move(board):
     # Check if AI has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "O"):
+            if test_win(board, i, j, "O"):
                 return [i, j]
 
     # Checks if opponent has any moves that result in a win
     for i in range(3):
         for j in range(3):
-            if testWin(board, i, j, "X"):
+            if test_win(board, i, j, "X"):
                 return [i, j]
 
     # Check for a move that results in a fork
     for i in range(3):
         for j in range(3):
-            if testFork(board, i, j, 'O'):
+            if test_fork(board, i, j, 'O'):
                 return [i, j]
 
     # Check for a move that the opponent can play and result in a fork
     # If there are two forks however, choose to go on the offense
-    loseForks = 0
-    tempSet = [0, 0]
+    lose_forks = 0
+    temp_set = [0, 0]
     for i in range(3):
         for j in range(3):
-            if testFork(board, i, j, 'X'):
-                loseForks += 1
-                tempSet = [i, j]
+            if test_fork(board, i, j, 'X'):
+                lose_forks += 1
+                temp_set = [i, j]
 
-    if loseForks == 1:
-        return tempSet
-    elif loseForks == 2:
+    if lose_forks == 1:
+        return temp_set
+    elif lose_forks == 2:
         if board[0][1] == ' ':
             return [0, 1]
         if board[1][0] == ' ':
@@ -104,16 +104,16 @@ def AIPlayerMove(board):
 
 
 # See if a win is possible if the input player selects the input position
-def testWin(board, i, j, player):
-    newBoard = duplicateBoard(board)
-    if newBoard[i][j] != " ":
+def test_win(board, i, j, player):
+    new_board = duplicate_board(board)
+    if new_board[i][j] != " ":
         return False
-    newBoard[i][j] = player
-    return win(newBoard, player)
+    new_board[i][j] = player
+    return win(new_board, player)
 
 
 # Create a deep copy of the board
-def duplicateBoard(board):
+def duplicate_board(board):
     duplicate = []
     for a in range(3):
         line = []
@@ -124,22 +124,22 @@ def duplicateBoard(board):
 
 
 # Given a move, see if there are at least two winning moves generated from that play
-def testFork(board, i, j, player):
-    newBoard = duplicateBoard(board)
-    if newBoard[i][j] != " ":
+def test_fork(board, i, j, player):
+    new_board = duplicate_board(board)
+    if new_board[i][j] != " ":
         return False
 
-    newBoard[i][j] = player
-    winningMoves = 0
+    new_board[i][j] = player
+    winning_moves = 0
     for a in range(3):
         for b in range(3):
-            if newBoard[a][b] == " ":
-                newBoard[a][b] = player
-                if win(newBoard, player):
-                    winningMoves += 1
-                newBoard[a][b] = " "
+            if new_board[a][b] == " ":
+                new_board[a][b] = player
+                if win(new_board, player):
+                    winning_moves += 1
+                new_board[a][b] = " "
 
-    if winningMoves >= 2:
+    if winning_moves >= 2:
         return True
     return False
 
@@ -173,7 +173,7 @@ else:
 input("Press Enter to begin!")
 
 while True:
-    printBoard(board)
+    print_board(board)
 
     # User goes
     if player == 'X':
@@ -189,7 +189,7 @@ while True:
     # Computer goes
     if player == 'O':
         time.sleep(1)
-        play = AIPlayerMove(board)
+        play = ai_player_move(board)
         board[play[0]][play[1]] = player
 
     # Check if someone has won
@@ -206,7 +206,7 @@ while True:
     else:
         player = 'X'
 
-printBoard(board)
+print_board(board)
 if tie:
     print("Well, there was a tie!")
 else:

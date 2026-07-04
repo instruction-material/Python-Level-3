@@ -5,14 +5,14 @@ f.close()
 
 
 def translate(word):
-    newWord = ""
+    new_word = ""
 
     for i in range(1, len(word)):
-        newWord += word[i]
+        new_word += word[i]
 
-    newWord += word[0] + 'ay'
+    new_word += word[0] + 'ay'
 
-    return newWord
+    return new_word
 
 
 l = []
@@ -29,7 +29,7 @@ for line in l:
 
 o.close()
 
-"""BONUS: Make sure it works for punctuation 
+"""BONUS: Make sure it works for punctuation
 
 f = open('input_punctuation.txt')
 lines = f.readlines()

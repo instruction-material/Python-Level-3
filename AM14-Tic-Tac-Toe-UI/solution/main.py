@@ -2,7 +2,7 @@ import random
 import time
 
 
-def printBoard(board):
+def print_board(board):
     for i in range(3):
         for j in range(3):
             if j == 2:
@@ -41,7 +41,7 @@ def win(board, player):
 
 
 # Simple AI algorithm - program just plays a spot randomly.
-def randomPlayerMove(board):
+def random_player_move(board):
     while True:
         row = random.randint(0, 2)
         column = random.randint(0, 2)
@@ -78,7 +78,7 @@ else:
 input("Press Enter to begin!")
 
 while True:
-    printBoard(board)
+    print_board(board)
 
     # User goes
     if player == 'X':
@@ -94,7 +94,7 @@ while True:
     # Computer goes
     if player == 'O':
         time.sleep(1)
-        play = randomPlayerMove(board)
+        play = random_player_move(board)
         board[play[0]][play[1]] = player
 
     # Check if someone has won
@@ -111,7 +111,7 @@ while True:
     else:
         player = 'X'
 
-printBoard(board)
+print_board(board)
 if tie:
     print("Well, there was a tie!")
 else:

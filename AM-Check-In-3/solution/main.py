@@ -11,7 +11,7 @@
 # list1 = [2, 1, 4, 0, 8, 10]
 
 # Change the bubbleSort() function below to be more efficient (so that there's an early cutoff).
-def bubbleSort(lst):
+def bubble_sort(lst):
     for i in range(len(lst) - 1):
         for j in range(len(lst) - i - 1):
             if lst[j] > lst[j + 1]:
@@ -36,16 +36,16 @@ def bubbleSort(lst):
 # What is Merge Sort? Can you describe how it works?
 
 # The function merge() combines two sorted lists together. Finish the incomplete merge() function below
-def merge(listA, listB):
+def merge(list_a, list_b):
     result = []
-    while len(listA) > 0 and len(listB) > 0:
+    while len(list_a) > 0 and len(list_b) > 0:
         # YOUR CODE HERE
-        if listA[0] < listB[0]:
-            result.append(listA.pop(0))
+        if list_a[0] < list_b[0]:
+            result.append(list_a.pop(0))
         else:
-            result.append(listB.pop(0))
+            result.append(list_b.pop(0))
 
-    return result + listA + listB
+    return result + list_a + list_b
 
 
 # What is the time complexity of Merge Sort? Can you describe the best and worst case scenarios?
@@ -98,7 +98,7 @@ for i in word:
 
 o.close()
 
-# Reading from the file that you just created, create a dictionary where the keys are the unique letters of your input and the values are how often those letters occur. 
+# Reading from the file that you just created, create a dictionary where the keys are the unique letters of your input and the values are how often those letters occur.
 
 d = {}
 

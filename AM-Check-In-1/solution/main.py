@@ -6,7 +6,7 @@ import random
 word = input("Enter a word: ")
 print("The middle letters: " + word[1:-1])
 
-# Func-2: Ask the user to enter a sentence with at least two words. Then print out the second word in the sentence. 
+# Func-2: Ask the user to enter a sentence with at least two words. Then print out the second word in the sentence.
 sentence = input("Enter a sentence with at least two words: ")
 print("The second word of the sentence: " + sentence.split()[1])
 print()
@@ -14,35 +14,35 @@ print()
 
 # RECURSION
 
-# Recursion-2: Write a function that takes in a number of rows of a pyramid and returns the number of bowling pins needed to make a pyramid with that number of rows. 
-def numPins(rows):
+# Recursion-2: Write a function that takes in a number of rows of a pyramid and returns the number of bowling pins needed to make a pyramid with that number of rows.
+def num_pins(rows):
     if rows <= 1:
         return rows
-    return rows + numPins(rows - 1)
+    return rows + num_pins(rows - 1)
 
 
-print("The number of pins for 2 rows:", numPins(2))
+print("The number of pins for 2 rows:", num_pins(2))
 
 
 # Recursion-3: Write a recursive function to calculate the nth Lucas number. The Lucas numbers are very similar to the Fibonacci numbers because each Lucas number is the sum of the previous two. The only difference is that the Lucas number sequence starts with 2 1 instead of 0 1. The first few Lucas numbers are:  2 1 3 4 7 11 ...
-def Lucas(n):
+def lucas(n):
     if n == 1:
         return 2
     elif n == 2:
         return 1
     else:
-        return Lucas(n - 1) + Lucas(n - 2)
+        return lucas(n - 1) + lucas(n - 2)
 
 
-print("The fourth Lucas number is:", Lucas(4))
+print("The fourth Lucas number is:", lucas(4))
 
 
 # Recursion-4: What will be printed if we call strangeFunction(4)?
-def strangeFunction(n):
+def strange_function(n):
     print(n)
     if n > 2:
-        strangeFunction(n - 1)
-        strangeFunction(n - 2)
+        strange_function(n - 1)
+        strange_function(n - 2)
 
 
 # strangeFunction(4)
@@ -59,7 +59,7 @@ nums.append(random.randint(1, 10))
 print("after adding a random number:")
 print(nums)
 
-# Stacks-4: Remove the top element of the stack then print the stack out. 
+# Stacks-4: Remove the top element of the stack then print the stack out.
 nums.pop()
 print("after removing the top element:")
 print(nums)
@@ -71,7 +71,7 @@ print()
 # makeWord("ok##") -> ""
 # makeWord("ti#ger") -> "tger"
 # makeWord("t###") -> ""
-def makeWord(keystrokes):
+def make_word(keystrokes):
     stack = []
     # loop through the keystrokes
     for key in keystrokes:

@@ -1,4 +1,4 @@
-def binSearchIter(lst, item):
+def bin_search_iter(lst, item):
     low = 0
     high = len(lst) - 1
 
@@ -16,7 +16,7 @@ def binSearchIter(lst, item):
     return False
 
 
-def binSearchRecur(lst, item):
+def bin_search_recur(lst, item):
     high = len(lst) - 1
 
     if high < 0:  # The list is empty
@@ -28,11 +28,11 @@ def binSearchRecur(lst, item):
         return True
     elif lst[mid] < item:
         # We already know that item is not at mid, so we exclude mid
-        return binSearchRecur(lst[mid + 1:], item)
+        return bin_search_recur(lst[mid + 1:], item)
     else:
-        return binSearchRecur(lst[:mid], item)
+        return bin_search_recur(lst[:mid], item)
 
 
 l = [1, 4, 5, 6, 8, 9, 10]
-print(binSearchIter(l, 4))
-print(binSearchRecur(l, 4))
+print(bin_search_iter(l, 4))
+print(bin_search_recur(l, 4))

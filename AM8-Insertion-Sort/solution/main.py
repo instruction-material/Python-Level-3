@@ -2,23 +2,23 @@ import random
 
 
 # Space complexity of O(n), since we create a new list
-def insertionSort1(lst):
+def insertion_sort1(lst):
     result = []
     for i in range(len(lst)):
-        itemToInsert = lst[i]
-        result.append(itemToInsert)
-        indexToInsert = i
+        item_to_insert = lst[i]
+        result.append(item_to_insert)
+        index_to_insert = i
 
-        while indexToInsert != 0 and itemToInsert < result[indexToInsert - 1]:
-            result[indexToInsert] = result[indexToInsert - 1]
-            result[indexToInsert - 1] = itemToInsert
-            indexToInsert -= 1
+        while index_to_insert != 0 and item_to_insert < result[index_to_insert - 1]:
+            result[index_to_insert] = result[index_to_insert - 1]
+            result[index_to_insert - 1] = item_to_insert
+            index_to_insert -= 1
 
     return result
 
 
 # Space complexity of O(1), since we modify the input list in-place
-def insertionSort2(lst):
+def insertion_sort2(lst):
     for i in range(len(lst)):
         j = i
         while j != 0 and lst[j] < lst[j - 1]:
@@ -31,4 +31,4 @@ def insertionSort2(lst):
 
 l = [random.randint(10, 99) for i in range(8)]
 print(l, end='\n\n')
-print(insertionSort1(l))
+print(insertion_sort1(l))

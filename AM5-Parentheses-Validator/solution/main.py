@@ -26,18 +26,18 @@ print(parentheses("{()[])"))
 
 
 # recursive way
-def recParentheses(brackets):
+def rec_parentheses(brackets):
     if len(brackets) == 0:
         return True
 
     for i in range(len(brackets) - 1):
         check = brackets[i] + brackets[i + 1]
         if check == "()" or check == "{}" or check == "[]":
-            newBracks = brackets[:i] + brackets[i + 2:]
-            return recParentheses(newBracks)
+            new_bracks = brackets[:i] + brackets[i + 2:]
+            return rec_parentheses(new_bracks)
 
     return False
 
 
-print(recParentheses("{()[]}"))
-print(recParentheses("{(((())))[}]"))
+print(rec_parentheses("{()[]}"))
+print(rec_parentheses("{(((())))[}]"))

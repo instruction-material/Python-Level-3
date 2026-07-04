@@ -24,20 +24,20 @@ def quicksort(lst):
     if n <= 1:
         return lst
 
-    pivotInd = random.randint(0, n - 1)
+    pivot_ind = random.randint(0, n - 1)
     # pivotInd = 0 is the initial "naive" choice
-    pivot = lst[pivotInd]
+    pivot = lst[pivot_ind]
 
     less, eq, great = partition(lst, pivot)
-    sortedLess = quicksort(less)
-    sortedGreat = quicksort(great)
+    sorted_less = quicksort(less)
+    sorted_great = quicksort(great)
 
-    return sortedLess + eq + sortedGreat
+    return sorted_less + eq + sorted_great
 
 
 # One possible way to shuffle the items in a list prior to sorting it
-def shuffle(lst, numSwaps):
-    for i in range(numSwaps):
+def shuffle(lst, num_swaps):
+    for i in range(num_swaps):
         a = random.randint(0, len(lst) - 1)
         b = random.randint(0, len(lst) - 1)
         temp = lst[a]

@@ -8,11 +8,11 @@
 # 3. f(n) = 1*2*3*4*...*n
 
 # 1. O(n^2)
-# 2. O(sqrt(n)) 
+# 2. O(sqrt(n))
 # 3. O(n!)
 
-# Time-3: Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the big-O of weirdFunction? 
-def weirdFunction(nums):
+# Time-3: Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the big-O of weirdFunction?
+def weird_function(nums):
     if len(nums) % 2 == 1:
         print("There are an odd amount of numbers")
     else:
@@ -25,7 +25,7 @@ def weirdFunction(nums):
 # weirdFunction([1,2,3,4,5,6]) (even length)
 # print()
 
-# Time-4: What is the time complexity of function1? Let n be the length of nums. 
+# Time-4: What is the time complexity of function1? Let n be the length of nums.
 def function1(nums):
     for num in nums:
         for i in range(3):
@@ -54,7 +54,7 @@ def function2(n):
 # Linear-2: The linearSearch() function takes in a list and a value, and returns true if the value is in the list and false otherwise, but it's incomplete. Fill in the missing code to create a working Linear Search function. Be sure to test the function after adding your code!
 
 
-def linearSearch(l, v):
+def linear_search(l, v):
     for item in l:
         if item == v:
             return True
@@ -72,7 +72,7 @@ def linearSearch(l, v):
 # Binary-2: The binarySearch() function takes in a sorted list and a value, and returns true if the value is in the list and false otherwise, but it's incomplete. Fill in the missing code to create a working Binary Search function. Be sure to test the function after adding your code!
 
 
-def binSearchIter(lst, item):
+def bin_search_iter(lst, item):
     low = 0
     high = len(lst) - 1
 
@@ -90,7 +90,7 @@ def binSearchIter(lst, item):
     return False
 
 
-def binSearchRecur(lst, item):
+def bin_search_recur(lst, item):
     high = len(lst) - 1
 
     if high < 0:
@@ -101,9 +101,9 @@ def binSearchRecur(lst, item):
     if lst[mid] == item:
         return True
     elif lst[mid] < item:
-        return binSearchRecur(lst[mid + 1:], item)
+        return bin_search_recur(lst[mid + 1:], item)
     else:
-        return binSearchRecur(lst[:mid], item)
+        return bin_search_recur(lst[:mid], item)
 
 
 # Binary-3: What is the time complexity of Binary Search? Can you describe the best and worst case scenarios?
@@ -121,19 +121,19 @@ def binSearchRecur(lst, item):
 # Ans: list1 = [1, 2, 10, 3, 6, 5]
 
 # The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
-def selectionSort(lst):
+def selection_sort(lst):
     for i in range(len(lst)):
-        maxItem = lst[i]
-        maxItemI = i
+        max_item = lst[i]
+        max_item_i = i
         for j in range(i, len(lst)):
             # YOUR CODE HERE
-            if lst[j] > maxItem:
-                maxItem = lst[j]
-                maxItemI = j
+            if lst[j] > max_item:
+                max_item = lst[j]
+                max_item_i = j
 
         temp = lst[i]
-        lst[i] = maxItem
-        lst[maxItemI] = temp
+        lst[i] = max_item
+        lst[max_item_i] = temp
     return lst
 
 
@@ -152,7 +152,7 @@ def selectionSort(lst):
 # Ans: list2 = [2, 3, 5, 7, 10, 1]
 
 # Finish the incomplete insertionSort() function below
-def insertionSort(lst):
+def insertion_sort(lst):
     for i in range(len(lst)):
         j = i
         while j != 0 and lst[j] < lst[j - 1]:
@@ -162,7 +162,7 @@ def insertionSort(lst):
             j -= 1
     return lst
 
-# What is the time complexity of Insertion Sort? Can you describe the best and worst case scenarios? 
+# What is the time complexity of Insertion Sort? Can you describe the best and worst case scenarios?
 # Ans: O(n^2)
 # Best case - Array is already sorted
 # Worst case - Array is backwards

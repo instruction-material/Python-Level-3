@@ -1,4 +1,4 @@
-def linearSearch(l, v):
+def linear_search(l, v):
     for item in l:
         if item == v:
             return True
@@ -6,5 +6,5 @@ def linearSearch(l, v):
 
 
 l = [1, 2, 3, 4, 5]
-print(linearSearch(l, 4))
-print(linearSearch(l, 6))
+print(linear_search(l, 4))
+print(linear_search(l, 6))

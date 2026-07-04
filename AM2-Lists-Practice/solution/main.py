@@ -19,7 +19,7 @@ print(squares)
 
 
 # Write a function that takes in two lists and returns the sum of both lists
-def sumLists(l1, l2):
+def sum_lists(l1, l2):
     answer = 0
     for num in l1:
         answer += num
@@ -30,16 +30,16 @@ def sumLists(l1, l2):
 
 a = [3, 5, 3, 2, -4, 1]
 b = [4, 8, 9, -3, -5]
-print(sumLists(a, b))
+print(sum_lists(a, b))
 
 
 # Write a function that takes in a list and returns the minimum value in that list
 def minimum(l):
-    minNum = l[0]
+    min_num = l[0]
     for num in l:
-        if num < minNum:
-            minNum = num
-    return minNum
+        if num < min_num:
+            min_num = num
+    return min_num
 
 
 print(minimum(a))
@@ -47,18 +47,18 @@ print(minimum(a))
 
 # Write a function that takes in a list and returns the maximum value in that list
 def maximum(l):
-    maxNum = l[0]
+    max_num = l[0]
     for num in l:
-        if num > maxNum:
-            maxNum = num
-    return maxNum
+        if num > max_num:
+            max_num = num
+    return max_num
 
 
 print(maximum(a))
 
 
 # Write a function that takes in a list of lists, and returns the sum of all those lists
-def sumListOfLists(l):
+def sum_list_of_lists(l):
     answer = 0
     for element in l:
         for num in element:
@@ -67,28 +67,28 @@ def sumListOfLists(l):
 
 
 l = [[1, 2, 3], [4, 5, 6], [], [7, 8, 9]]
-print(sumListOfLists(l))
+print(sum_list_of_lists(l))
 
 
 # Write a function that takes in a list of lists, and returns a new list made from “flattening” the lists (putting every element from each list into a single list)
-def flattenList(l):
-    newList = []
+def flatten_list(l):
+    new_list = []
     for element in l:
         for num in element:
-            newList.append(num)
-    return newList
+            new_list.append(num)
+    return new_list
 
 
-print(flattenList(l))
+print(flatten_list(l))
 
 
 # Write a function that takes in a list of lists that returns a new list of all the individual maxes from each list. Can you find a way to use the function that you already made that returns the maximum of a list?
-def maxList(l):
-    mList = []
+def max_list(l):
+    m_list = []
     for i in range(len(l)):
         if len(l[i]) > 0:
-            mList.append(maximum(l[i]))
-    return mList
+            m_list.append(maximum(l[i]))
+    return m_list
 
 
-print(maxList(l))
+print(max_list(l))

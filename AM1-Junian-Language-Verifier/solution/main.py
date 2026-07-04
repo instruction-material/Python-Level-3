@@ -1,13 +1,13 @@
 word = input("Please type in a word for verification: ")
 
 vowels = "aeiou"
-numVowels = 0
+num_vowels = 0
 
 for letter in word:
     if letter in vowels:
-        numVowels += 1
+        num_vowels += 1
 
-if numVowels < 2:
+if num_vowels < 2:
     print("Your word is invalid.")
 elif len(word) % 2 != 0:
     print("Your word is invalid.")
