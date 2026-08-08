@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 # Convert to binary, iterative method
 def to_binary_iterative(number):
     binary = ""

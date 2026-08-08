@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 def bin_search_iter(lst, item):
     low = 0
     high = len(lst) - 1

@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 # O(n) - we loop through all of the whole numbers from 0 up to n,
 # so this function has a linear runtime
 def f1(n):

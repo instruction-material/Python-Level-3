@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 def recursive_factorial(num):
     if num == 0:
         return 1

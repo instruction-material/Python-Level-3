@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 guess = 50
 low = 1
 high = 100

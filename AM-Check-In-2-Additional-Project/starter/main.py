@@ -3,12 +3,12 @@
 # You can copy a list with this line of code: list2 = copy.deepcopy(list1)
 # You can sort a list in reverse if you write list2.sort(reverse=True)
 
-# Copy over your functions for insertion sort and selection sort here. 
+# Copy over your functions for insertion sort and selection sort here.
 
 
 # create a variable for n
 
-# generate a list with n random numbers in it 
+# generate a list with n random numbers in it
 
 # make 3 copies of the list with copy.deepcopy(list1)
 

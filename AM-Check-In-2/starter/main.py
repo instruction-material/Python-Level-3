@@ -2,14 +2,15 @@
 # TIME COMPLEXITY
 #########################
 
-# What is Big-O analysis? 
+# What is Big-O analysis?
 
 # Find the Big-O of each of these functions:
 # 1. f(n) = n^2 + 1000n
 # 2. f(n) = log(n) + sqrt(n)
 # 3. f(n) = 1*2*3*4*...*n
 
-# Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the Big-O of weirdFunction? 
+
+# Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the Big-O of weirdFunction?
 def weirdFunction(nums):
     if len(nums) % 2 == 1:
         print("There are an odd amount of numbers")
@@ -27,6 +28,7 @@ def function1(nums):
 
 # function1([12,45,23,67])
 
+
 # What is the time complexity of function2?
 def function2(n):
     print(n)
@@ -41,9 +43,9 @@ def function2(n):
 # SEARCHING
 #########################
 
-# What do search algorithms do? What two search algorithms have we learned? When can we use each one? 
+# What do search algorithms do? What two search algorithms have we learned? When can we use each one?
 
-# Write a function that takes in a sorted list of 0’s and 1’s and returns the index of the first 1. The function should be in O(logn) time. 
+# Write a function that takes in a sorted list of 0’s and 1’s and returns the index of the first 1. The function should be in O(logn) time.
 
 
 #########################
@@ -55,6 +57,7 @@ def function2(n):
 # list1 = [2, 5, 10, 3, 6, 1]
 # What will list1 look after 2 passes of Selection Sort?
 # Ans:
+
 
 # The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
 def selectionSort(lst):
@@ -79,6 +82,7 @@ def selectionSort(lst):
 # What will list2 look like after 3 passes of Insertion Sort?
 # Ans:
 
+
 # Finish the incomplete insertionSort() function below
 def insertionSort(lst):
     for i in range(len(lst)):
@@ -86,6 +90,7 @@ def insertionSort(lst):
         # YOUR CODE HERE
 
     return lst
+
 
 # What is the time complexity of Insertion Sort?
 

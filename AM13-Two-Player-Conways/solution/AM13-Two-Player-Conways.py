@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 """
 Read the description of the two player version of Conway’s Game of Life found at the bottom of this page. In essence, you will need to create a starting file for each player and then load it into a playing grid. Let each player take turns selecting a place where they want to add a cell, and a place where they want to remove a cell. After updating those locations, go through a single step of Conway’s four rules as explained in the previous project. Let each player continue taking turns until a player loses all of their cells.
 """
@@ -59,7 +54,12 @@ def neighbors(grid, alive, i, j):
     count_alive = sum(counts.values())
 
     # Apply Conway's rules
-    if alive in [1, 2] and count_alive not in [2, 3] or alive == 0 and count_alive != 3:
+    if (
+        alive in [1, 2]
+        and count_alive not in [2, 3]
+        or alive == 0
+        and count_alive != 3
+    ):
         return 0
     return 2 if counts[2] > counts[1] else 1
 
@@ -116,7 +116,9 @@ while True:
     y_add = int(input("Please enter the column of the cell you wish to add: "))
     grid[x_add][y_add] = player
     x_del = int(input("Please enter the row of the cell you wish to delete: "))
-    y_del = int(input("Please enter the column of the cell you wish to delete: "))
+    y_del = int(
+        input("Please enter the column of the cell you wish to delete: ")
+    )
     grid[x_del][y_del] = 0
 
 # Determine winner

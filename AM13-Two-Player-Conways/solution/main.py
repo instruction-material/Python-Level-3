@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 # Function to print the board with O for Player 1, X for Player 2, and - for Dead
 def print_board(game):
     print(" ", end=" ")
@@ -203,10 +198,18 @@ while True:
     # Player O's turn
     if player_turn:
         print("It's Player O's Turn.")
-        row_add = int(input("Please enter the row of the cell you wish to add: "))
-        col_add = int(input("Please enter the column of the cell you wish to add: "))
-        row_del = int(input("Please enter the row of the cell you wish to delete: "))
-        col_del = int(input("Please enter the column of the cell you wish to delete: "))
+        row_add = int(
+            input("Please enter the row of the cell you wish to add: ")
+        )
+        col_add = int(
+            input("Please enter the column of the cell you wish to add: ")
+        )
+        row_del = int(
+            input("Please enter the row of the cell you wish to delete: ")
+        )
+        col_del = int(
+            input("Please enter the column of the cell you wish to delete: ")
+        )
         grid[row_add][col_add] = 1
         grid[row_del][col_del] = 0
         player_turn = False
@@ -216,10 +219,18 @@ while True:
     # Player X's turn
     else:
         print("It's Player X's Turn.")
-        row_add = int(input("Please enter the row of the cell you wish to add: "))
-        col_add = int(input("Please enter the column of the cell you wish to add: "))
-        row_del = int(input("Please enter the row of the cell you wish to delete: "))
-        col_del = int(input("Please enter the column of the cell you wish to delete: "))
+        row_add = int(
+            input("Please enter the row of the cell you wish to add: ")
+        )
+        col_add = int(
+            input("Please enter the column of the cell you wish to add: ")
+        )
+        row_del = int(
+            input("Please enter the row of the cell you wish to delete: ")
+        )
+        col_del = int(
+            input("Please enter the column of the cell you wish to delete: ")
+        )
         grid[row_add][col_add] = 2
         grid[row_del][col_del] = 0
         player_turn = True

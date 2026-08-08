@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 import random
 
 
@@ -21,25 +16,57 @@ def print_board(board):
 # Check if a player has won the game
 def win(board, player):
     # Horizontal wins
-    if board[0][0] == player and board[0][1] == player and board[0][2] == player:
+    if (
+        board[0][0] == player
+        and board[0][1] == player
+        and board[0][2] == player
+    ):
         return True
-    if board[1][0] == player and board[1][1] == player and board[1][2] == player:
+    if (
+        board[1][0] == player
+        and board[1][1] == player
+        and board[1][2] == player
+    ):
         return True
-    if board[2][0] == player and board[2][1] == player and board[2][2] == player:
+    if (
+        board[2][0] == player
+        and board[2][1] == player
+        and board[2][2] == player
+    ):
         return True
 
     # Vertical wins
-    if board[0][0] == player and board[1][0] == player and board[2][0] == player:
+    if (
+        board[0][0] == player
+        and board[1][0] == player
+        and board[2][0] == player
+    ):
         return True
-    if board[0][1] == player and board[1][1] == player and board[2][1] == player:
+    if (
+        board[0][1] == player
+        and board[1][1] == player
+        and board[2][1] == player
+    ):
         return True
-    if board[0][2] == player and board[1][2] == player and board[2][2] == player:
+    if (
+        board[0][2] == player
+        and board[1][2] == player
+        and board[2][2] == player
+    ):
         return True
 
     # Diagonal wins
-    if board[0][0] == player and board[1][1] == player and board[2][2] == player:
+    if (
+        board[0][0] == player
+        and board[1][1] == player
+        and board[2][2] == player
+    ):
         return True
-    if board[0][2] == player and board[1][1] == player and board[2][0] == player:
+    if (
+        board[0][2] == player
+        and board[1][1] == player
+        and board[2][0] == player
+    ):
         return True
     return False
 

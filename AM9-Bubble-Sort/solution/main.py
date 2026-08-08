@@ -1,14 +1,12 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 def bubble_sort_in_place(values):
     """Sort values in place using the basic bubble sort algorithm."""
     for pass_index in range(len(values)):
         for index in range(0, len(values) - 1 - pass_index):
             if values[index] > values[index + 1]:
-                values[index], values[index + 1] = values[index + 1], values[index]
+                values[index], values[index + 1] = (
+                    values[index + 1],
+                    values[index],
+                )
 
     return values
 
@@ -20,7 +18,10 @@ def bubble_sort_improved(values):
 
         for index in range(0, len(values) - 1 - pass_index):
             if values[index] > values[index + 1]:
-                values[index], values[index + 1] = values[index + 1], values[index]
+                values[index], values[index + 1] = (
+                    values[index + 1],
+                    values[index],
+                )
                 swapped = True
 
         if not swapped:

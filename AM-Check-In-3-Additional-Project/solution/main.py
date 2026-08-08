@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 f = open("input.txt")
 lines = f.readlines()
 lines = [line.strip() for line in lines]

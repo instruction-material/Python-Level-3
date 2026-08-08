@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 import random
 import time
 
@@ -58,7 +53,9 @@ start_lin = time.time()  # Returns number of seconds since Jan 1 1970
 for i in range(1000):
     item = random.randint(0, 100000)
     linear_search(nums, item)
-end_lin = time.time()  # Time will have advanced a few seconds compared to earlier
+end_lin = (
+    time.time()
+)  # Time will have advanced a few seconds compared to earlier
 print("Linear search ended.")
 
 nums.sort()

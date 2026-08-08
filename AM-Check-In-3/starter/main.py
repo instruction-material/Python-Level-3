@@ -6,6 +6,7 @@
 # What does the list1 look like after 2 passes of Bubble Sort?
 # Ans:
 
+
 # Change the bubbleSort() function below to be more efficient.
 def bubbleSort(lst):
     for i in range(0, len(lst)):
@@ -30,6 +31,7 @@ def bubbleSort(lst):
 
 # In Merge Sort, what must be true about the two lists that are being merged?
 
+
 # The function merge() combines two sorted lists together. Finish the incomplete merge() function below
 def merge(listA, listB):
     result = []
@@ -51,6 +53,7 @@ def merge(listA, listB):
 
 # What is the time complexity of Quicksort in its best case? What's the time complexity of Quicksort in its worst case?
 
+
 # The function partition() takes in a list and pivot is incomplete. Finish implementing the function below
 def partition(lst, pivot):
     less = []
@@ -60,6 +63,7 @@ def partition(lst, pivot):
     # YOUR CODE HERE
 
     return less, eq, great
+
 
 # Test your function here
 

@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 import random
 
 
@@ -14,7 +9,10 @@ def insertion_sort1(lst):
         result.append(item_to_insert)
         index_to_insert = i
 
-        while index_to_insert != 0 and item_to_insert < result[index_to_insert - 1]:
+        while (
+            index_to_insert != 0
+            and item_to_insert < result[index_to_insert - 1]
+        ):
             result[index_to_insert] = result[index_to_insert - 1]
             result[index_to_insert - 1] = item_to_insert
             index_to_insert -= 1

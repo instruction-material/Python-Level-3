@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 # Create a list of the numbers 1 through 20 (without hard-coding the list)
 nums = []
 for i in range(20):

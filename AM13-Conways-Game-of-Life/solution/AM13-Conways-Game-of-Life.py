@@ -1,8 +1,3 @@
-###########################
-###   CODING STANDARD   ###
-###########################
-# Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
 """
 Write a program that reads in a text file containing a coordinate pair of numbers on each line, and then fills in a two-dimensional grid with an “o” at each of the coordinate locations listed in the text file. After the initial grid has been set up, generate the next step according to the rules of Conway’s Game of Life. Once the next step has been generated, set the original grid equal to the new one. Be sure to print out the new grid once it has been created! Make this process repeat forever.
 """
@@ -66,7 +61,11 @@ def neighbors(grid, alive, row, col):
         count_alive += 1
     if row + 1 < len(grid) and grid[row + 1][col]:
         count_alive += 1
-    if col + 1 < len(grid[0]) and row + 1 < len(grid) and grid[row + 1][col + 1]:
+    if (
+        col + 1 < len(grid[0])
+        and row + 1 < len(grid)
+        and grid[row + 1][col + 1]
+    ):
         count_alive += 1
 
     # Rule 1: Any live cell with fewer than two live neighbours dies, as if by underpopulation.
