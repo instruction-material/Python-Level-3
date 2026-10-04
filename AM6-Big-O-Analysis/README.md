@@ -2,9 +2,11 @@
 
 Canonical source repository: `Python-Level-3`
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+Core AM6 project: classify mathematical runtime expressions.
 
-## Structure
+- [starter/README.md](starter/README.md) is the complete ten-prompt worksheet.
+- [solution/README.md](solution/README.md) is the separate justified reference key.
+- The original `solution/main.py` question snapshot is retained for provenance;
+  it is not an executable solution or the answer key.
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+No Python implementation or IDE import is required for this mathematical task.

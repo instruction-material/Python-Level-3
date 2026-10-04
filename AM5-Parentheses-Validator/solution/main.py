@@ -14,15 +14,13 @@ def parentheses(brackets):
                 return False
             elif dictionary[stack.pop()] != ch:
                 return False
+        else:
+            return False
 
     if len(stack) == 0:
         return True
     else:
         return False
-
-
-print(parentheses("{()[]}"))
-print(parentheses("{()[])"))
 
 
 # recursive way
@@ -39,5 +37,8 @@ def rec_parentheses(brackets):
     return False
 
 
-print(rec_parentheses("{()[]}"))
-print(rec_parentheses("{(((())))[}]"))
+if __name__ == "__main__":
+    print(parentheses("{()[]}"))
+    print(parentheses("{()[])"))
+    print(rec_parentheses("{()[]}"))
+    print(rec_parentheses("{(((())))[}]"))

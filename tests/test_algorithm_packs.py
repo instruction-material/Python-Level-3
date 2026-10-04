@@ -20,6 +20,15 @@ CONTRACTS = {
     "AM4-Binary-Converter": ("to_binary_iterative", "to_binary_recursive"),
     "AM6-Linear-Search": ("linear_search",),
     "AM7-Binary-Search": ("bin_search_iter", "bin_search_recur"),
+    "AM5-Recursive-Cascade": ("cascade", "inverse_cascade"),
+    "AM5-Recursive-Palindrome-Checker": ("is_palindrome",),
+    "AM5-Parentheses-Validator": ("parentheses", "rec_parentheses"),
+    "AM5-Recursive-Sum-and-Max": ("sum_recursion", "max_recursion"),
+    "AM5-Substring-Generator": ("get_substrings",),
+    "AM-Check-In-1-Additional-Project": ("sum_print", "sum_print_reverse"),
+    "AM1-Mad-Libs": ("run_mad_libs",),
+    "AM1-Junian-Language-Verifier": ("run_verifier",),
+    "AM1-Juni-Assistant": ("run_assistant",),
 }
 
 

@@ -2,9 +2,10 @@
 
 Canonical source repository: `Python-Level-3`
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+Core AM6 analysis project: classify supplied code, not invent another algorithm.
 
-## Structure
+- [starter/README.md](starter/README.md) gives the task, domains, and checks.
+- `starter/main.py` contains supplied code to analyze, without answer comments.
+- `solution/main.py` is the separate reference, not learner starter code.
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Use Python 3. Importing the reference does not run a demo or prompt for input.

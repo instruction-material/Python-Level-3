@@ -21,7 +21,16 @@ and Boolean search contracts. Binary conversion now uses integer division to
 avoid losing digits above floating-point precision. Reference demonstrations
 run only when invoked directly, keeping imports suitable for self-checks.
 
-Twenty-seven placeholder starters remain open. Review each against its actual
-course brief and separate reference; analysis-only tasks may need a worksheet
-or executable analysis harness rather than an arbitrary algorithm template.
-Do not treat this six-pack correction as completion of the full source audit.
+The follow-up source review adds nine incomplete console/recursion starters,
+the original fourteen function-analysis examples without answer comments, and
+a complete ten-prompt Big-O worksheet with a separate justified reference key.
+
+Reference corrections cover empty running sums, empty sums/maximum semantics,
+consistent bracket-only validation, stable contiguous substring output, explicit
+literal palindrome behavior, blank/exact assistant commands and session state,
+and case-insensitive language rules with specific failure messages.
+
+Sixteen placeholder roles remain open. Review each against its actual course
+brief and separate reference. A mathematical worksheet is intentionally not a
+coding starter; do not invent source only to satisfy a file-count check.
+See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.
