@@ -30,7 +30,13 @@ consistent bracket-only validation, stable contiguous substring output, explicit
 literal palindrome behavior, blank/exact assistant commands and session state,
 and case-insensitive language rules with specific failure messages.
 
-Sixteen placeholder roles remain open. Review each against its actual course
+The sorting follow-up adds six incomplete starter packs for AM8-AM11 and checks
+fifteen sorting variants, explicit mutation/identity/stability contracts, merge
+costs, optional shuffle boundaries, and import-safe references. Sorting Comparison
+now reports only checked, measured medians over fresh copies of shared input data;
+it no longer prints historical guesses as results.
+
+Ten placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a
 coding starter; do not invent source only to satisfy a file-count check.
 See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.

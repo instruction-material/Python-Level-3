@@ -1,8 +1,8 @@
 import random
 
 
-# Space complexity of O(n), since we create a new list
 def insertion_sort1(lst):
+    """Return a stable sorted new list without changing the input."""
     result = []
     for i in range(len(lst)):
         item_to_insert = lst[i]
@@ -20,8 +20,8 @@ def insertion_sort1(lst):
     return result
 
 
-# Space complexity of O(1), since we modify the input list in-place
 def insertion_sort2(lst):
+    """Sort stably in place and return the same list."""
     for i in range(len(lst)):
         j = i
         while j != 0 and lst[j] < lst[j - 1]:
@@ -32,6 +32,8 @@ def insertion_sort2(lst):
     return lst
 
 
-l = [random.randint(10, 99) for i in range(8)]
-print(l, end="\n\n")
-print(insertion_sort1(l))
+if __name__ == "__main__":
+    values = [random.randint(10, 99) for _ in range(8)]
+    print("original:", values)
+    print("sorted copy:", insertion_sort1(values))
+    print("original after copy sort:", values)

@@ -1,20 +1,21 @@
 import random
 
 
-# O(n) space complexity, since we create and return a new list
 def selection_sort1(lst):
+    """Return a sorted new list, consuming (emptying) the input list."""
     result = []
     for i in range(len(lst)):
         min_item = lst[0]
         for item in lst:
-            min_item = min(item, min_item)
+            if item < min_item:
+                min_item = item
         result.append(min_item)
         lst.remove(min_item)
     return result
 
 
-# O(1) space complexity, since we just modify the original list
 def selection_sort2(lst):
+    """Sort in place and return the same list; swaps need not be stable."""
     for i in range(len(lst)):
         min_item = lst[i]
         min_item_i = i
@@ -29,6 +30,8 @@ def selection_sort2(lst):
     return lst
 
 
-l = [random.randint(1, 100) for i in range(10)]
-print(l)
-print(selection_sort1(l))
+if __name__ == "__main__":
+    values = [random.randint(1, 100) for _ in range(10)]
+    print("original:", values)
+    print("consuming sort:", selection_sort1(values))
+    print("input after consuming sort:", values)

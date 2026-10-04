@@ -5,11 +5,12 @@
 
 # This is a helper function to handle the merging part of Merge Sort
 def merge(list_a, list_b):
+    """Merge sorted inputs into a new list; left-side ties come first."""
     result = []
     a_index = 0
     b_index = 0
     while a_index < len(list_a) and b_index < len(list_b):
-        if list_a[a_index] < list_b[b_index]:
+        if list_a[a_index] <= list_b[b_index]:
             result.append(list_a[a_index])
             a_index += 1
         else:
@@ -29,6 +30,7 @@ def merge(list_a, list_b):
 
 # This function is to help build intuition for the splitting part of Merge Sort
 def split(lst):
+    """Print singleton leaves left to right (print [] for empty input)."""
     n = len(lst)
     if n <= 1:
         print(lst)
@@ -39,9 +41,10 @@ def split(lst):
 
 # Merge Sort that uses the helper function merge
 def merge_sort(lst):
+    """Return a stable sorted new list, including empty/singleton inputs."""
     n = len(lst)
     if n <= 1:  # An empty list (or a list containing one element) is a sorted list
-        return lst
+        return lst.copy()
 
     first_half = merge_sort(lst[: n // 2])
     second_half = merge_sort(lst[n // 2 :])
@@ -50,9 +53,10 @@ def merge_sort(lst):
 
 # This is the integrated version that does not require a helper "merge" function
 def merge_sort2(lst):
+    """Integrated stable merge sort; never mutate or alias the input."""
     n = len(lst)
     if n <= 1:
-        return lst
+        return lst.copy()
 
     first_half = merge_sort2(lst[: n // 2])
     second_half = merge_sort2(lst[n // 2 :])
@@ -61,7 +65,7 @@ def merge_sort2(lst):
     a_index = 0
     b_index = 0
     while a_index < len(first_half) and b_index < len(second_half):
-        if first_half[a_index] < second_half[b_index]:
+        if first_half[a_index] <= second_half[b_index]:
             result.append(first_half[a_index])
             a_index += 1
         else:

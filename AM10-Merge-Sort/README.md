@@ -1,10 +1,15 @@
 # AM10 Merge Sort
 
-Canonical source repository: `Python-Level-3`
+Canonical source repository: `Python-Level-3`.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+The original project folders and source filename `main.py` are preserved from the
+2026-05-14 migration. The 2026-10-04 sorting audit authors a distinct learner
+starter and corrects the separate reference where needed.
 
-## Structure
+- `starter/main.py` contains incomplete implementation TODOs, not final answers.
+- `starter/README.md` supplies the complete contracts, workflow, and self-checks.
+- `solution/main.py` is the reference and does no work during import.
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Start with the learner brief. Run from the starter folder locally, or confirm
+the site's Python IDE import; Run initially prints an implementation reminder.
+See `SOURCE_PACK_REVIEW.md` for checked boundaries and remaining audit work.

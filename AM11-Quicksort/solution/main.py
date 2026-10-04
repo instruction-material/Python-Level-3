@@ -1,8 +1,9 @@
 import random
 
 
-# Helper function to partition the input list using the given index
+# The pivot argument is a value, not an index.
 def partition(lst, pivot):
+    """Return less/equal/greater lists, preserving order within each group."""
     less = []  # Alternatively explain how to do multiple assignments, like so:
     eq = []  # less, eq, great = [[] for i in range(3)]
     great = []
@@ -18,25 +19,32 @@ def partition(lst, pivot):
     return less, eq, great
 
 
-def quicksort(lst):
+def quicksort(lst, rng=None):
+    """Return a sorted new list; optional rng makes pivot choices repeatable."""
     n = len(lst)
 
     if n <= 1:
-        return lst
+        return lst.copy()
 
-    pivot_ind = random.randint(0, n - 1)
+    generator = random if rng is None else rng
+    pivot_ind = generator.randint(0, n - 1)
     # pivotInd = 0 is the initial "naive" choice
     pivot = lst[pivot_ind]
 
     less, eq, great = partition(lst, pivot)
-    sorted_less = quicksort(less)
-    sorted_great = quicksort(great)
+    sorted_less = quicksort(less, generator)
+    sorted_great = quicksort(great, generator)
 
     return sorted_less + eq + sorted_great
 
 
 # One possible way to shuffle the items in a list prior to sorting it
 def shuffle(lst, num_swaps):
+    """Mutate by random swaps; return None. This is not a uniform shuffle."""
+    if type(num_swaps) is not int or num_swaps < 0:
+        raise ValueError("num_swaps must be a nonnegative integer")
+    if len(lst) < 2:
+        return
     for i in range(num_swaps):
         a = random.randint(0, len(lst) - 1)
         b = random.randint(0, len(lst) - 1)
@@ -47,12 +55,15 @@ def shuffle(lst, num_swaps):
 
 # Another possible way to shuffle a list
 def shuffle2(lst):
+    """Return a random permutation in a new list, consuming the input."""
     result = []
     while len(lst) > 0:
         result.append(lst.pop(random.randint(0, len(lst) - 1)))
     return result
 
 
-l = [random.randint(1, 100) for i in range(8)]
-print(l)
-print(quicksort(l))
+if __name__ == "__main__":
+    values = [random.randint(1, 100) for _ in range(8)]
+    print("original:", values)
+    print("sorted copy:", quicksort(values))
+    print("original after sort:", values)
