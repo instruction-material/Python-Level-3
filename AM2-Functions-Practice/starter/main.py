@@ -1,24 +1,41 @@
-# Write a function that takes in three numbers and returns the product of the numbers
+"""Iterative function review; reference answers remain in solution/."""
 
 
-# Write a function that takes in two numbers and returns their average
+def product(a, b, c):
+    """Return the product of three numbers."""
+    raise NotImplementedError("Implement product.")
 
 
-# Write a function that takes in a word and a letter as input, and returns how many times that letter occurs in the word
+def average(x, y):
+    """Return the arithmetic mean of two numbers."""
+    raise NotImplementedError("Implement average.")
 
 
-# Write a function that takes in an integer as input, and returns how many digits are 7
+def count_letter(word, letter):
+    """Count one exact, case-sensitive character in a string."""
+    raise NotImplementedError("Implement count_letter.")
 
 
-# Write a function that takes in two numbers, a and b, and returns a to the power of b
+def count_seven(number):
+    """Count digit 7 in an integer's magnitude, ignoring its sign."""
+    raise NotImplementedError("Implement count_seven.")
 
 
-# Challenge: Write a function that takes in a number and returns its factorial
+def exponent(a, b):
+    """Use a loop for a**b; b is a nonnegative integer, not bool."""
+    raise NotImplementedError("Implement exponent.")
 
 
-# Challenge: Write a function that takes in an integer, n, and returns the length of the Hailstone sequence starting at n. The Hailstone sequence is as follows:
-#   As long as n is not equal to 1,
-#     print n
-#     if n is an even number, cut n in half
-#     otherwise, make n equal to three times itself, plus one
-# Ex: 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1, so an input of 10 would give an output of 7 (since there are 7 numbers in total)
+def factorial(n):
+    """Optional: iterative factorial of a nonnegative integer; 0! is 1."""
+    raise NotImplementedError("Implement factorial.")
+
+
+def hailstone(n, max_steps=10000):
+    """Optional: positive integer term count; cap transitions explicitly."""
+    raise NotImplementedError("Implement hailstone.")
+
+
+if __name__ == "__main__":
+    print("Implement the five required functions, then test independent examples.")
+    print("Factorial and bounded Hailstone are optional iterative challenges.")

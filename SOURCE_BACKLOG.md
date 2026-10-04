@@ -36,6 +36,15 @@ costs, optional shuffle boundaries, and import-safe references. Sorting Comparis
 now reports only checked, measured medians over fresh copies of shared input data;
 it no longer prints historical guesses as results.
 
+The fundamentals follow-up replaces three migrated comment-only starters with
+32 matching, deliberately incomplete callable exercises. References repair exact
+Hailstone arithmetic, twenty positive even numbers and deterministic ascending
+tied modes. All sixteen fundamentals questions are present in the learner brief.
+Integer domains, a practical Hailstone transition cap, empty-list policies and
+mutation/case contracts are tested. Five function-review tasks remain required;
+factorial and Hailstone remain optional iterative challenges before AM4 recursion.
+Eight other migrated pairs still need assignment-specific contract verification.
+
 Ten placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a
 coding starter; do not invent source only to satisfy a file-count check.

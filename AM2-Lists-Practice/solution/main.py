@@ -1,25 +1,32 @@
-# Create a list of the numbers 1 through 20 (without hard-coding the list)
-nums = []
-for i in range(20):
-    nums.append(i + 1)
-print(nums)
-
-# Create a list of the first 10 even numbers (without hard-coding the list)
-evens = []
-for i in range(1, 21):
-    if i % 2 == 0:
-        evens.append(i)
-print(evens)
-
-# Create a list of the first 10 perfect squares (without hard-coding the list)
-squares = []
-for i in range(1, 11):
-    squares.append(i * i)
-print(squares)
+"""List practice references; loops generate values and imports do not print."""
 
 
-# Write a function that takes in two lists and returns the sum of both lists
+def make_numbers():
+    """Return a fresh list of integers 1 through 20."""
+    nums = []
+    for i in range(20):
+        nums.append(i + 1)
+    return nums
+
+
+def make_evens():
+    """Return a fresh list of twenty positive even numbers, 2 through 40."""
+    evens = []
+    for i in range(1, 21):
+        evens.append(2 * i)
+    return evens
+
+
+def make_squares():
+    """Return a fresh list of ten positive perfect squares, 1 through 100."""
+    squares = []
+    for i in range(1, 11):
+        squares.append(i * i)
+    return squares
+
+
 def sum_lists(l1, l2):
+    """Return the sum of both lists, preserving inputs; empty sums are zero."""
     answer = 0
     for num in l1:
         answer += num
@@ -28,13 +35,10 @@ def sum_lists(l1, l2):
     return answer
 
 
-a = [3, 5, 3, 2, -4, 1]
-b = [4, 8, 9, -3, -5]
-print(sum_lists(a, b))
-
-
-# Write a function that takes in a list and returns the minimum value in that list
 def minimum(l):
+    """Return the minimum of a nonempty numeric list, without mutation."""
+    if not l:
+        raise ValueError("minimum requires a nonempty list")
     min_num = l[0]
     for num in l:
         if num < min_num:
@@ -42,11 +46,10 @@ def minimum(l):
     return min_num
 
 
-print(minimum(a))
-
-
-# Write a function that takes in a list and returns the maximum value in that list
 def maximum(l):
+    """Return the maximum of a nonempty numeric list, without mutation."""
+    if not l:
+        raise ValueError("maximum requires a nonempty list")
     max_num = l[0]
     for num in l:
         if num > max_num:
@@ -54,11 +57,8 @@ def maximum(l):
     return max_num
 
 
-print(maximum(a))
-
-
-# Write a function that takes in a list of lists, and returns the sum of all those lists
 def sum_list_of_lists(l):
+    """Return the sum of all inner lists; empty outer/inner lists add zero."""
     answer = 0
     for element in l:
         for num in element:
@@ -66,12 +66,8 @@ def sum_list_of_lists(l):
     return answer
 
 
-l = [[1, 2, 3], [4, 5, 6], [], [7, 8, 9]]
-print(sum_list_of_lists(l))
-
-
-# Write a function that takes in a list of lists, and returns a new list made from “flattening” the lists (putting every element from each list into a single list)
 def flatten_list(l):
+    """Return a new one-level ordered flattening; preserve all input lists."""
     new_list = []
     for element in l:
         for num in element:
@@ -79,16 +75,24 @@ def flatten_list(l):
     return new_list
 
 
-print(flatten_list(l))
-
-
-# Write a function that takes in a list of lists that returns a new list of all the individual maxes from each list. Can you find a way to use the function that you already made that returns the maximum of a list?
 def max_list(l):
+    """Return maxima of nonempty inner lists in order, skipping empty ones."""
     m_list = []
-    for i in range(len(l)):
-        if len(l[i]) > 0:
-            m_list.append(maximum(l[i]))
+    for inner in l:
+        if inner:
+            m_list.append(maximum(inner))
     return m_list
 
 
-print(max_list(l))
+if __name__ == "__main__":
+    print("numbers:", make_numbers())
+    print("twenty positive evens:", make_evens())
+    print("ten positive squares:", make_squares())
+    a = [3, 5, 3, 2, -4, 1]
+    b = [4, 8, 9, -3, -5]
+    nested = [[1, 2, 3], [4, 5, 6], [], [7, 8, 9]]
+    print("two-list sum:", sum_lists(a, b))
+    print("minimum/maximum:", minimum(a), maximum(a))
+    print("nested sum:", sum_list_of_lists(nested))
+    print("flattened:", flatten_list(nested))
+    print("nonempty inner maxima:", max_list(nested))

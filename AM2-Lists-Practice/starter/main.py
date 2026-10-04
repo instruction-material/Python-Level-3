@@ -1,25 +1,50 @@
-# Create a list of the numbers 1 through 20 (without hard-coding the list)
+"""Loop-based list construction and processing; implement before reference review."""
 
 
-# Create a list of the first 20 even numbers (without hard-coding the list)
+def make_numbers():
+    """Return a new list of integers 1 through 20, generated with a loop."""
+    raise NotImplementedError("Implement make_numbers.")
 
 
-# Create a list of the first 10 perfect squares (without hard-coding the list)
+def make_evens():
+    """Return a new list of the first twenty positive even numbers."""
+    raise NotImplementedError("Implement make_evens.")
 
 
-# Write a function that takes in two lists and returns the sum of both lists
+def make_squares():
+    """Return a new list of the first ten positive perfect squares."""
+    raise NotImplementedError("Implement make_squares.")
 
 
-# Write a function that takes in a list and returns the minimum value in that list
+def sum_lists(l1, l2):
+    """Return the sum of both numeric lists; empty lists contribute zero."""
+    raise NotImplementedError("Implement sum_lists.")
 
 
-# Write a function that takes in a list and returns the maximum value in that list
+def minimum(l):
+    """Return the minimum; reject an empty list with ValueError."""
+    raise NotImplementedError("Implement minimum.")
 
 
-# Write a function that takes in a list of lists, and returns the sum of all those lists
+def maximum(l):
+    """Return the maximum; reject an empty list with ValueError."""
+    raise NotImplementedError("Implement maximum.")
 
 
-# Write a function that takes in a list of lists, and returns a new list made from “flattening” the lists (putting every element from each list into a single list)
+def sum_list_of_lists(l):
+    """Return the sum of all inner numeric lists without changing them."""
+    raise NotImplementedError("Implement sum_list_of_lists.")
 
 
-# Write a function that takes in a list of lists that returns a new list of all the individual maxes from each list. Can you find a way to use the function that you already made that returns the maximum of a list?
+def flatten_list(l):
+    """Return a new ordered one-level flattening without changing inputs."""
+    raise NotImplementedError("Implement flatten_list.")
+
+
+def max_list(l):
+    """Return maxima of nonempty inner lists in order; skip empty inner lists."""
+    raise NotImplementedError("Implement max_list.")
+
+
+if __name__ == "__main__":
+    print("Implement all nine list tasks; test new inputs and empty-list rules.")
