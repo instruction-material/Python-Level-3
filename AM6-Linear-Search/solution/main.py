@@ -1,10 +1,11 @@
-def linear_search(l, v):
-    for item in l:
-        if item == v:
+def linear_search(values, target):
+    for item in values:
+        if item == target:
             return True
     return False
 
 
-l = [1, 2, 3, 4, 5]
-print(linear_search(l, 4))
-print(linear_search(l, 6))
+if __name__ == "__main__":
+    values = [1, 2, 3, 4, 5]
+    print(linear_search(values, 4))
+    print(linear_search(values, 6))

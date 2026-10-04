@@ -4,4 +4,5 @@ def recursive_factorial(num):
     return num * recursive_factorial(num - 1)
 
 
-print(recursive_factorial(5))
+if __name__ == "__main__":
+    print(recursive_factorial(5))

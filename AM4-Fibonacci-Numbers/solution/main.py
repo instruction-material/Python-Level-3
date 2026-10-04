@@ -10,16 +10,19 @@ def fibonacci(n):
     return fibonacci(n - 2) + fibonacci(n - 1)
 
 
-n = int(input("\n\nEnter n, where n will represent the nth Fibonacci number: "))
-print(fibonacci(n))
+if __name__ == "__main__":
+    n = int(input("\n\nEnter a positive position n (position 1 is 0): "))
+    if n < 1:
+        raise ValueError("The Fibonacci position must be positive.")
+    print(fibonacci(n))
 
-# Iterative solution
-a = 0
-b = 1
+    # Iterative solution
+    a = 0
+    b = 1
 
-for i in range(1, n):
-    c = a + b
-    a = b
-    b = c
+    for i in range(1, n):
+        c = a + b
+        a = b
+        b = c
 
-print(a)
+    print(a)

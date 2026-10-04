@@ -33,6 +33,7 @@ def bin_search_recur(lst, item):
         return bin_search_recur(lst[:mid], item)
 
 
-l = [1, 4, 5, 6, 8, 9, 10]
-print(bin_search_iter(l, 4))
-print(bin_search_recur(l, 4))
+if __name__ == "__main__":
+    values = [1, 4, 5, 6, 8, 9, 10]
+    print(bin_search_iter(values, 4))
+    print(bin_search_recur(values, 4))
