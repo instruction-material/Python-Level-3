@@ -13,6 +13,10 @@ Canonical source repository: `Python-Level-3`
 - Run `./verify-course-source.sh` from this repository root before treating the source pack as ready.
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
+- The gate also runs the standard-library algorithm pack tests in `tests/`.
+  They verify six authored starters remain incomplete, import quietly, run with
+  exercise feedback, and match their reference function signatures. Reference
+  checks cover boundaries, large integer conversion, and search behavior.
 
 ## Active Catalog Targets
 
@@ -69,8 +73,15 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting a distinct counterpart: 33
+- Placeholder role folders awaiting a distinct counterpart: 27
 - Complete starter/solution pairs with distinct migrated content: 11
-- Active source-like files excluding archive: 138
+- Authored algorithm starter/reference pairs verified by tests: 6
+- Active source-like files excluding archive: 145
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
+
+The authored pairs are Recursive Factorials, Recursive Exponents, Fibonacci
+Numbers, Binary Converter, Linear Search, and Binary Search. Their completed
+reference algorithms remain separate from the incomplete learner starters.
+The remaining 27 placeholder roles still need assignment-specific review;
+the basic structural gate does not certify every project in this repository.

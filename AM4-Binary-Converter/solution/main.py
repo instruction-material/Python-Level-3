@@ -4,20 +4,19 @@ def to_binary_iterative(number):
     while number > 1:
         # The new digit needs to go in front of the existing ones, so we can't use +=
         binary = str(number % 2) + binary
-        number = int(number / 2)  # Alternatively, introduce //=
+        number //= 2
     binary = str(number) + binary
     return binary
-
-
-print(to_binary_iterative(6))
 
 
 def to_binary_recursive(number):
     if number <= 1:
         return str(number)
 
-    # Rather than int(number/2), you could alternatively introduce number // 2
-    return to_binary_recursive(int(number / 2)) + str(number % 2)
+    # Integer division preserves all digits, even above floating-point precision.
+    return to_binary_recursive(number // 2) + str(number % 2)
 
 
-print(to_binary_recursive(6))
+if __name__ == "__main__":
+    print(to_binary_iterative(6))
+    print(to_binary_recursive(6))

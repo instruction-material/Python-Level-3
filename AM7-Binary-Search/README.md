@@ -2,9 +2,12 @@
 
 Canonical source repository: `Python-Level-3`
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+AM7 core project: compare iterative and recursive search in sorted lists.
 
 ## Structure
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+- [starter/README.md](starter/README.md) contains the exercise directions and checks.
+- `starter/main.py` is an intentionally unfinished, runnable learner scaffold.
+- `solution/main.py` is the separate instructor/reference implementation.
+
+Run either main.py with Python 3. Importing the reference does not run its demo.

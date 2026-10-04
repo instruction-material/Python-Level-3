@@ -4,4 +4,5 @@ def exponent(base, power):
     return base * exponent(base, power - 1)
 
 
-print(exponent(3, 4))
+if __name__ == "__main__":
+    print(exponent(3, 4))
