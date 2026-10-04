@@ -1,5 +1,20 @@
 # AM5 Recursive Palindrome Checker starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `Python-Level-3`.
+Implement is_palindrome(text), returning True or False. This exercise compares
+the literal text: case, spaces, and punctuation are significant. Empty and
+one-character strings are palindromes; no preprocessing is required.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course source is split into separate starter and solution snapshots.
+Choose the stopping cases, compare the ends, and reduce to the middle when
+appropriate. For "", "a", "abba", and "abc", expect True, True, True, False.
+Also compare "Aa" with "aa" to check the case-sensitive contract.
+Trace a short input and explain why every recursive call gets smaller.
+Do not implement the checker with text[::-1]; reversal is a self-check only.
+
+## Start and verify
+
+Open the starter in the site's Python IDE and confirm the import, or run
+`python3 main.py` locally. Initial Run prints an exercise reminder. Replace the
+TODO and `NotImplementedError` statements while keeping names and parameters.
+Try the checks above and explain the result before consulting the reference.
+
+The `../solution/` folder is separate instructor/reference material.

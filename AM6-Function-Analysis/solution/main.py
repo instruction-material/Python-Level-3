@@ -84,8 +84,9 @@ def f9(n, m):
             print(i, j)
 
 
-# O(n) - initially this appears to be the same as the previous, but
-# the function is exited after the inner loop iterates n times
+# O(n) when m > 0: the function exits after the first inner loop.
+# When m == 0, no loop body runs; that boundary takes constant work.
+# Counts here treat each print/primitive operation as one unit of work.
 def f10(n, m):
     for i in range(m):
         for j in range(n):

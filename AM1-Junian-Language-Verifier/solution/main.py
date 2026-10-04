@@ -1,17 +1,32 @@
-word = input("Please type in a word for verification: ")
+def verification_errors(word):
+    """Return failed rules; letter comparisons and vowel counts ignore case."""
+    normalized = word.lower()
+    errors = []
+    if len(word) % 2 != 0:
+        errors.append("The word must have an even number of characters.")
 
-vowels = "aeiou"
-num_vowels = 0
+    num_vowels = 0
+    for letter in normalized:
+        if letter in "aeiou":
+            num_vowels += 1
+    if num_vowels < 2:
+        errors.append("The word must contain at least two vowels.")
 
-for letter in word:
-    if letter in vowels:
-        num_vowels += 1
+    if normalized and normalized[0] == normalized[-1]:
+        errors.append("The first and last letters must be different.")
+    return errors
 
-if num_vowels < 2:
-    print("Your word is invalid.")
-elif len(word) % 2 != 0:
-    print("Your word is invalid.")
-elif word[0] == word[len(word) - 1]:  # Optionally, introduce word[-1]
-    print("Your word is invalid.")
-else:
-    print("Your word is valid.")
+
+def run_verifier():
+    word = input("Please type in a word for verification: ")
+    errors = verification_errors(word)
+    if errors:
+        print("Your word is invalid.")
+        for error in errors:
+            print(error)
+    else:
+        print("Your word is valid.")
+
+
+if __name__ == "__main__":
+    run_verifier()

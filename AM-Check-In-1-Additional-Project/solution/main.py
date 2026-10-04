@@ -2,6 +2,8 @@
 
 
 def sum_print(nums):
+    if not nums:
+        return
     if len(nums) == 1:
         print(nums[0])
     else:
@@ -9,13 +11,12 @@ def sum_print(nums):
         print(sum(nums))
 
 
-sum_print([4, 5, 2])
-
-
 # Then, write another function that takes in a list of numbers. It should print the sum of all of the numbers then print the sum of the first n-1 numbers then the sum of the first n-2 numbers and so on until it prints just the first number (Notice that this function prints the same thing as the first, just in reverse).
 
 
 def sum_print_reverse(nums):
+    if not nums:
+        return
     if len(nums) == 1:
         print(nums[0])
     else:
@@ -23,4 +24,6 @@ def sum_print_reverse(nums):
         sum_print_reverse(nums[:-1])
 
 
-sum_print_reverse([4, 5, 2])
+if __name__ == "__main__":
+    sum_print([4, 5, 2])
+    sum_print_reverse([4, 5, 2])

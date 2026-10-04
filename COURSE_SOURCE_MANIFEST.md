@@ -14,9 +14,12 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify six authored starters remain incomplete, import quietly, run with
+  They verify fifteen authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
-  checks cover boundaries, large integer conversion, and search behavior.
+  checks cover boundaries, large integer conversion, search behavior, recursion,
+  literal strings, bracket-only validation, and console input/state. Separate
+  analysis tests verify fourteen supplied functions without answer comments and
+  a ten-prompt mathematical worksheet with a separate reference key.
 
 ## Active Catalog Targets
 
@@ -73,15 +76,25 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting a distinct counterpart: 27
+- Placeholder role folders awaiting assignment-specific material: 16
 - Complete starter/solution pairs with distinct migrated content: 11
-- Authored algorithm starter/reference pairs verified by tests: 6
-- Active source-like files excluding archive: 145
+- Authored incomplete coding starter/reference pairs verified by tests: 15
+- Supplied-code analysis starter/reference pairs verified by tests: 1
+- Mathematical worksheet/reference pairs reviewed separately: 1
+- Active source-like files excluding archive: 160
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
-The authored pairs are Recursive Factorials, Recursive Exponents, Fibonacci
-Numbers, Binary Converter, Linear Search, and Binary Search. Their completed
-reference algorithms remain separate from the incomplete learner starters.
-The remaining 27 placeholder roles still need assignment-specific review;
-the basic structural gate does not certify every project in this repository.
+The authored material now covers the six initial algorithm packs plus AM1's
+three console review projects, AM5's five recursion/string projects, the first
+check-in's running-sum project, and both AM6 analysis projects. Completed
+references remain separate from coding starters. Analysis inputs are supplied
+code or a worksheet, not arbitrary unfinished algorithms.
+
+The Big-O starter intentionally has no Python file: its README is the complete
+mathematical task. Counting Python files alone would incorrectly label it as a
+missing coding implementation. The other 16 placeholder roles still require
+assignment-specific review. The 11 migrated pairs have distinct content but
+have not all passed these authored-pack correctness checks.
+
+See SOURCE_PACK_REVIEW.md for evidence, role distinctions, and the open list.

@@ -14,8 +14,9 @@ def get_substrings(string):
         new_substrings.append(substr)
 
     set_subs = set(new_substrings)  # convert to set to delete duplicates
-    substrings = list(set_subs)  # convert back to list
+    substrings = sorted(set_subs)  # a stable list of contiguous substrings
     return substrings
 
 
-print(get_substrings("abcde"))
+if __name__ == "__main__":
+    print(get_substrings("abcde"))
