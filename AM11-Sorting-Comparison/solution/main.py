@@ -1,239 +1,151 @@
-import time
-from random import randint
+"""Bounded, checked sorting experiment. No experiment runs during import."""
+
+import random
+from statistics import median
+from time import perf_counter
 
 
-# O(1) space complexity, since we just modify the original list
 def selection_sort(lst):
+    """Sort in place, choosing the minimum of the remaining suffix."""
     for i in range(len(lst)):
-        min_item = lst[0]
-        min_item_i = 0
-        for j in range(i, len(lst)):
-            if lst[j] < min_item:
-                min_item = lst[j]
+        min_item_i = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[min_item_i]:
                 min_item_i = j
-
-        temp = lst[i]
-        lst[i] = min_item
-        lst[min_item_i] = temp
+        lst[i], lst[min_item_i] = lst[min_item_i], lst[i]
     return lst
 
 
-# Space complexity of O(1), since we modify the input list in-place
 def insertion_sort(lst):
+    """Sort stably in place by growing the sorted prefix."""
     for i in range(len(lst)):
         j = i
         while j != 0 and lst[j] < lst[j - 1]:
-            temp = lst[j - 1]
-            lst[j - 1] = lst[j]
-            lst[j] = temp
+            lst[j - 1], lst[j] = lst[j], lst[j - 1]
             j -= 1
-
     return lst
 
 
 def bubble_sort(lst):
+    """Basic in-place bubble sort, intentionally without early exit."""
     for i in range(len(lst) - 1, 0, -1):
-        for j in range(0, i):
+        for j in range(i):
             if lst[j] > lst[j + 1]:
-                temp = lst[j]
-                lst[j] = lst[j + 1]
-                lst[j + 1] = temp
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
     return lst
 
 
-# This is the integrated version that does not require a helper "merge" function
 def merge_sort(lst):
-    n = len(lst)
-    if n <= 1:
-        return lst
-
-    first_half = merge_sort(lst[: n // 2])
-    second_half = merge_sort(lst[n // 2 :])
-
+    """Stable sorted copy using indexed linear merging, not pop(0)."""
+    if len(lst) <= 1:
+        return lst.copy()
+    midpoint = len(lst) // 2
+    left = merge_sort(lst[:midpoint])
+    right = merge_sort(lst[midpoint:])
     result = []
-    while len(first_half) > 0 and len(second_half) > 0:
-        if first_half[0] < second_half[0]:
-            result.append(first_half.pop(0))
+    a = b = 0
+    while a < len(left) and b < len(right):
+        if left[a] <= right[b]:
+            result.append(left[a])
+            a += 1
         else:
-            result.append(second_half.pop(0))
+            result.append(right[b])
+            b += 1
+    result.extend(left[a:])
+    result.extend(right[b:])
+    return result
 
-    return result + first_half + second_half
 
-
-# Helper function to partition the input list using the given index
 def partition(lst, pivot):
-    less = []  # Alternatively explain how to do multiple assignments, like so:
-    eq = []  # less, eq, great = [[] for i in range(3)]
-    great = []
-
-    for num in lst:
-        if num < pivot:
-            less.append(num)
-        elif num == pivot:
-            eq.append(num)
+    """Partition around a pivot value, preserving order within each group."""
+    less, equal, greater = [], [], []
+    for value in lst:
+        if value < pivot:
+            less.append(value)
+        elif value == pivot:
+            equal.append(value)
         else:
-            great.append(num)
-
-    return less, eq, great
-
-
-def quicksort(lst):
-    n = len(lst)
-
-    if n <= 1:
-        return lst
-
-    pivot_ind = randint(0, n - 1)
-    # pivotInd = 0 is the initial "naive" choice
-    pivot = lst[pivot_ind]
-
-    less, eq, great = partition(lst, pivot)
-
-    sorted_less = quicksort(less)
-    sorted_great = quicksort(great)
-
-    return sorted_less + eq + sorted_great
+            greater.append(value)
+    return less, equal, greater
 
 
-""" This is a timing test on completely random lists """
-print("SORTING TIMING TESTS (RANDOM)")
-for n in [100, 1000, 10000]:
-    print("With", n, "items")
+def quicksort(lst, rng=None):
+    """Return a new sorted list with repeatable optional random pivots."""
+    if len(lst) <= 1:
+        return lst.copy()
+    generator = random if rng is None else rng
+    pivot = lst[generator.randint(0, len(lst) - 1)]
+    less, equal, greater = partition(lst, pivot)
+    return quicksort(less, generator) + equal + quicksort(greater, generator)
 
-    if n < 10000:
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        start = time.time()
-        selection_sort(lst)
-        end = time.time()
-        print("Selection Sort:\t", round(end - start, 6), "seconds")
 
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        start = time.time()
-        insertion_sort(lst)
-        end = time.time()
-        print("Insertion Sort:\t", round(end - start, 6), "seconds")
+def make_workloads(size, rng):
+    """Derive random, sorted, reversed and duplicate-heavy shared inputs."""
+    if type(size) is not int or not 0 <= size <= 2000:
+        raise ValueError("size must be an integer from 0 to 2000")
+    values = [rng.randint(-10000, 10000) for _ in range(size)]
+    ordered = sorted(values)
+    return {
+        "random": values,
+        "sorted": ordered,
+        "reversed": ordered[::-1],
+        "duplicates": [rng.randint(-2, 2) for _ in range(size)],
+    }
 
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        start = time.time()
-        bubble_sort(lst)
-        end = time.time()
-        print("Bubble Sort:\t", round(end - start, 6), "seconds")
-    else:
-        print("Selection Sort:\t about 16 seconds")
-        print("Insertion Sort:\t about 44 seconds")
-        print("Bubble Sort:\t about 45 seconds")
 
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    start = time.time()
-    merge_sort(lst)
-    end = time.time()
-    print("Merge Sort:\t\t", round(end - start, 6), "seconds")
+def time_sort(sorter, values):
+    """Time only sorting a fresh copy; reject wrong results after timing."""
+    expected = sorted(values)
+    working = values.copy()
+    start = perf_counter()
+    result = sorter(working)
+    elapsed = perf_counter() - start
+    if result != expected:
+        raise AssertionError("Sorting result is incorrect; do not report its speed.")
+    return elapsed
 
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    start = time.time()
-    quicksort(lst)
-    end = time.time()
-    print("Quick Sort:\t\t", round(end - start, 6), "seconds")
 
-    print()
+def benchmark(sizes=(100, 300), repeats=3, seed=0, algorithms=None):
+    """Return measured median seconds with bounded sizes and repeat counts."""
+    if type(repeats) is not int or not 1 <= repeats <= 10:
+        raise ValueError("repeats must be an integer from 1 to 10")
+    sizes = tuple(sizes)
+    if not 1 <= len(sizes) <= 5:
+        raise ValueError("provide between one and five sizes")
+    for size in sizes:
+        if type(size) is not int or not 0 <= size <= 2000:
+            raise ValueError("sizes must be integers from 0 to 2000")
+    workloads_rng = random.Random(seed)
+    pivot_rng = random.Random(seed)
+    if algorithms is None:
+        algorithms = {
+            "Selection Sort": selection_sort,
+            "Insertion Sort": insertion_sort,
+            "Bubble Sort (basic)": bubble_sort,
+            "Merge Sort": merge_sort,
+            "Quicksort": lambda values: quicksort(values, pivot_rng),
+        }
+    rows = []
+    for size in sizes:
+        for shape, values in make_workloads(size, workloads_rng).items():
+            for name, sorter in algorithms.items():
+                samples = [time_sort(sorter, values) for _ in range(repeats)]
+                rows.append({
+                    "size": size,
+                    "shape": shape,
+                    "algorithm": name,
+                    "repeats": repeats,
+                    "median_seconds": median(samples),
+                })
+    return rows
 
-time.sleep(2)
-""" This is a timing test on sorted lists """
-print("\n\nSORTING TIMING TESTS (PRE-SORTED)")
-for n in [100, 1000, 10000]:
-    print("With", n, "items")
 
-    if n < 10000:
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        lst.sort()
-        start = time.time()
-        selection_sort(lst)
-        end = time.time()
-        print("Selection Sort:\t", round(end - start, 6), "seconds")
-    else:
-        print("Selection Sort:\t about 16 seconds")
-
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    lst.sort()
-    start = time.time()
-    insertion_sort(lst)
-    end = time.time()
-    print("Insertion Sort:\t", round(end - start, 6), "seconds")
-
-    if n < 10000:
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        lst.sort()
-        start = time.time()
-        bubble_sort(lst)
-        end = time.time()
-        print("Bubble Sort:\t", round(end - start, 6), "seconds")
-    else:
-        print("Bubble Sort:\t about 37 seconds")
-
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    lst.sort()
-    start = time.time()
-    merge_sort(lst)
-    end = time.time()
-    print("Merge Sort:\t\t", round(end - start, 6), "seconds")
-
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    lst.sort()
-    start = time.time()
-    quicksort(lst)
-    end = time.time()
-    print("Quick Sort:\t\t", round(end - start, 6), "seconds")
-
-    print()
-time.sleep(2)
-""" This is a timing test on reversed sorted lists """
-print("\n\nSORTING TIMING TESTS (REVERSED SORTED)")
-for n in [100, 1000, 10000]:
-    print("With", n, "items")
-
-    if n < 10000:
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        lst.sort()
-        lst.reverse()
-        start = time.time()
-        selection_sort(lst)
-        end = time.time()
-        print("Selection Sort:\t", round(end - start, 6), "seconds")
-
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        lst.sort()
-        lst.reverse()
-        start = time.time()
-        insertion_sort(lst)
-        end = time.time()
-        print("Insertion Sort:\t", round(end - start, 6), "seconds")
-
-        lst = [randint(-10000, 10000) for _ in range(n)]
-        lst.sort()
-        lst.reverse()
-        start = time.time()
-        bubble_sort(lst)
-        end = time.time()
-        print("Bubble Sort:\t", round(end - start, 6), "seconds")
-    else:
-        print("Selection Sort:\t about 30 seconds")
-        print("Insertion Sort:\t about 105 seconds")
-        print("Bubble Sort:\t about 84 seconds")
-
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    lst.sort()
-    lst.reverse()
-    start = time.time()
-    merge_sort(lst)
-    end = time.time()
-    print("Merge Sort:\t\t", round(end - start, 6), "seconds")
-
-    lst = [randint(-10000, 10000) for _ in range(n)]
-    lst.sort()
-    lst.reverse()
-    start = time.time()
-    quicksort(lst)
-    end = time.time()
-    print("Quick Sort:\t\t", round(end - start, 6), "seconds")
-
-    print()
+if __name__ == "__main__":
+    print("Measured medians: 3 runs, shared input copies, seed 0.")
+    print("Sorting only; generation, copying, validation and printing excluded.")
+    print("These small local measurements illustrate behavior, not Big-O proof.")
+    for row in benchmark():
+        print(
+            f"{row['size']:4} {row['shape']:10} "
+            f"{row['algorithm']:20} {row['median_seconds']:.6f} seconds"
+        )

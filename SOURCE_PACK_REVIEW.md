@@ -20,13 +20,41 @@ import references or learner answers. Analysis code is the problem input, not a
 completed classification. The mathematical worksheet is readable without an IDE.
 
 The standard-library suite checks the six previous algorithm pairs as well.
-It now has 22 test methods, with many additional input cases. The reference
+The pre-sorting milestone had 22 test methods. The reference
 algorithm checks are separate from the learner starter folders. This is evidence
 for these authored packs, not certification of every migrated source file.
 
+## Sorting follow-up
+
+Six more authored, incomplete starter packs now cover selection, insertion,
+bubble, merge, quicksort, and Sorting Comparison. Original function names and
+source filenames are preserved. New-list, in-place and consuming contracts are
+explicit, including empty/singleton identity. References are import-safe.
+
+Selection Comparison's incorrect minimum scan is repaired. The consuming
+selection variant keeps the first equal minimum, preserving tied-record identity.
+Merge uses left-side tie handling and indexed linear merging; quicksort documents
+pivot values and allocating recursion. Optional shuffling documents its mutation
+and randomness boundaries and handles empty input.
+
+Sorting Comparison now uses fresh copies of shared, seeded input shapes, checks
+every result, and reports only measured median timings. Generation, copying,
+oracle computation, validation and printing are outside the timing boundary.
+Default runs use sizes 100/300 and three repeats; explicit guards bound learner
+experiments to five sizes, 2000 items each, and ten repeats. Basic bubble sort is
+labeled rather than being confused with the early-exit variant.
+
+The suite now has 31 methods. Fifteen sorting variants are checked on all 364
+numeric lists of length 0-5 over {-1, 0, 1}, plus former selection failures and
+larger ordered cases. Tests independently check mutation/identity, stable record
+labels where promised, merge/split, pivot values, shuffles, actual early-exit
+comparison counts, timing boundaries, shared copies, medians, and bounds.
+These tests prove the authored numeric contracts, not unbounded-input performance
+or the correctness of unrelated legacy pairs.
+
 ## Open placeholder roles
 
-The remaining 16 folders below were inspected for source shape and dependencies,
+The remaining 10 folders below were inspected for source shape and dependencies,
 but their algorithms, instructions, asset loading, and interactive flows remain
 unverified. They are not marked ready merely because a solution file exists.
 
@@ -35,12 +63,6 @@ unverified. They are not marked ready merely because a solution file exists.
 | AM7-Reverse-Number-Guesser | Interactive binary-search game | Bounds, feedback validation, and termination |
 | AM7-Runtime-Comparator | Search timing experiment | Comparable inputs and timing boundaries |
 | AM7-Number-Guesser | Interactive guessing game | Guess limits, invalid input, and deterministic test setup |
-| AM8-Selection-Sort | Sorting | Distinct starter; sortedness, duplicates, mutation contract |
-| AM8-Insertion-Sort | Sorting | Distinct starter; sortedness, duplicates, mutation contract |
-| AM9-Bubble-Sort | Sorting | Distinct starter; improved early exit and mutation contract |
-| AM10-Merge-Sort | Sorting | Merge/split/recursive contracts and empty/odd-length cases |
-| AM11-Quicksort | Sorting | Partition pivot/duplicate handling and termination |
-| AM11-Sorting-Comparison | Timing experiment | Shared data, copies, fair timing, checked algorithms |
 | AM12-Crazy-Name-Tags-Printer | File I/O | File paths, output shape, independent input data |
 | AM13-Conways-Game-of-Life | Console simulation | Rule oracle, board edges, local input assets, termination |
 | AM13-Two-Player-Conways | Console simulation | Ownership rules, turn input, local assets, duplicate legacy files |

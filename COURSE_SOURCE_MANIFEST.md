@@ -14,7 +14,7 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify fifteen authored coding starters remain incomplete, import quietly, run with
+  They verify twenty-one authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, and console input/state. Separate
@@ -76,24 +76,25 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting assignment-specific material: 16
+- Placeholder role folders awaiting assignment-specific material: 10
 - Complete starter/solution pairs with distinct migrated content: 11
-- Authored incomplete coding starter/reference pairs verified by tests: 15
+- Authored incomplete coding starter/reference pairs verified by tests: 21
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 160
+- Active source-like files excluding archive: 167
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
 The authored material now covers the six initial algorithm packs plus AM1's
 three console review projects, AM5's five recursion/string projects, the first
-check-in's running-sum project, and both AM6 analysis projects. Completed
+check-in's running-sum project, both AM6 analysis projects, and six sorting packs
+from AM8 through AM11. Completed
 references remain separate from coding starters. Analysis inputs are supplied
 code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
-missing coding implementation. The other 16 placeholder roles still require
+missing coding implementation. The other 10 placeholder roles still require
 assignment-specific review. The 11 migrated pairs have distinct content but
 have not all passed these authored-pack correctness checks.
 

@@ -1,17 +1,15 @@
 # AM9 Bubble Sort
 
-Canonical source repository: `Python-Level-3`
+Canonical source repository: `Python-Level-3`.
 
-Project goal: implement bubble sort, compare the basic and improved versions, and explain why the improved version can stop early when a list is already sorted.
+The original project folders and source filename `main.py` are preserved from the
+2026-05-14 migration. The 2026-10-04 sorting audit authors a distinct learner
+starter and corrects the separate reference where needed.
 
-## Structure
+- `starter/main.py` contains incomplete implementation TODOs, not final answers.
+- `starter/README.md` supplies the complete contracts, workflow, and self-checks.
+- `solution/main.py` is the reference and does no work during import.
 
-- `starter/` contains the implementation requirements.
-- `solution/` contains a reference implementation with an in-place sort, an early-exit sort, and a copy-returning helper.
-
-## Completion Checks
-
-- Sorts a list containing positive numbers, repeated values, and values that start out of order.
-- Preserves the original list when using the copy-returning helper.
-- Explains the nested-loop structure and the reason the inner loop can shrink after each pass.
-- Explains why the early-exit version is faster on an already sorted or nearly sorted list.
+Start with the learner brief. Run from the starter folder locally, or confirm
+the site's Python IDE import; Run initially prints an implementation reminder.
+See `SOURCE_PACK_REVIEW.md` for checked boundaries and remaining audit work.

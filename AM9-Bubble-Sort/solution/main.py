@@ -37,14 +37,15 @@ def bubble_sort_copy(values):
     return result
 
 
-sample_values = [42, 17, 17, 99, 8, 63, 21, 5]
-copy_sorted = bubble_sort_copy(sample_values)
-in_place_values = sample_values.copy()
+if __name__ == "__main__":
+    sample_values = [42, 17, 17, 99, 8, 63, 21, 5]
+    copy_sorted = bubble_sort_copy(sample_values)
+    in_place_values = sample_values.copy()
 
-print("original:", sample_values)
-print("sorted copy:", copy_sorted)
-print("original after copy sort:", sample_values)
-print("in-place sorted:", bubble_sort_improved(in_place_values))
+    print("original:", sample_values)
+    print("sorted copy:", copy_sorted)
+    print("original after copy sort:", sample_values)
+    print("in-place sorted:", bubble_sort_improved(in_place_values))
 
 """
 Python can swap two list elements in one statement:
