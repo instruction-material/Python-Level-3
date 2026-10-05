@@ -34,10 +34,19 @@ ORIGINAL_PLAYERS = [
     ["M. Betts", 0.285, 21, 67], ["A. Rendon", 0.328, 29, 104],
     ["D. Lemahieu", 0.331, 22, 87], ["R. Acuna", 0.290, 36, 89],
 ]
+# Exact baseline Git LF bytes and their configured CRLF checkout variants.
+# The baseline is 2a5f8d3ef1c7ec91e98219c399c849d2528edcb5. Accept only these
+# two full-file digests, not arbitrary newline/whitespace normalization.
 ASSET_DIGESTS = {
-    (DICTIONARY, "input.txt"): "68682cffe83e789d637dc16d247608e8911c2ea6608e0e51eda701e9a6d6f580",
-    (LATIN, "input_no_punctuation.txt"): "12f8a11bb65655593bbeb41a8602e389bdea1f9544a3b33fbd33a5dc9a64c76f",
-    (LATIN, "input_punctuation.txt"): "3a67645f67f58c84ef20db3540d8b6f6bcdbdd7be1d679eebf307b37422d3d2d",
+    (DICTIONARY, "input.txt"): (
+        "22762e02b84efa6b62abc7a241f3545b8be470017c42e99c72c38e7bb3c26a85",
+        "68682cffe83e789d637dc16d247608e8911c2ea6608e0e51eda701e9a6d6f580"),
+    (LATIN, "input_no_punctuation.txt"): (
+        "9186548066bed03eb9ad6b1b8261bc819b4549db4796d50d2d93701d3b72afd9",
+        "12f8a11bb65655593bbeb41a8602e389bdea1f9544a3b33fbd33a5dc9a64c76f"),
+    (LATIN, "input_punctuation.txt"): (
+        "ebe8862a5456b541542fd1c4f577ea9a06d02698d51f26bceb25b92d601cfc50",
+        "3a67645f67f58c84ef20db3540d8b6f6bcdbdd7be1d679eebf307b37422d3d2d"),
 }
 
 
@@ -93,10 +102,13 @@ class RecordFilePackTests(unittest.TestCase):
     def test_original_asset_bytes_and_synthetic_player_records_are_preserved(self):
         for (pack, name), expected in ASSET_DIGESTS.items():
             for role in ("starter", "solution"):
-                data = (ROOT / pack / role / name).read_bytes()
-                self.assertEqual(hashlib.sha256(data).hexdigest(), expected)
-                self.assertIn(b"\r\n", data)
-                self.assertFalse(data.endswith(b"\n"))
+                with self.subTest(pack=pack, role=role, asset=name):
+                    data = (ROOT / pack / role / name).read_bytes()
+                    digest = hashlib.sha256(data).hexdigest()
+                    self.assertIn(digest, expected)
+                    self.assertEqual(b"\r\n" in data, digest == expected[1])
+                    self.assertIn(b"\n", data)
+                    self.assertFalse(data.endswith(b"\n"))
         for role in ("starter", "solution"):
             module = load(BASEBALL, role)
             self.assertEqual(module["playerList"], ORIGINAL_PLAYERS)

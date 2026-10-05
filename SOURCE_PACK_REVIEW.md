@@ -116,8 +116,11 @@ The last three migrated pairs now have complete learner briefs and twelve
 matching incomplete callable tasks, with the punctuation helper explicitly
 optional. Original filenames, ten synthetic player records, p1-p10, playerList
 and compatible player_list are preserved. Six original file copies are checked
-by SHA-256, retaining CRLF, the unterminated final records and dictionary key
-whitespace. No original example was reformatted to simplify testing.
+by exact SHA-256 fixtures for baseline Git LF bytes and the configured CRLF
+checkout variants, retaining the unterminated final records and dictionary key
+whitespace. The first Linux run exposed the Mac's core.autocrlf conversion; its
+initial Mac-only fixture was corrected against the baseline Git blobs, without
+normalizing arbitrary contents or changing any example/attribute file.
 
 | Pack | Checked assignment contract |
 | --- | --- |
