@@ -44,13 +44,39 @@ Default runs use sizes 100/300 and three repeats; explicit guards bound learner
 experiments to five sizes, 2000 items each, and ten repeats. Basic bubble sort is
 labeled rather than being confused with the early-exit variant.
 
-The suite now has 31 methods. Fifteen sorting variants are checked on all 364
+The sorting milestone had 31 methods. Fifteen sorting variants are checked on all 364
 numeric lists of length 0-5 over {-1, 0, 1}, plus former selection failures and
 larger ordered cases. Tests independently check mutation/identity, stable record
 labels where promised, merge/split, pivot values, shuffles, actual early-exit
 comparison counts, timing boundaries, shared copies, medians, and bounds.
 These tests prove the authored numeric contracts, not unbounded-input performance
 or the correctness of unrelated legacy pairs.
+
+## Migrated fundamentals follow-up
+
+Three previously migrated pairs now have explicitly incomplete callable starters,
+complete learner briefs and quiet reference imports:
+
+| Pack | Preserved purpose and corrected contract |
+| --- | --- |
+| AM2 Functions Practice | Five required iterative review functions; optional factorial/Hailstone challenges remain separate from later recursion projects. Exact integer digit/Hailstone arithmetic, nonnegative exponent/factorial domains and a bounded transition cap are checked. |
+| AM2 Lists Practice | Loop-generated twenty positive evens match the original task. Original two-list/nested functions remain, min/max reject empty lists, and max_list preserves its explicit empty-inner-list skip policy. |
+| AM3 Fundamentals Problem Set | All sixteen original tasks and function names remain. Tied modes are ascending, case/empty/integer domains are stated, and only swap_min_max mutates its input. |
+
+The suite now has 45 methods. Fourteen added methods verify all 32 starter
+signatures/bodies and exercise reminders, independent numeric/string oracles,
+all 364 small integer lists, distinct-number permutations, ordered frequencies,
+fresh output identity, rejected domains and exact bounded Hailstone behavior.
+The former large-integer case has 412 terms rather than the rounded result 55.
+Digit counting also handles integers beyond the default string-conversion digit
+limit without float arithmetic. The reference's actual large input and bounded
+oracles are tested; this is not a proof of general Hailstone convergence or of
+unbounded performance.
+
+Twenty-four authored coding pairs, one supplied-code analysis and one worksheet
+are checked. Eight distinct migrated pairs still await full contract verification;
+ten genuine coding placeholder roles remain. Source-file counts are inventory,
+not correctness evidence.
 
 ## Open placeholder roles
 
@@ -71,7 +97,7 @@ unverified. They are not marked ready merely because a solution file exists.
 | AM14-Tic-Tac-Toe-AI-Test | Strategy experiment | Deterministic adversaries and honest performance claims |
 | AM14-Tic-Tac-Toe-AI-with-Forks | Console strategy game | Fork logic, legal moves, termination |
 
-The existing 11 distinct migrated pairs also need their own correctness review.
+The remaining 8 distinct migrated pairs also need their own correctness review.
 The broader site audit still includes other courses, supported environments,
 original-source identity reconciliation, delivery-purpose distinctions, and
 bridge extension language alignment. None is closed by this source-pack gate.

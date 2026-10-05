@@ -1,28 +1,35 @@
-# (1) Write a function that takes in a list of numbers and returns a list with every number doubled.
+"""Fundamentals references with explicit boundaries and quiet imports."""
+
+
+def _require_integer(N, minimum=0):
+    if type(N) is not int or N < minimum:
+        raise ValueError("N must be an integer at least " + str(minimum) + ", not bool")
+
+
+def _require_distinct_nonempty(numbers):
+    if not numbers or len(set(numbers)) != len(numbers):
+        raise ValueError("a nonempty list of distinct numbers is required")
+
+
 def double(numbers):
+    """Return a new doubled list, preserving input order and duplicates."""
     result = []
     for number in numbers:
         result.append(number * 2)
     return result
 
 
-print(double([1, 2, 3]))
-
-
-# (2) Write a function that takes in a list of words and returns a list of only the words that start with the letter 'a.'
 def starts_with_a(words):
+    """Return words beginning with lowercase a; empty strings do not match."""
     result = []
     for word in words:
-        if word[0] == "a":
+        if word and word[0] == "a":
             result.append(word)
     return result
 
 
-print(starts_with_a(["apple", "banana", "ant", "orange"]))
-
-
-# (3) Write a function that takes in a list of numbers and returns the number of even numbers in the list.
 def num_of_evens(numbers):
+    """Count even integers, including zero and negative even numbers."""
     count = 0
     for number in numbers:
         if number % 2 == 0:
@@ -30,115 +37,90 @@ def num_of_evens(numbers):
     return count
 
 
-print(num_of_evens([2, 4, 6, 7]))
-
-
-# (4) Write a function that takes in a list of numbers and returns the sum of the list.
 def sum_of_numbers(numbers):
-    sum = 0
+    """Return the numeric sum, or zero for an empty list."""
+    total = 0
     for number in numbers:
-        sum += number
-    return sum
+        total += number
+    return total
 
 
-print(sum_of_numbers([-1, 1, 2, 3]))
-
-
-# (5) Write a function that takes in a list of distinct numbers and returns the index of the largest number in the list.
 def index_of_largest_number(numbers):
+    """Return the largest-value index in a nonempty distinct-number list."""
+    _require_distinct_nonempty(numbers)
     index = 0
     largest_num = numbers[0]
-    for i in range(0, len(numbers)):
+    for i in range(len(numbers)):
         if numbers[i] > largest_num:
             index = i
             largest_num = numbers[i]
     return index
 
 
-print(index_of_largest_number([-4, -6, -3]))
-
-
-# (6) For a given integer N, print all perfect squares less than or equal to N.
 def all_squares(N):
+    """Print nonnegative perfect squares <= N, one per line; return None."""
+    _require_integer(N)
     i = 0
-    while True:
-        perfect_square = i * i
-        if perfect_square <= N:
-            print(perfect_square)
-        else:
-            break
+    while i * i <= N:
+        print(i * i)
         i += 1
 
 
-all_squares(101)
-
-
-# (7) Write a function that takes in an integer N and returns the greatest integer x for which 2^x is less than or equal to N.
 def largest_power_of_two(N):
+    """Return the greatest integer x with 2**x <= positive integer N."""
+    _require_integer(N, 1)
     i = 0
-    while True:
-        power_of_two = 2**i
-        if power_of_two > N:
-            return i - 1
+    power_of_two = 1
+    while power_of_two * 2 <= N:
+        power_of_two *= 2
         i += 1
+    return i
 
 
-print(largest_power_of_two(65))
-
-
-# (8) Write a function that takes in an integer N and returns the sum of 1! + 2! + ... + N!.
 def factorial_sum(N):
-    sum = 0
+    """Return 1! + 2! + ... + N!; zero gives the empty sum."""
+    _require_integer(N)
+    total = 0
     for i in range(1, N + 1):
         factorial = 1
         for j in range(1, i + 1):
             factorial *= j
-        sum += factorial
-    return sum
+        total += factorial
+    return total
 
 
-print(factorial_sum(3))
-
-
-# (9) Write a function that takes in a positive integer N and returns its largest divisor less than N.
 def largest_divisor(N):
+    """Return the largest positive divisor below N, or None at N=1."""
+    _require_integer(N, 1)
     for i in range(N - 1, 0, -1):
         if N % i == 0:
             return i
+    return None
 
 
-print(largest_divisor(24))
-
-
-# (10) Write a function that takes in a list of integers (positive or negative) and returns the largest product that can be made with any two numbers from the list.
 def largest_product(numbers):
+    """Return the maximum product of two distinct positions; require two items."""
+    if len(numbers) < 2:
+        raise ValueError("largest_product requires at least two integers")
     largest_num = numbers[0] * numbers[1]
-    for i in range(0, len(numbers)):
-        for j in range(0, len(numbers)):
-            if numbers[i] * numbers[j] > largest_num and i != j:
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] * numbers[j] > largest_num:
                 largest_num = numbers[i] * numbers[j]
     return largest_num
 
 
-print(largest_product([0, 5, 9]))
-print(largest_product([-3, -8, 10]))
-
-
-# (11) Write a function that takes in a list of integers (positive or negative) and return True if any pair of the numbers in the list sum to 0, Otherwise, return False.
 def sums_to_zero(numbers):
-    for i in range(0, len(numbers)):
-        for j in range(0, len(numbers)):
-            if numbers[i] + numbers[j] == 0 and i != j:
+    """Return True iff two distinct positions sum to zero; do not reuse an item."""
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] + numbers[j] == 0:
                 return True
     return False
 
 
-print(sums_to_zero([0, -1, 2]))
-print(sums_to_zero([-5, 8, 5]))
-
-
-# (12) Write a function that takes in a list of integers and returns a list of the most commonly occurring integers in the list. For example, if the list is [3, 6, 2, 2, 6], the function should return [2,6].
 def most_common_numbers(numbers):
+    """Return all tied modes in ascending order, or a new empty list."""
     freq = {}
     for number in numbers:
         if number in freq:
@@ -153,39 +135,28 @@ def most_common_numbers(numbers):
             highest_freq = freq[number]
         elif freq[number] == highest_freq:
             most_common.append(number)
-    return most_common
+    return sorted(most_common)
 
 
-print(most_common_numbers([6, 3, 2, 2]))
-print(most_common_numbers([5, 4, 5, 4, 5, 4]))
-print(most_common_numbers([1, 2, 3]))
-
-
-# (13) Write a function that takes in a string and returns the string in reverse order.
 def reverse_string(str):
+    """Reverse every character, including whitespace and punctuation."""
     reverse_str = ""
     for i in range(len(str) - 1, -1, -1):
         reverse_str += str[i]
     return reverse_str
 
 
-print(reverse_string("hello"))
-
-
-# (14) Write a function that takes in a string and returns the number of vowels in the string.
 def count_vowels(str):
+    """Count ASCII a/e/i/o/u in either case; y is not counted."""
     count = 0
-    for i in str:
-        if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+    for character in str:
+        if character.lower() in ("a", "e", "i", "o", "u"):
             count += 1
     return count
 
 
-print(count_vowels("mooncake"))
-
-
-# (15) Write a function that takes in a list of numbers and returns the number of numbers that appear exactly twice in the list.
 def count_pairs(numbers):
+    """Count distinct values whose frequency is exactly two."""
     freq = {}
     count = 0
     for number in numbers:
@@ -199,26 +170,35 @@ def count_pairs(numbers):
     return count
 
 
-print(count_pairs([1, 1, 2, 2, 3, 3, 3, 4]))
-
-
-# (16) Write a function that takes in a list of distinct numbers and return the list with the smallest and largest numbers swapped.
 def swap_min_max(numbers):
+    """Swap extrema in place for a nonempty distinct-number list; return it."""
+    _require_distinct_nonempty(numbers)
     min_index = 0
     max_index = 0
-    min_num = numbers[0]
-    max_num = numbers[0]
-    for i in range(0, len(numbers)):
-        number = numbers[i]
-        if number < min_num:
+    for i in range(len(numbers)):
+        if numbers[i] < numbers[min_index]:
             min_index = i
-            min_num = number
-        elif number > max_num:
+        if numbers[i] > numbers[max_index]:
             max_index = i
-            max_num = number
-    numbers[min_index] = max_num
-    numbers[max_index] = min_num
+    numbers[min_index], numbers[max_index] = numbers[max_index], numbers[min_index]
     return numbers
 
 
-print(swap_min_max([1, 2, 3, 4]))
+if __name__ == "__main__":
+    print("double:", double([1, 2, 3]))
+    print("starts with a:", starts_with_a(["", "apple", "Apple", "ant"]))
+    print("even count:", num_of_evens([-2, 0, 3]))
+    print("sum:", sum_of_numbers([-1, 1, 2, 3]))
+    print("largest index:", index_of_largest_number([-4, -6, -3]))
+    print("squares:")
+    all_squares(16)
+    print("power:", largest_power_of_two(65))
+    print("factorial sum:", factorial_sum(3))
+    print("divisor:", largest_divisor(24))
+    print("largest product:", largest_product([-3, -8, 10]))
+    print("zero pair:", sums_to_zero([-5, 8, 5]))
+    print("ordered modes:", most_common_numbers([3, 6, 2, 2, 6]))
+    print("reverse:", reverse_string("hello"))
+    print("vowels:", count_vowels("Mooncake"))
+    print("pairs:", count_pairs([1, 1, 2, 2, 3, 3, 3, 4]))
+    print("swapped:", swap_min_max([1, 2, 3, 4]))
