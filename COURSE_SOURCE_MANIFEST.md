@@ -5,8 +5,13 @@ Canonical source repository: `Python-Level-3`
 ## Mapped Catalog Courses
 
 - `python-level-3`: Python Level 3
-- `java-without-graphics`: Java without Graphics
-- `java-with-graphics`: Java with Graphics
+
+This active mapping follows the site catalog at
+`a7d78580d00f8719b3437b0bbb663cb9e03edea9`. The former Java without/with Graphics
+catalog IDs are no longer active courses. Current Java Level 1, 2 and 3 source
+maps to `Java-Level-1`, `Java-Level-2` and `Java-Level-3` respectively; this Python
+repository is not their implementation source. Archived Java material remains
+historical evidence and does not establish an active Python project mapping.
 
 ## Verification Gate
 
