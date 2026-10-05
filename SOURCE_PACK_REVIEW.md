@@ -175,15 +175,46 @@ worksheet are now checked. Seven coding placeholder roles remain open. The gate
 inventories 199 source-like files including archive, 188 excluding archive.
 The broader course, delivery-purpose and workflow audit is still incomplete.
 
+## Crazy Name Tags follow-up
+
+The missing AM12 starter now contains four incomplete core callables and one
+explicitly optional separate-file callable. Its complete learner brief specifies
+the original literal, alternate-index and reverse character orders, one LF per
+character and an extra LF after each of the three core sections. Empty names
+give exactly three LFs. Literal case, spaces/tabs and Unicode code points are
+preserved; grapheme-aware reversal is not claimed.
+
+The separate reference validates name/destination before opening, writes UTF-8/LF
+with context-managed closure and only prompts/writes when directly invoked.
+Console outcomes distinguish writing, invalid names, cancellation and filesystem
+failure. The optional extension validates all three destinations and rejects
+path/symlink/hardlink aliases before any write. Ordinary later I/O errors can
+leave partial output; no transactional rollback is promised. The original
+reference remains in Git at 2473272796d28401c2b8a3f50b472070d9272e3a; all four
+original output sample blobs remain unchanged, including the historical empty
+core output that is not a new expected fixture.
+
+Seventeen new methods bring the native suite to 118. Independent character/index
+oracles check all 364 small names plus literal Unicode/space/tab cases. Tests
+cover matching incomplete signatures, quiet imports, direct-run reminders,
+exact baseline LF/configured CRLF sample digests, real UTF-8/LF temporary files,
+overwrite, validation before opening, context closure, missing paths, callback
+configuration, cancellation, fresh outcomes and honest optional partial-failure
+behavior. Both console entry points are exercised in temporary workspaces.
+
+Thirty-six authored coding/review pairs, one supplied-code analysis and one
+worksheet are checked. Six coding placeholders remain. The gate inventories
+201 source-like files including archive, 190 excluding archive. Bounded tests
+do not certify unrelated references, unrestricted performance or the site audit.
+
 ## Open placeholder roles
 
-The remaining 7 folders below were inspected for source shape and dependencies,
+The remaining 6 folders below were inspected for source shape and dependencies,
 but their algorithms, instructions, asset loading, and interactive flows remain
 unverified. They are not marked ready merely because a solution file exists.
 
 | Folder | Assignment family | Next verification |
 | --- | --- | --- |
-| AM12-Crazy-Name-Tags-Printer | File I/O | File paths, output shape, independent input data |
 | AM13-Conways-Game-of-Life | Console simulation | Rule oracle, board edges, local input assets, termination |
 | AM13-Two-Player-Conways | Console simulation | Ownership rules, turn input, local assets, duplicate legacy files |
 | AM14-Tic-Tac-Toe-UI | Console game | Input bounds, legal moves, win/draw states |
