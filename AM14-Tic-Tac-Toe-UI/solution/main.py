@@ -1,157 +1,215 @@
+"""Finite Tic Tac Toe helpers; reference answers are separate from learner work."""
+
 import random
-import time
+import re
 
 
-def print_board(board):
-    for i in range(3):
-        for j in range(3):
-            if j == 2:
-                print(" " + board[i][j], end="")
-            else:
-                print(" " + board[i][j] + " |", end="")
-        if i != 2:
-            print("\n-––+–––+–––")
-    print("\n")
+def _board(board):
+    if (type(board) is not list or len(board) != 3
+            or any(type(row) is not list or len(row) != 3 for row in board)
+            or any(type(cell) is not str or cell not in (" ", "X", "O")
+                   for row in board for cell in row)):
+        raise ValueError("Use three list rows of three space/X/O strings.")
 
 
-# Check if a player has won the game
+def _player(player):
+    if type(player) is not str or player not in ("X", "O"):
+        raise ValueError("The player must be X or O.")
+
+
+def _coordinate(number):
+    if type(number) is not int or not 0 <= number <= 2:
+        raise ValueError("A coordinate must be an integer from 0 through 2.")
+
+
+def _rng(rng):
+    rng = random if rng is None else rng
+    if not callable(getattr(rng, "choice", None)):
+        raise ValueError("The random source must have a callable choice method.")
+    return rng
+
+
+def _move(move, available):
+    if type(move) not in (list, tuple) or len(move) != 2:
+        raise ValueError("A strategy must return a row/column pair.")
+    row, col = move
+    _coordinate(row)
+    _coordinate(col)
+    result = [row, col]
+    if result not in available:
+        raise ValueError("A strategy must choose an available square.")
+    return result
+
+
+def _start(start_player, rng):
+    if start_player is None:
+        start_player = rng.choice(("X", "O"))
+    _player(start_player)
+    return start_player
+
+
+def make_board():
+    """Return a new empty 3x3 board with independently allocated rows."""
+    return [[" " for _ in range(3)] for _ in range(3)]
+
+
+def duplicate_board(board):
+    """Validate and copy every row; no caller-owned list is reused."""
+    _board(board)
+    return [row[:] for row in board]
+
+
 def win(board, player):
-    # Horizontal wins
-    if (
-        board[0][0] == player
-        and board[0][1] == player
-        and board[0][2] == player
-    ):
-        return True
-    if (
-        board[1][0] == player
-        and board[1][1] == player
-        and board[1][2] == player
-    ):
-        return True
-    if (
-        board[2][0] == player
-        and board[2][1] == player
-        and board[2][2] == player
-    ):
-        return True
-
-    # Vertical wins
-    if (
-        board[0][0] == player
-        and board[1][0] == player
-        and board[2][0] == player
-    ):
-        return True
-    if (
-        board[0][1] == player
-        and board[1][1] == player
-        and board[2][1] == player
-    ):
-        return True
-    if (
-        board[0][2] == player
-        and board[1][2] == player
-        and board[2][2] == player
-    ):
-        return True
-
-    # Diagonal wins
-    if (
-        board[0][0] == player
-        and board[1][1] == player
-        and board[2][2] == player
-    ):
-        return True
-    if (
-        board[0][2] == player
-        and board[1][1] == player
-        and board[2][0] == player
-    ):
-        return True
-    return False
+    """Check all eight winning lines for X or O without changing the board."""
+    _board(board)
+    _player(player)
+    lines = [board[row] for row in range(3)]
+    lines += [[board[row][col] for row in range(3)] for col in range(3)]
+    lines += [[board[i][i] for i in range(3)], [board[i][2-i] for i in range(3)]]
+    return any(all(cell == player for cell in line) for line in lines)
 
 
-# Simple AI algorithm - program just plays a spot randomly.
-def random_player_move(board):
-    while True:
-        row = random.randint(0, 2)
-        column = random.randint(0, 2)
-        if board[row][column] == " ":
-            return [row, column]
-
-
-# Check if the board is full
 def finished(board):
-    for i in range(3):
-        for j in range(3):
-            if board[i][j] == " ":
-                return False
-    return True
+    """Return whether all nine squares are occupied, independently of wins."""
+    _board(board)
+    return all(cell != " " for row in board for cell in row)
 
 
-# Set up the board
-board = []
-for i in range(3):
-    line = []
-    for j in range(3):
-        line.append(" ")
-    board.append(line)
+def game_status(board):
+    """Return ongoing/X_won/O_won/draw; reject simultaneous winners."""
+    _board(board)
+    x_won, o_won = win(board, "X"), win(board, "O")
+    if x_won and o_won:
+        raise ValueError("A game board cannot have two winners.")
+    if x_won:
+        return "X_won"
+    if o_won:
+        return "O_won"
+    return "draw" if finished(board) else "ongoing"
 
-tie = False
-player = "X"
-flip = random.randint(1, 2)
-if flip == 1:
-    print("The coin flip shows that the computer (O) goes first!")
-    player = "O"
-else:
-    print("The coin flip shows that you (X) will go first!")
 
-input("Press Enter to begin!")
+def legal_moves(board):
+    """Return fresh row-major coordinate lists; terminal boards have no moves."""
+    if game_status(board) != "ongoing":
+        return []
+    return [[row, col] for row in range(3) for col in range(3)
+            if board[row][col] == " "]
 
-while True:
-    print_board(board)
 
-    # User goes
-    if player == "X":
-        # While loop to make sure user puts in valid numbers
-        while True:
-            row = int(input("Pick a row to play: "))
-            col = int(input("Pick a column to play: "))
-            if (
-                (-1 < row and row < 3)
-                and (-1 < col and col < 3)
-                and board[row][col] == " "
-            ):
-                board[row][col] = player
-                break
-            print("Not a valid move, try again")
+def apply_move(board, player, row, col):
+    """Return a fresh board after one legal move; reject ended/occupied positions."""
+    _board(board)
+    _player(player)
+    _coordinate(row)
+    _coordinate(col)
+    if game_status(board) != "ongoing" or board[row][col] != " ":
+        raise ValueError("The move needs an empty square in an ongoing game.")
+    result = duplicate_board(board)
+    result[row][col] = player
+    return result
 
-    # Computer goes
-    if player == "O":
-        time.sleep(1)
-        play = random_player_move(board)
-        board[play[0]][play[1]] = player
 
-    # Check if someone has won
-    if win(board, player):
-        break
-    # Check if all game spots are taken
-    if finished(board):
-        tie = True
-        break
+def _result(status, board, moves, start_player):
+    return {"status": status, "winner": status[0] if status.endswith("_won") else None,
+            "board": duplicate_board(board), "moves": moves[:], "start_player": start_player}
 
-    # Changes turns
-    if player == "X":
-        player = "O"
-    else:
-        player = "X"
 
-print_board(board)
-if tie:
-    print("Well, there was a tie!")
-else:
-    if player == "X":
-        print("Wow! You won!")
-    else:
-        print("Well, the Random Player won.")
+def render_board(board):
+    """Return an ASCII board with separators and a final LF; never print."""
+    _board(board)
+    rows = ["|".join(f" {cell} " for cell in row) for row in board]
+    return "\n---+---+---\n".join(rows) + "\n"
+
+
+def print_board(board, output_fn=None):
+    """Send the complete render to one call of the call-time output callback."""
+    output_fn = print if output_fn is None else output_fn
+    if not callable(output_fn):
+        raise ValueError("The output callback must be callable.")
+    output_fn(render_board(board))
+
+
+def parse_coordinate(text):
+    """Return a signed ASCII coordinate 0..2, or None for case-insensitive quit."""
+    if not isinstance(text, str):
+        raise ValueError("A coordinate record must be text.")
+    token = text.strip()
+    if token.casefold() == "quit":
+        return None
+    if re.fullmatch(r"[+-]?[0-9]+", token) is None:
+        raise ValueError("Enter an ASCII integer from 0 through 2 or quit.")
+    try:
+        coordinate = int(token)
+    except ValueError as error:
+        raise ValueError("The coordinate text is too long.") from error
+    _coordinate(coordinate)
+    return coordinate
+
+
+def random_player_move(board, rng=None):
+    """Choose uniformly from legal positions; return None when the game has ended."""
+    rng = _rng(rng)
+    available = legal_moves(board)
+    return _move(rng.choice([move[:] for move in available]), available) if available else None
+
+
+def play(start_player=None, input_fn=None, output_fn=None, rng=None):
+    """Play human X versus computer O; invalid input retries, quit/EOF cancels."""
+    input_fn = input if input_fn is None else input_fn
+    output_fn = print if output_fn is None else output_fn
+    if not callable(input_fn) or not callable(output_fn):
+        raise ValueError("Input and output callbacks must be callable.")
+    if start_player is not None:
+        _player(start_player)
+    rng = _rng(rng)
+    start_player = _start(start_player, rng)
+    player, board, moves = start_player, make_board(), []
+    output_fn(f"{start_player} starts. Human X; computer O. Coordinates 0..2; quit cancels.")
+
+    def finish(status):
+        output_fn("Game cancelled." if status == "cancelled" else
+                  "Draw." if status == "draw" else f"{status[0]} wins.")
+        return _result(status, board, moves, start_player)
+
+    print_board(board, output_fn)
+    while True:
+        if player == "X":
+            coordinates = []
+            for label in ("Row", "Column"):
+                try:
+                    text = input_fn(f"{label} (0..2/quit): ")
+                except (EOFError, KeyboardInterrupt):
+                    return finish("cancelled")
+                try:
+                    coordinate = parse_coordinate(text)
+                except ValueError:
+                    output_fn("Invalid coordinate. Retry the row/column pair.")
+                    break
+                if coordinate is None:
+                    return finish("cancelled")
+                coordinates.append(coordinate)
+            if len(coordinates) != 2:
+                continue
+            row, col = coordinates
+            if board[row][col] != " ":
+                output_fn("That square is occupied. Retry the row/column pair.")
+                continue
+        else:
+            row, col = random_player_move(board, rng)
+            output_fn(f"O chooses {row}, {col}.")
+        board = apply_move(board, player, row, col)
+        moves.append((player, row, col))
+        print_board(board, output_fn)
+        status = game_status(board)
+        if status != "ongoing":
+            return finish(status)
+        player = "O" if player == "X" else "X"
+
+
+def main(start_player=None, input_fn=None, output_fn=None, rng=None):
+    """Run the guarded console game and return its explicit final outcome."""
+    return play(start_player, input_fn, output_fn, rng)
+
+
+if __name__ == "__main__":
+    main()

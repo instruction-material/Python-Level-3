@@ -236,20 +236,46 @@ worksheet are checked. Four coding placeholders remain. The gate inventories
 204 source-like files including archive, 193 excluding archive. This bounded
 evidence does not certify unrestricted game termination or other course packs.
 
-## Open placeholder roles
+## Tic Tac Toe follow-up
 
-The remaining 4 folders below were inspected for source shape and dependencies,
-but their algorithms, instructions, asset loading, and interactive flows remain
-unverified. They are not marked ready merely because a solution file exists.
+The four required AM14 stages now have complete neutral learner briefs and 59
+matching deliberately incomplete callable tasks. Board helpers and candidate
+evaluation leave caller state unchanged. Console games preserve human X and
+computer O, optional reproducible/random starts, accepted-turn alternation,
+legal moves and early win/draw termination. Quit at either prompt, EOF and
+input interrupts cancel honestly. Unexpected callback errors propagate. Random
+selection uses a bounded legal list and validates its result. Imports are quiet.
 
-| Folder | Assignment family | Next verification |
-| --- | --- | --- |
-| AM14-Tic-Tac-Toe-UI | Console game | Input bounds, legal moves, win/draw states |
-| AM14-Tic-Tac-Toe-AI | Console game | Strategy, legal moves, copied-board mutation |
-| AM14-Tic-Tac-Toe-AI-Test | Strategy experiment | Deterministic adversaries and honest performance claims |
-| AM14-Tic-Tac-Toe-AI-with-Forks | Console strategy game | Fork logic, legal moves, termination |
+The basic policy retains own win, opponent block, center, original corner order
+and random side priorities. Both marks are configurable for comparisons. The
+fork policy counts distinct threat coordinates, excludes immediate wins from
+forks and adds single/multiple-fork defenses. A compulsory blocking reply must
+not itself win or fork; otherwise a candidate removing all immediate opponent
+forks is considered before the stated center/corner/side fallback.
 
-The three remaining migrated pairs were reviewed in the record/file follow-up above.
-The broader site audit still includes other courses, supported environments,
-original-source identity reconciliation, delivery-purpose distinctions, and
-bridge extension language alignment. None is closed by this source-pack gate.
+Evaluation runs fresh games with copied-board strategy callbacks and one seeded
+random source. Batches validate a documented 0..10000 bound; default1000 preserves
+the original experiment size. Counts/rates and a first-loss trace are returned.
+A zero-game batch fabricates no outcome. Standard random-opponent performance
+is reported only for that policy, starting-order and seed configuration.
+
+Twenty-three new methods bring the full native suite to167. Independent bitmask
+oracles cover all19683 symbol boards; both starts produce10956 reachable board/
+turn states checked for status, legal moves, candidate threats, forks and fresh
+state. Actual console traces cover wins, draws, retries, cancellation at each
+prompt, call-time defaults and guarded direct runs. Experiment checks cover
+seeding, counts/rates, bounded legal traces, copied callback isolation and bad
+strategy results. Complete game trees include every legal opponent response and
+every possible random fallback. Basic policy can lose when moving second; the
+revised fork reference cannot lose from an empty board for either mark/start.
+This is specific to that reference policy and finite3x3 rules, not arbitrary
+positions, learner code or callback termination.
+
+All42 coding/review pairs, one supplied-code analysis and one mathematical
+worksheet now have assignment-specific material. No active linked coding
+placeholder remains. The source-like inventory is209 including archive/198active.
+Original AM14 snapshots remain at Git baselineefd0cdfb190a9110ec1a160786e13f724a60153f;
+original public helper names and default roles are preserved. Standalone stage
+files let the IDE import each starter independently. This does not close the
+broader course/site audit, supported environments, original-source identity,
+delivery-purpose distinctions or bridge extension language alignment.

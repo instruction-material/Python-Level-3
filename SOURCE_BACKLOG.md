@@ -95,7 +95,15 @@ Reference checks use exhaustive bounded rule oracles and actual console/file
 workflows; 26 new methods bring the native suite to 144. The first simulation
 and the owned alternating-turn project retain distinct core purposes.
 
-Four placeholder roles remain open. Review each against its actual course
-brief and separate reference. A mathematical worksheet is intentionally not a
-coding starter; do not invent source only to satisfy a file-count check.
-See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.
+The Tic Tac Toe follow-up closes the final four active coding placeholders with
+complete stage-specific learner briefs, 59 matching incomplete callables and
+separate corrected references. The original catalog places UI, basic strategy,
+evaluation and fork strategy in required curriculum. Learners reuse their own
+verified earlier work rather than importing reference answers. All 167 native
+methods pass, including independent bitboard/reachable-state oracles, real
+console outcomes, reproducible experiments and all-legal-opponent policy trees.
+
+No active coding placeholder remains. A mathematical worksheet is intentionally
+not a coding starter; do not invent source only to satisfy a file-count check.
+The broader site audit still covers other courses, workflow availability,
+original-source identity and language alignment. See SOURCE_PACK_REVIEW.md.

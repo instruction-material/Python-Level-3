@@ -1,10 +1,8 @@
-# AM14 Tic Tac Toe UI
+# Tic Tac Toe UI
 
-Canonical source repository: `Python-Level-3`
+Build the playable console foundation: represent and print a board, validate human X moves, alternate turns with random legal computer O moves, and stop honestly on a win, draw or cancellation.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+- [Complete learner instructions and deliberately incomplete source](starter/README.md)
+- [Separate reference answers](solution/main.py)
 
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+This is required AM14 core work in the original curriculum. The four stages share a board representation while adding distinct UI, tactical strategy, reproducible evaluation and fork-defense work. Carry forward learner-written functions as directed in the complete brief. Reference imports are quiet and use only Python's standard library. Original snapshots remain in Git at `efd0cdfb190a9110ec1a160786e13f724a60153f`.

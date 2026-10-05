@@ -14,7 +14,7 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify thirty-eight authored coding starters remain incomplete, import quietly, run with
+  They verify 42 authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, console input/state, and AM2/AM3
@@ -90,13 +90,13 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting assignment-specific material: 4
+- Placeholder role folders awaiting assignment-specific material: 0
 - Distinct migrated starter/reference pairs awaiting contract verification: 0
-- Authored incomplete coding starter/reference pairs verified by tests: 38
+- Authored incomplete coding starter/reference pairs verified by tests: 42
 - Hybrid coding reviews with preserved supplied problem functions: 3
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 193
+- Active source-like files excluding archive: 198
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -125,9 +125,30 @@ code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
-missing coding implementation. The other 4 placeholder roles still require
-assignment-specific review. No migrated pair remains outside these authored-pack
-contract checks; that does not certify the placeholder references, unrelated
-legacy files, unrestricted performance or the broader site/course audit.
+missing coding implementation. No active linked coding placeholder remains. All 42 coding/review pairs now have
+authored learner contracts and separate checked references. This does not certify
+unrelated legacy files, other course packs or the broader site/course audit.
 
 See SOURCE_PACK_REVIEW.md for evidence, role distinctions, and the open list.
+
+## Tic Tac Toe follow-up
+
+Four required stages now have complete learner briefs and 59 matching incomplete
+callables across their self-contained packs. Learners carry forward their own
+verified board/UI code; the stages add random legal play, basic tactical rules,
+reproducible evaluation and fork creation/defense. Quiet imports, finite legal
+selection, validation, fresh state and explicit cancellation replace unsafe
+console and experiment side effects. The original default X/O roles, random
+starting-order purpose and basic priority are retained. The advanced reference
+repairs unconditional multiple-fork edge selection with deliberate forcing or
+fork-removal defenses. Evaluation is seeded, bounded and scoped to tested policies.
+
+All 167 native methods pass. The 23 new methods use bitmask oracles over 19,683
+symbol boards, enumerate 10,956 reachable board/turn states from both starts,
+check candidate/move/state mutation contracts, replay console wins/draws/cancels,
+and verify counts/rates/seeded traces. All-legal-opponent game trees with every
+random fallback find basic-policy losses when moving second and no losses for
+the revised fork reference from an empty board, for either mark and starting
+order. This result is specific to the defined reference policy and 3x3 rules,
+not arbitrary positions, learner implementations or non-terminating callbacks.
+The gate inventories 209 source-like files including archive, 198 active.
