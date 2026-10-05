@@ -1,18 +1,6 @@
-#########################
-# TIME COMPLEXITY
-#########################
-
-# Time-2: Find the big-O of each of these functions:
-# 1. f(n) = n^2 + 1000n
-# 2. f(n) = log(n) + sqrt(n)
-# 3. f(n) = 1*2*3*4*...*n
-
-# 1. O(n^2)
-# 2. O(sqrt(n))
-# 3. O(n!)
+"""Reference algorithms; mathematical classifications and traces are in README.md."""
 
 
-# Time-3: Look at the definition of weirdFunction. What is the best case scenario? What is the worst case scenario? What is the big-O of weirdFunction?
 def weird_function(nums):
     if len(nums) % 2 == 1:
         print("There are an odd amount of numbers")
@@ -21,39 +9,16 @@ def weird_function(nums):
             print(i, nums[i])
 
 
-# ANSWER: O(n)
-# weirdFunction([4,5,6]) (odd length)
-# weirdFunction([1,2,3,4,5,6]) (even length)
-# print()
-
-
-# Time-4: What is the time complexity of function1? Let n be the length of nums.
 def function1(nums):
     for num in nums:
         for i in range(3):
             print(i, num)
 
 
-# ANSWER: O(n)
-# function1([12,45,23,67])
-
-
-# Time-5: What is the time complexity of function2?
 def function2(n):
     print(n)
     if n > 2:
         function2(n // 2)
-
-
-# ANSWER: O(log(n))
-# function2(50)
-
-
-#########################
-# Linear Search
-#########################
-
-# Linear-2: The linearSearch() function takes in a list and a value, and returns true if the value is in the list and false otherwise, but it's incomplete. Fill in the missing code to create a working Linear Search function. Be sure to test the function after adding your code!
 
 
 def linear_search(l, v):
@@ -63,111 +28,77 @@ def linear_search(l, v):
     return False
 
 
-# Linear-3: What is the time complexity of Linear Search? Can you describe the best and worst case scenarios?
-# Ans: O(n)
-
-
-#########################
-# Binary Search
-#########################
-
-# Binary-2: The binarySearch() function takes in a sorted list and a value, and returns true if the value is in the list and false otherwise, but it's incomplete. Fill in the missing code to create a working Binary Search function. Be sure to test the function after adding your code!
-
-
 def bin_search_iter(lst, item):
-    low = 0
-    high = len(lst) - 1
-
+    """Already ascending input; no input scan or mutation."""
+    low, high = 0, len(lst) - 1
     while low <= high:
-        mid = (high + low) // 2
-        x = lst[mid]
-
-        if x == item:
+        mid = (low + high) // 2
+        if lst[mid] == item:
             return True
-        elif x < item:
+        if lst[mid] < item:
             low = mid + 1
         else:
             high = mid - 1
-
     return False
 
 
 def bin_search_recur(lst, item):
-    high = len(lst) - 1
-
-    if high < 0:
-        return False
-
-    mid = high // 2
-
-    if lst[mid] == item:
-        return True
-    elif lst[mid] < item:
-        return bin_search_recur(lst[mid + 1 :], item)
-    else:
-        return bin_search_recur(lst[:mid], item)
+    """Bounds-only recursion avoids the old recursive slice copying."""
+    def search(low, high):
+        if low > high:
+            return False
+        mid = (low + high) // 2
+        if lst[mid] == item:
+            return True
+        if lst[mid] < item:
+            return search(mid + 1, high)
+        return search(low, mid - 1)
+    return search(0, len(lst) - 1)
 
 
-# Binary-3: What is the time complexity of Binary Search? Can you describe the best and worst case scenarios?
-# Ans: O(log(n))
+def first_one_index(numbers):
+    """Sorted binary input is a precondition, not an O(n) validation scan."""
+    low, high = 0, len(numbers)
+    while low < high:
+        mid = (low + high) // 2
+        if numbers[mid] == 0:
+            low = mid + 1
+        else:
+            high = mid
+    if low < len(numbers) and numbers[low] == 1:
+        return low
+    return -1
 
 
-#########################
-# SELECTION SORT
-#########################
-
-# What is Selection Sort? Can you describe how it works?
-
-# list1 = [2, 5, 10, 3, 6, 1]
-# What will list1 look after 2 passes of Selection Sort?
-# Ans: list1 = [1, 2, 10, 3, 6, 5]
-
-
-# The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
 def selection_sort(lst):
+    """Descending, in-place selection; no stability promise."""
     for i in range(len(lst)):
         max_item = lst[i]
         max_item_i = i
         for j in range(i, len(lst)):
-            # YOUR CODE HERE
             if lst[j] > max_item:
                 max_item = lst[j]
                 max_item_i = j
-
-        temp = lst[i]
-        lst[i] = max_item
-        lst[max_item_i] = temp
+        lst[i], lst[max_item_i] = lst[max_item_i], lst[i]
     return lst
 
 
-# What is the time complexity of Selection Sort? Can you describe the best and worst case scenarios?
-# Ans: O(n^2)
-
-
-#########################
-# INSERTION SORT
-#########################
-
-# What is Insertion Sort? Can you describe how it works?
-
-# list2 = [3, 7, 2, 5, 10, 1]
-# What will list2 look after 3 passes of Insertion Sort?
-# Ans: list2 = [2, 3, 5, 7, 10, 1]
-
-
-# Finish the incomplete insertionSort() function below
 def insertion_sort(lst):
-    for i in range(len(lst)):
+    """Ascending, stable in-place insertion; passes begin at index one."""
+    for i in range(1, len(lst)):
         j = i
-        while j != 0 and lst[j] < lst[j - 1]:
-            temp = lst[j - 1]
-            lst[j - 1] = lst[j]
-            lst[j] = temp
+        while j > 0 and lst[j] < lst[j - 1]:
+            lst[j - 1], lst[j] = lst[j], lst[j - 1]
             j -= 1
     return lst
 
 
-# What is the time complexity of Insertion Sort? Can you describe the best and worst case scenarios?
-# Ans: O(n^2)
-# Best case - Array is already sorted
-# Worst case - Array is backwards
+selectionSort = selection_sort
+insertionSort = insertion_sort
+weirdFunction = weird_function
+
+
+if __name__ == "__main__":
+    print("First one:", first_one_index([0, 0, 0, 1, 1]))
+    print("Descending selection:", selection_sort([2, 5, 10, 3, 6, 1]))
+    print("Ascending insertion:", insertion_sort([3, 7, 2, 5, 10, 1]))
