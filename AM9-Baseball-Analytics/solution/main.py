@@ -1,4 +1,8 @@
-# List of baseball players with random stats
+"""Bubble-sort leaderboards over the original synthetic player records."""
+
+import math
+
+# List of baseball players with random stats: avg, home run, RBI
 p1 = ["B. Harper", 0.254, 27, 92]
 p2 = ["J. Soler", 0.256, 36, 91]
 p3 = ["C. Yelich", 0.329, 41, 89]
@@ -10,42 +14,54 @@ p8 = ["A. Rendon", 0.328, 29, 104]
 p9 = ["D. Lemahieu", 0.331, 22, 87]
 p10 = ["R. Acuna", 0.290, 36, 89]
 
-player_list = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+playerList = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+player_list = playerList
 
 
-# Slightly modified bubblesort to accomodate different areas. Returns the names in correct order rather than the list itself.
 def bubble_baseball(players, stat):
-    num = 0
-    if stat == "Average":
-        num = 1
-    elif stat == "Home Run":
-        num = 2
-    elif stat == "RBI":
-        num = 3
+    """Rank validated records descending by stat; return fresh names, retaining ties."""
+    if stat not in ("Average", "Home Run", "RBI"):
+        raise ValueError("stat must be Average, Home Run or RBI")
+    if not isinstance(players, list):
+        raise ValueError("players must be a list of four-field records")
+    for number, record in enumerate(players, 1):
+        if not isinstance(record, (list, tuple)) or len(record) != 4:
+            raise ValueError("record " + str(number) + " must have four fields")
+        name, average, home_runs, rbi = record
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError("record " + str(number) + " must have a nonblank name")
+        if (type(average) not in (int, float) or not 0 <= average <= 1
+                or not math.isfinite(average)):
+            raise ValueError("record " + str(number) + " average must be finite in [0, 1]")
+        if any(type(value) is not int or value < 0 for value in (home_runs, rbi)):
+            raise ValueError("record " + str(number) + " counts must be nonnegative integers")
+    field = {"Average": 1, "Home Run": 2, "RBI": 3}[stat]
+    ranked = players.copy()
+    for end in range(len(ranked) - 1, 0, -1):
+        swapped = False
+        for index in range(end):
+            if ranked[index][field] < ranked[index + 1][field]:
+                ranked[index], ranked[index + 1] = ranked[index + 1], ranked[index]
+                swapped = True
+        if not swapped:
+            break
+    return [record[0] for record in ranked]
 
-    names = []
-    for i in range(0, len(players)):
-        for j in range(0, len(players) - 1):
-            if players[j][num] > players[j + 1][num]:
-                temp = players[j]
-                players[j] = players[j + 1]
-                players[j + 1] = temp
-        names.append(players[len(players) - i - 1][0])
-    return names
+
+def print_list(names):
+    """Print one tab-indented name per line; return None."""
+    if not isinstance(names, list) or not all(isinstance(name, str) for name in names):
+        raise ValueError("names must be a list of strings")
+    for name in names:
+        print("\t" + name)
 
 
-def print_list(list1):
-    for i in range(len(list1)):
-        print("\t" + list1[i])
+def main():
+    """Display the three leaderboards without changing playerList."""
+    for number, stat in enumerate(("Average", "Home Run", "RBI")):
+        print(("\n" if number else "") + stat + " Leaderboard:")
+        print_list(bubble_baseball(playerList, stat))
 
 
-import time
-
-print("Average Leaderboard:")
-print_list(bubble_baseball(player_list, "Average"))
-time.sleep(2)
-print("\nHome Run Leaderboard:")
-print_list(bubble_baseball(player_list, "Home Run"))
-time.sleep(2)
-print("\nRBI Leaderboard:")
-print_list(bubble_baseball(player_list, "RBI"))
+if __name__ == "__main__":
+    main()
