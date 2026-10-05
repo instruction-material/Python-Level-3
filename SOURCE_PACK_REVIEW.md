@@ -142,17 +142,47 @@ placeholder roles remain unverified. The native gate inventories 195 source-like
 files including archive, 184 excluding archive. Bounded tests do not certify
 unrelated legacy references, unrestricted performance or the broader site audit.
 
+## Interactive search follow-up
+
+Three previously structural starters now have complete self-contained briefs
+and thirteen matching incomplete callable tasks. Twelve are core tasks of their
+respective assignments; the Runtime Comparator's recursive slice helper is
+explicitly optional. Original project folders/filenames, original yes feedback,
+1-100 interval, seven-try defaults and search function/parameter names remain.
+The corrected references are separate and imports do not prompt, draw random
+values, allocate workloads, print or time experiments. The original references
+are retained in Git at baseline 6b7ed239bf995cc0725e71850ba6c8b83bb0629d.
+
+| Pack | Checked assignment contract |
+| --- | --- |
+| Reverse Number Guesser | Required computer-led midpoint game, case/whitespace-normalized yes/above/below/quit, strict bound changes, invalid retry without consumed attempt, and distinct confirmed/inferred/contradiction/exhausted/cancelled outcomes. Inference is conditional on consistent feedback, not a false confirmation. |
+| Number Guesser | Optional player-led random-secret game with signed ASCII integer/range validation, accepted-attempt counting, explicit won/lost/cancelled outcomes and deterministic secret injection. A binary strategy can find every secret within seven; arbitrary repeated guesses can lose. |
+| Runtime Comparator | Required linear/iterative-binary experiment using the same multiset/targets, untimed validated warm-ups, fresh repeat copies and actual measured batch medians. Preparation, sorting, oracle, validation and printing are excluded. Original-order versus sorted hit positions are disclosed; optional sliced recursion is not benchmarked or falsely called logarithmic total work. |
+
+Twenty-one added methods bring the native suite to 101. They verify incomplete
+signatures, direct-run reminders, quiet imports without random/timing work,
+all 100 default secrets and selected smaller intervals, invalid/contradictory/
+cancelled/last-attempt flows, fresh outcome history and call-time callbacks.
+Independent membership tests cover all 364 small lists and a virtual indexed
+million-item sequence that forbids scans/slices. Injected clocks verify shared
+query order, fresh copies, warm-ups, exact timer boundaries, measured medians,
+mutation/wrong-result rejection, malformed configurations and finite clocks.
+Real guarded default runs remain bounded; tests never assert a machine-specific
+speed ratio or certify an asymptotic result from a timing sample.
+
+Thirty-five authored coding/review pairs, one supplied-code analysis and one
+worksheet are now checked. Seven coding placeholder roles remain open. The gate
+inventories 199 source-like files including archive, 188 excluding archive.
+The broader course, delivery-purpose and workflow audit is still incomplete.
+
 ## Open placeholder roles
 
-The remaining 10 folders below were inspected for source shape and dependencies,
+The remaining 7 folders below were inspected for source shape and dependencies,
 but their algorithms, instructions, asset loading, and interactive flows remain
 unverified. They are not marked ready merely because a solution file exists.
 
 | Folder | Assignment family | Next verification |
 | --- | --- | --- |
-| AM7-Reverse-Number-Guesser | Interactive binary-search game | Bounds, feedback validation, and termination |
-| AM7-Runtime-Comparator | Search timing experiment | Comparable inputs and timing boundaries |
-| AM7-Number-Guesser | Interactive guessing game | Guess limits, invalid input, and deterministic test setup |
 | AM12-Crazy-Name-Tags-Printer | File I/O | File paths, output shape, independent input data |
 | AM13-Conways-Game-of-Life | Console simulation | Rule oracle, board edges, local input assets, termination |
 | AM13-Two-Player-Conways | Console simulation | Ownership rules, turn input, local assets, duplicate legacy files |

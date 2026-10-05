@@ -14,7 +14,7 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify thirty-two authored coding starters remain incomplete, import quietly, run with
+  They verify thirty-five authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, console input/state, and AM2/AM3
@@ -27,6 +27,10 @@ Canonical source repository: `Python-Level-3`
   dictionaries and the original Juni Latin character rule with optional
   punctuation. Tests preserve the original records and six input-file copies,
   check deliberate malformed-record policies and protect file aliases.
+  Three interactive search packs add exact feedback/input domains, explicit
+  confirmed/inferred/win/loss/cancel/error states and deterministic secret tests.
+  Shared search queries, untimed warm-ups, fresh copies, measured medians and
+  timing-boundary/mutation checks replace the incomparable legacy experiment.
   Separate
   analysis tests verify fourteen supplied functions without answer comments and
   a ten-prompt mathematical worksheet with a separate reference key.
@@ -86,13 +90,13 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting assignment-specific material: 10
+- Placeholder role folders awaiting assignment-specific material: 7
 - Distinct migrated starter/reference pairs awaiting contract verification: 0
-- Authored incomplete coding starter/reference pairs verified by tests: 32
+- Authored incomplete coding starter/reference pairs verified by tests: 35
 - Hybrid coding reviews with preserved supplied problem functions: 3
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 184
+- Active source-like files excluding archive: 188
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -104,16 +108,20 @@ authored callable scaffolds and checked AM2/AM3 assignment contracts. Five
 check-in packs now have complete briefs and 27 incomplete callable exercises,
 while preserving the five original tracing/optimization problem bodies.
 The remaining three migrated pairs now have complete briefs and 12 incomplete
-callable exercises, with the punctuation helper explicitly optional. All 80
-native test methods pass; the original synthetic player records and file bytes
-remain unchanged.
+callable exercises, with the punctuation helper explicitly optional. That
+milestone had 80 native methods; original synthetic player records/file bytes
+remain unchanged. The interactive follow-up adds three full briefs and thirteen
+matching incomplete callables, including one optional recursive-search helper.
+The suite now has 101 methods; guessing outcomes and comparable measured search
+batches are independently checked without claiming arbitrary guesses guarantee
+a win or one benchmark proves Big-O.
 Completed
 references remain separate from coding starters. Analysis inputs are supplied
 code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
-missing coding implementation. The other 10 placeholder roles still require
+missing coding implementation. The other 7 placeholder roles still require
 assignment-specific review. No migrated pair remains outside these authored-pack
 contract checks; that does not certify the placeholder references, unrelated
 legacy files, unrestricted performance or the broader site/course audit.
