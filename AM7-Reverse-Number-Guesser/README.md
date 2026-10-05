@@ -1,10 +1,17 @@
-# AM7 Reverse Number Guesser
+# Reverse Number Guesser
 
-Canonical source repository: `Python-Level-3`
+Required computer-led interval game with explicit feedback, bounds and termination.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+## Roles and workflow
 
-## Structure
+- starter/README.md is the complete self-contained learner brief.
+- starter/main.py contains incomplete tasks; initial Run prints a reminder.
+- solution/main.py is the separate import-safe completed reference.
+- Confirm importing the starter in the Python IDE, or run with local Python 3.
+- Save/export completed work and verify it reopens; no third-party packages are required.
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Original folder/filenames and assignment purpose are retained. The prior reference
+at source revision 6b7ed239bf995cc0725e71850ba6c8b83bb0629d is preserved in Git.
+This follow-up deliberately corrects input, state and timing behavior instead of
+certifying that old snapshot merely because it existed. Tests live separately
+under the repository tests/ directory; they do not embed answers in the starter.

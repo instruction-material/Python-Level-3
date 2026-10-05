@@ -68,10 +68,20 @@ path and validates/reads before output opening, including alias protection.
 All original input bytes and player records remain unchanged. Seventeen new
 methods bring the native suite to 80 passing methods, including independent
 bounded ranking/parser/translation oracles, import safety and real file workflows.
-Ten coding placeholders remain open; no migrated pair is still awaiting these
+At that milestone ten coding placeholders remained open; no migrated pair awaited these
 assignment-specific contract checks.
 
-Ten placeholder roles remain open. Review each against its actual course
+The interactive search follow-up now supplies complete briefs and thirteen
+incomplete matching callables for both guessing games and Runtime Comparator.
+The reference fixes false success on invalid feedback, distinguishes inference
+from confirmation, validates accepted guesses without consuming invalid tries,
+and uses shared queries, fresh copies, independent result checks and measured
+median search timings. Computer-led and player-led purposes remain distinct;
+the former and timing project are core, the player-led game supplemental.
+The native suite now has 101 methods, including all default secrets, strict
+state/input domains, deterministic timer boundaries and bounded default runs.
+
+Seven placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a
 coding starter; do not invent source only to satisfy a file-count check.
 See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.
