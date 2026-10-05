@@ -89,7 +89,13 @@ semantics, UTF-8/LF writing, validation and input cancellation are explicit.
 All four original sample files remain unchanged. Seventeen independent methods
 bring the native suite to 118.
 
-Six placeholder roles remain open. Review each against its actual course
+The Conway follow-up completes two required packs with 24 incomplete callables,
+full simulation/ownership contracts and ten unchanged original input assets.
+Reference checks use exhaustive bounded rule oracles and actual console/file
+workflows; 26 new methods bring the native suite to 144. The first simulation
+and the owned alternating-turn project retain distinct core purposes.
+
+Four placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a
 coding starter; do not invent source only to satisfy a file-count check.
 See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.

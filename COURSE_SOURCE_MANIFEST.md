@@ -14,7 +14,7 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify thirty-six authored coding starters remain incomplete, import quietly, run with
+  They verify thirty-eight authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, console input/state, and AM2/AM3
@@ -90,13 +90,13 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting assignment-specific material: 6
+- Placeholder role folders awaiting assignment-specific material: 4
 - Distinct migrated starter/reference pairs awaiting contract verification: 0
-- Authored incomplete coding starter/reference pairs verified by tests: 36
+- Authored incomplete coding starter/reference pairs verified by tests: 38
 - Hybrid coding reviews with preserved supplied problem functions: 3
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 190
+- Active source-like files excluding archive: 193
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -125,7 +125,7 @@ code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
-missing coding implementation. The other 6 placeholder roles still require
+missing coding implementation. The other 4 placeholder roles still require
 assignment-specific review. No migrated pair remains outside these authored-pack
 contract checks; that does not certify the placeholder references, unrelated
 legacy files, unrestricted performance or the broader site/course audit.
