@@ -207,16 +207,43 @@ worksheet are checked. Six coding placeholders remain. The gate inventories
 201 source-like files including archive, 190 excluding archive. Bounded tests
 do not certify unrelated references, unrestricted performance or the site audit.
 
+## Conway simulation and ownership follow-up
+
+Both required Conway packs now have full learner contracts and 24 matching
+incomplete callable tasks. Boolean B3/S23 uses finite nonwrapping boundaries and
+synchronous fresh generations. The owned variant retains surviving owners,
+uses majority births, alternates O/X independently of counts, and validates
+grow-dead/kill-opponent pairs before editing. Edits precede each generation;
+initial, post-edit and post-generation extinction are checked separately.
+Cancellation and turn limits never manufacture a winner. Full-board automatic
+passes and bounded defaults are explicit authored policies; continuous modes
+retain the original purposes without promising natural termination.
+
+All ten original input blobs remain unchanged and are copied byte-for-byte
+into learner starters. Original unsafe/conflicting references remain frozen in
+Git at efd0cdfb190a9110ec1a160786e13f724a60153f. Both legacy filenames now resolve
+their own sibling main.py as quiet compatibility entry points.
+
+Twenty-six new methods bring the native suite to 144. Independent exhaustive
+2-by-3 Boolean and owned-board oracles cover finite rules and ownership. Real
+file/console checks cover context closure, literal original assets, domain and
+mutation contracts, bounded and continuous selection, legal phase order,
+invalid-pair retry, each cancellation prompt, pass/win/draw/limit outcomes,
+default callbacks, quiet imports and direct compatibility entry points.
+
+Thirty-eight authored coding/review pairs, one supplied-code analysis and one
+worksheet are checked. Four coding placeholders remain. The gate inventories
+204 source-like files including archive, 193 excluding archive. This bounded
+evidence does not certify unrestricted game termination or other course packs.
+
 ## Open placeholder roles
 
-The remaining 6 folders below were inspected for source shape and dependencies,
+The remaining 4 folders below were inspected for source shape and dependencies,
 but their algorithms, instructions, asset loading, and interactive flows remain
 unverified. They are not marked ready merely because a solution file exists.
 
 | Folder | Assignment family | Next verification |
 | --- | --- | --- |
-| AM13-Conways-Game-of-Life | Console simulation | Rule oracle, board edges, local input assets, termination |
-| AM13-Two-Player-Conways | Console simulation | Ownership rules, turn input, local assets, duplicate legacy files |
 | AM14-Tic-Tac-Toe-UI | Console game | Input bounds, legal moves, win/draw states |
 | AM14-Tic-Tac-Toe-AI | Console game | Strategy, legal moves, copied-board mutation |
 | AM14-Tic-Tac-Toe-AI-Test | Strategy experiment | Deterministic adversaries and honest performance claims |
