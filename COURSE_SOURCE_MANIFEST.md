@@ -14,11 +14,16 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify twenty-four authored coding starters remain incomplete, import quietly, run with
+  They verify twenty-nine authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, console input/state, and AM2/AM3
-  integer domains, list generation, ordered modes and mutation contracts. Separate
+  integer domains, list generation, ordered modes and mutation contracts. Five
+  check-in packs add bounds-only searches, actual bubble-sort early cutoff,
+  sort directions/pass traces, shared two-sort timing inputs and validated
+  character-file read/write workflows. Three hybrid reviews preserve five
+  supplied problem functions, checked against a frozen original-source fixture.
+  Separate
   analysis tests verify fourteen supplied functions without answer comments and
   a ten-prompt mathematical worksheet with a separate reference key.
 
@@ -78,11 +83,12 @@ Canonical source repository: `Python-Level-3`
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
 - Placeholder role folders awaiting assignment-specific material: 10
-- Distinct migrated starter/reference pairs awaiting contract verification: 8
-- Authored incomplete coding starter/reference pairs verified by tests: 24
+- Distinct migrated starter/reference pairs awaiting contract verification: 3
+- Authored incomplete coding starter/reference pairs verified by tests: 29
+- Hybrid coding reviews with preserved supplied problem functions: 3
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 171
+- Active source-like files excluding archive: 180
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -90,14 +96,17 @@ The authored material now covers the six initial algorithm packs plus AM1's
 three console review projects, AM5's five recursion/string projects, the first
 check-in's running-sum project, both AM6 analysis projects, and six sorting packs
 from AM8 through AM11. Three previously migrated practice pairs now also have
-authored callable scaffolds and checked AM2/AM3 assignment contracts. Completed
+authored callable scaffolds and checked AM2/AM3 assignment contracts. Five
+check-in packs now have complete briefs and 27 incomplete callable exercises,
+while preserving the five original tracing/optimization problem bodies.
+Completed
 references remain separate from coding starters. Analysis inputs are supplied
 code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
 missing coding implementation. The other 10 placeholder roles still require
-assignment-specific review. The remaining 8 migrated pairs have distinct content but
+assignment-specific review. The remaining 3 migrated pairs have distinct content but
 have not all passed these authored-pack correctness checks.
 
 See SOURCE_PACK_REVIEW.md for evidence, role distinctions, and the open list.

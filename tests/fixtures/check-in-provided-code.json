@@ -1,0 +1,25 @@
+{
+  "sourceRevision": "6ed2caf76313b92163e3c450f6bd7192e518b9a5",
+  "functions": [
+    {
+      "path": "AM-Check-In-1/starter/main.py",
+      "source": "def strangeFunction(n):\n    print(n)\n    if n > 2:\n        strangeFunction(n - 1)\n        strangeFunction(n - 2)\n"
+    },
+    {
+      "path": "AM-Check-In-2/starter/main.py",
+      "source": "def weirdFunction(nums):\n    if len(nums) % 2 == 1:\n        print(\"There are an odd amount of numbers\")\n    else:\n        for i in range(len(nums)):\n            print(i, nums[i])\n"
+    },
+    {
+      "path": "AM-Check-In-2/starter/main.py",
+      "source": "def function1(nums):\n    for num in nums:\n        for i in range(3):\n            print(i, num)\n"
+    },
+    {
+      "path": "AM-Check-In-2/starter/main.py",
+      "source": "def function2(n):\n    print(n)\n    if n > 2:\n        function2(n // 2)\n"
+    },
+    {
+      "path": "AM-Check-In-3/starter/main.py",
+      "source": "def bubbleSort(lst):\n    for i in range(0, len(lst)):\n        for j in range(0, len(lst) - 1):\n            if lst[j] > lst[j + 1]:\n                temp = lst[j]\n                lst[j] = lst[j + 1]\n                lst[j + 1] = temp\n    return lst\n"
+    }
+  ]
+}

@@ -61,15 +61,8 @@ def function2(n):
 
 # The selectionSort() function below takes in a list and sorts the numbers from largest to smallest, but it's incomplete. Finish what's missing.
 def selectionSort(lst):
-    for i in range(len(lst)):
-        maxItem = lst[i]
-        maxItemI = i
-        for j in range(i, len(lst)):
-            # YOUR CODE HERE
-            pass
-
-    return lst
-
+    """Sort descending in place and return the same list."""
+    raise NotImplementedError("Implement selectionSort before calling it.")
 
 # What is the time complexity of Selection Sort?
 
@@ -85,13 +78,40 @@ def selectionSort(lst):
 
 # Finish the incomplete insertionSort() function below
 def insertionSort(lst):
-    for i in range(len(lst)):
-        j = i
-        # YOUR CODE HERE
-
-    return lst
-
+    """Sort ascending in place and return the same list."""
+    raise NotImplementedError("Implement insertionSort before calling it.")
 
 # What is the time complexity of Insertion Sort?
 
 # What is the worst case scenario for Insertion Sort? What is the best case?
+
+
+# Searching exercises; supplied complexity functions above stay unchanged.
+
+def linear_search(l, v):
+    """Return Boolean membership without changing the list."""
+    raise NotImplementedError("Implement linear_search before calling it.")
+
+
+def bin_search_iter(lst, item):
+    """Return Boolean membership in an already ascending sequence, using bounds."""
+    raise NotImplementedError("Implement bin_search_iter before calling it.")
+
+
+def bin_search_recur(lst, item):
+    """Use recursive bounds without copying/slicing the already ascending sequence."""
+    raise NotImplementedError("Implement bin_search_recur before calling it.")
+
+
+def first_one_index(numbers):
+    """Return the first 1 index, or -1, in an already sorted binary sequence."""
+    raise NotImplementedError("Implement first_one_index before calling it.")
+
+
+selection_sort = selectionSort
+insertion_sort = insertionSort
+weird_function = weirdFunction
+
+
+if __name__ == "__main__":
+    print("Implement the searching/sorting TODOs; predict the supplied code before running examples.")

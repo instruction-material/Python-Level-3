@@ -41,3 +41,44 @@ def strangeFunction(n):
 # makeWord("ok##") -> ""
 # makeWord("ti#ger") -> "tger"
 # makeWord("t###") -> ""
+
+
+# Callable exercises: see README.md for domains and self-checks.
+
+def middle_letters(word):
+    """Return the middle of a string; empty/short words return an empty string."""
+    raise NotImplementedError("Implement middle_letters before calling it.")
+
+
+def second_word(sentence):
+    """Return the second whitespace-delimited word; fewer than two raises ValueError."""
+    raise NotImplementedError("Implement second_word before calling it.")
+
+
+def num_pins(rows):
+    """Recursively return the pin total for a nonnegative integer number of rows."""
+    raise NotImplementedError("Implement num_pins before calling it.")
+
+
+def lucas(n):
+    """Recursively return the one-based Lucas term; n must be a positive integer."""
+    raise NotImplementedError("Implement lucas before calling it.")
+
+
+def make_word(keystrokes):
+    """Process # as backspace, ignoring it when the stack is empty."""
+    raise NotImplementedError("Implement make_word before calling it.")
+
+
+def main():
+    """Collect words and demonstrate the original push/pop stack tasks."""
+    raise NotImplementedError("Implement main before calling it.")
+
+
+# Preserve the names used in the original prompt and reference.
+makeWord = make_word
+strange_function = strangeFunction
+
+
+if __name__ == "__main__":
+    print("Implement the TODO functions and main; then replace this reminder with main().")

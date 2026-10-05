@@ -1,105 +1,89 @@
-import copy
+"""Import-safe two-sort experiment; measured medians are not Big-O proofs."""
+
+import math
 import random
-import time
-
-# Algorithm Comparison
-
-# Copy in the code for each of the sorting functions that you have previously written, and write some tests to determine how fast each algorithm runs in a given scenario. Some possible scenarios to consider testing would be when the list to be sorted is already completely random, when it is already sorted, when it is sorted and reversed, and how many elements are in each of these lists (eg. n = 100, n = 1000, n = 2000, etc.). Can you think of any other scenarios?
-
-
-# You can copy a list with this line of code: list2 = copy.deepcopy(list1)
-# You can sort a list in reverse if you write list2.sort(reverse=True)
-
-# Copy over your functions for insertion sort and selection sort here.
+from statistics import median
+from time import perf_counter
 
 
 def selection_sort2(lst):
     for i in range(len(lst)):
-        min_item = lst[i]
-        min_item_i = i
-        for j in range(i, len(lst)):
-            if lst[j] < min_item:
-                min_item = lst[j]
-                min_item_i = j
-
-        temp = lst[i]
-        lst[i] = min_item
-        lst[min_item_i] = temp
+        minimum = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[minimum]:
+                minimum = j
+        lst[i], lst[minimum] = lst[minimum], lst[i]
     return lst
 
 
 def insertion_sort2(lst):
-    for i in range(len(lst)):
+    for i in range(1, len(lst)):
         j = i
-        while j != 0 and lst[j] < lst[j - 1]:
-            temp = lst[j - 1]
-            lst[j - 1] = lst[j]
-            lst[j] = temp
+        while j > 0 and lst[j] < lst[j - 1]:
+            lst[j - 1], lst[j] = lst[j], lst[j - 1]
             j -= 1
     return lst
 
 
-# create a variable for n
-n = 2000
+def _integer(value, name, minimum, maximum=None):
+    if (isinstance(value, bool) or not isinstance(value, int)
+            or value < minimum or (maximum is not None and value > maximum)):
+        raise ValueError(name + " is outside the documented integer bounds")
 
-# generate a list with n random numbers in it
-nums = []
-for i in range(n):
-    nums.append(random.randint(1, n * 10))
-# make 3 copies of the list with copy.deepcopy(list1)
-nums2 = copy.deepcopy(nums)
-nums3 = copy.deepcopy(nums)
-nums4 = copy.deepcopy(nums)
 
-# sort and reverse two copies of the list with list3.sort(reverse=True)
-nums3.sort(reverse=True)
-nums4.sort(reverse=True)
+def make_workloads(n, seed=0):
+    _integer(n, "n", 0, 2000)
+    if isinstance(seed, bool) or not isinstance(seed, int):
+        raise ValueError("seed must be an integer, not bool")
+    rng = random.Random(seed)
+    values = [rng.randint(1, max(1, n * 10)) for _ in range(n)]
+    ordered = sorted(values)
+    return {"random": values, "sorted": ordered, "reversed": ordered[::-1]}
 
-# Find the times for all 4 tests
 
-# selection sort random order
-start_select = time.time()
-selection_sort2(nums)
-stop_select = time.time()
+def time_sort(sorter, values):
+    expected = sorted(values)
+    working = values.copy()
+    start = perf_counter()
+    result = sorter(working)
+    elapsed = perf_counter() - start
+    if result != expected:
+        raise AssertionError("Sorter did not return the correct ascending list")
+    if not math.isfinite(elapsed) or elapsed < 0:
+        raise RuntimeError("Clock did not produce a finite nonnegative duration")
+    return elapsed
 
-# selection sort on reversed list
-start_select_reverse = time.time()
-selection_sort2(nums3)
-stop_select_reverse = time.time()
 
-# insertion sort random order
-start_insert = time.time()
-insertion_sort2(nums2)
-stop_insert = time.time()
+def benchmark(sizes=(100, 300), repeats=3, seed=0, sorters=None):
+    sizes = tuple(sizes)
+    if not 1 <= len(sizes) <= 5:
+        raise ValueError("Use one to five sizes")
+    for n in sizes:
+        _integer(n, "size", 0, 2000)
+    _integer(repeats, "repeats", 1, 10)
+    if isinstance(seed, bool) or not isinstance(seed, int):
+        raise ValueError("seed must be an integer, not bool")
+    if sorters is None:
+        sorters = {"selection": selection_sort2, "insertion": insertion_sort2}
+    if (not isinstance(sorters, dict) or not 1 <= len(sorters) <= 2
+            or not all(callable(sorter) for sorter in sorters.values())):
+        raise ValueError("Use one or two named callable sorters")
+    rows = []
+    for n in sizes:
+        shapes = make_workloads(n, seed)
+        for shape, values in shapes.items():
+            for name, sorter in sorters.items():
+                samples = [time_sort(sorter, values) for _ in range(repeats)]
+                rows.append({
+                    "algorithm": name, "shape": shape, "n": n,
+                    "repeats": repeats, "seconds": median(samples),
+                })
+    return rows
 
-# insertion sort on reversed list
-start_insert_reverse = time.time()
-insertion_sort2(nums4)
-stop_insert_reverse = time.time()
 
-# print results
-print(
-    "Selection sort time for n="
-    + str(n)
-    + ": "
-    + str(round(stop_select - start_select, 5))
-)
-print(
-    "Selection sort reversed time for n="
-    + str(n)
-    + ": "
-    + str(round(stop_select_reverse - start_select_reverse, 5))
-)
-
-print(
-    "Insertion sort time for n="
-    + str(n)
-    + ": "
-    + str(round(stop_insert - start_insert, 5))
-)
-print(
-    "Insertion sort reversed time for n="
-    + str(n)
-    + ": "
-    + str(round(stop_insert_reverse - start_insert_reverse, 5))
-)
+if __name__ == "__main__":
+    print("Measured medians: 3 runs; generation, copying, validation and printing excluded.")
+    print("Small two-sort review experiment, not Big-O proof.")
+    for row in benchmark():
+        print(row["algorithm"], row["shape"], row["n"],
+              format(row["seconds"], ".9f"), "seconds")

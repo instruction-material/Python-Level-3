@@ -43,7 +43,23 @@ tied modes. All sixteen fundamentals questions are present in the learner brief.
 Integer domains, a practical Hailstone transition cap, empty-list policies and
 mutation/case contracts are tested. Five function-review tasks remain required;
 factorial and Hailstone remain optional iterative challenges before AM4 recursion.
-Eight other migrated pairs still need assignment-specific contract verification.
+The next check-in follow-up verifies five of the eight other migrated pairs.
+
+The three main check-ins retain five supplied functions for tracing, complexity
+analysis and optimization. Their complete briefs and two additional core review
+projects now have 27 incomplete callable exercises. Reference corrections add
+the missing logarithmic first-one search, remove recursive binary-search slicing,
+repair the descending selection trace, implement the requested bubble early
+cutoff, and distinguish readlines from word splitting. The two-sort experiment
+uses all three shared input shapes and measured medians with fresh copies.
+Character-file contracts preserve meaningful spaces, reject malformed records
+deliberately, validate before overwriting, and protect input/output aliases.
+All 63 native test methods pass, including original-body preservation, independent
+bounded oracles, mutation/identity and exact file-byte regressions.
+
+Three migrated pairs still need assignment-specific verification:
+AM9-Baseball-Analytics, AM12-File-IO-and-Dictionaries and
+AM12-Juni-Latin-with-File-IO. These, plus ten coding placeholders, remain open.
 
 Ten placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a

@@ -73,10 +73,42 @@ limit without float arithmetic. The reference's actual large input and bounded
 oracles are tested; this is not a proof of general Hailstone convergence or of
 unbounded performance.
 
-Twenty-four authored coding pairs, one supplied-code analysis and one worksheet
-are checked. Eight distinct migrated pairs still await full contract verification;
-ten genuine coding placeholder roles remain. Source-file counts are inventory,
-not correctness evidence.
+That milestone checked twenty-four authored coding pairs, one supplied-code
+analysis and one worksheet. Eight distinct migrated pairs then awaited full
+contract verification; ten genuine coding placeholder roles remain.
+Source-file counts are inventory, not correctness evidence.
+
+## Check-in follow-up
+
+Five previously migrated pairs now have self-contained learner briefs and 27
+intentionally incomplete callable exercises. Three main reviews are hybrid
+analysis/coding packs: the five original strangeFunction, weirdFunction,
+function1, function2 and bubbleSort bodies remain problem inputs, not answers.
+A frozen fixture identifies source revision
+6ed2caf76313b92163e3c450f6bd7192e518b9a5 and tests their exact syntax trees.
+
+| Pack | Checked assignment contract |
+| --- | --- |
+| Check-In 1 | Middle/second strings, one-based Lucas numbers, recursive bowling pins, literal backspaces and the original random push/pop walkthrough. Small practice domains make recursion costs explicit. |
+| Check-In 2 | Boolean searches use bounds rather than copying or validation scans; first-one search is logarithmic. Selection remains descending; insertion remains ascending/stable. Separate keys contain exact original expressions and corrected pass traces. |
+| Check-In 2 Additional | Two ascending sorts use shared random/sorted/reversed multisets, fresh copies and measured medians. Preparation, copying, oracle, validation and printing stay outside timing; bounded small defaults remain distinct from AM11's five-sort experiment. |
+| Check-In 3 | Original bubble baseline stays available; the improved sort actually stops after one no-swap pass. Indexed stable merge and ordered pivot-value partitions preserve inputs. Unicode character files retain literal spaces, deliberate record errors and separate answers. |
+| Check-In 3 Additional | ASCII file sorting returns fresh lists, retains duplicates and rejects invalid records with line numbers. Validation precedes output opening; source bytes survive malformed input and path/symlink/hardlink output aliases. |
+
+The suite now has 63 methods. Eighteen added methods check incomplete signatures,
+quiet imports and direct-run reminders; all 3280 small backspace strings; all
+364 small numeric lists; every binary boundary through length 128; and indexed
+virtual million-item sequences that forbid scanning, copying and slicing.
+Independent checks cover stable record identity, actual baseline/early-cutoff
+comparison counts, pass traces, all small merge pairs, literal file bytes,
+empty/malformed/missing files, alias protection, timing boundaries and medians
+from injected clocks. Reference demonstrations run with bounded defaults.
+
+Twenty-nine authored coding/review pairs, one separate supplied-code analysis
+and one worksheet are checked. Three migrated pairs and ten coding placeholders
+remain open. The native gate inventories 191 source-like files including archive,
+180 excluding archive. These counts and bounded tests do not certify unrelated
+legacy files, unrestricted performance, or the broader site/course audit.
 
 ## Open placeholder roles
 
@@ -97,7 +129,7 @@ unverified. They are not marked ready merely because a solution file exists.
 | AM14-Tic-Tac-Toe-AI-Test | Strategy experiment | Deterministic adversaries and honest performance claims |
 | AM14-Tic-Tac-Toe-AI-with-Forks | Console strategy game | Fork logic, legal moves, termination |
 
-The remaining 8 distinct migrated pairs also need their own correctness review.
+The remaining 3 distinct migrated pairs also need their own correctness review.
 The broader site audit still includes other courses, supported environments,
 original-source identity reconciliation, delivery-purpose distinctions, and
 bridge extension language alignment. None is closed by this source-pack gate.

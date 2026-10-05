@@ -1,20 +1,9 @@
-###########################
-
-# BUBBLE SORT
-
-###########################
-
-# What is Bubble Sort? Can you describe how it works?
-
-# list1 = [4, 8, 2, 1, 10, 0]
-# What does the list1 look like after 2 passes of Bubble Sort?
-# list1 = [2, 1, 4, 0, 8, 10]
+"""Advanced-sort/file review reference. Traces and explanations are in README.md."""
 
 
-# Change the bubbleSort() function below to be more efficient (so that there's an early cutoff).
-def bubble_sort(lst):
-    for i in range(len(lst) - 1):
-        for j in range(len(lst) - i - 1):
+def bubbleSort(lst):
+    for i in range(0, len(lst)):
+        for j in range(0, len(lst) - 1):
             if lst[j] > lst[j + 1]:
                 temp = lst[j]
                 lst[j] = lst[j + 1]
@@ -22,100 +11,74 @@ def bubble_sort(lst):
     return lst
 
 
-# What is the time complexity of Bubble Sort? Can you describe the best and worst case scenarios
-# Ans: O(n^2)
-# Ans: Best case - already in order
-# Worst case - reverse order
+
+def bubble_sort(lst):
+    """Stable ascending in-place sort with an actual no-swap early cutoff."""
+    for end in range(len(lst) - 1, 0, -1):
+        swapped = False
+        for j in range(end):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+                swapped = True
+        if not swapped:
+            break
+    return lst
 
 
-###########################
-
-# MERGE SORT
-
-###########################
-
-# What is Merge Sort? Can you describe how it works?
-
-
-# The function merge() combines two sorted lists together. Finish the incomplete merge() function below
-def merge(list_a, list_b):
+def merge(listA, listB):
+    """Stable, indexed linear merge; already sorted inputs are unchanged."""
     result = []
-    while len(list_a) > 0 and len(list_b) > 0:
-        # YOUR CODE HERE
-        if list_a[0] < list_b[0]:
-            result.append(list_a.pop(0))
+    left = right = 0
+    while left < len(listA) and right < len(listB):
+        if listA[left] <= listB[right]:
+            result.append(listA[left])
+            left += 1
         else:
-            result.append(list_b.pop(0))
-
-    return result + list_a + list_b
-
-
-# What is the time complexity of Merge Sort? Can you describe the best and worst case scenarios?
-# Ans: O(nlog(n)
+            result.append(listB[right])
+            right += 1
+    result.extend(listA[left:])
+    result.extend(listB[right:])
+    return result
 
 
-###########################
-
-# QUICKSORT
-
-###########################
-
-# What is Quicksort? Can you describe how it works?
-
-
-# The function partition() takes in a list and pivot is incomplete. Finish implementing the function below
 def partition(lst, pivot):
-    less = []
-    eq = []
-    great = []
-
-    # YOUR CODE HERE
-    for num in lst:
-        if num < pivot:
-            less.append(num)
-        elif num == pivot:
-            eq.append(num)
+    less, eq, great = [], [], []
+    for value in lst:
+        if value < pivot:
+            less.append(value)
+        elif value == pivot:
+            eq.append(value)
         else:
-            great.append(num)
-
+            great.append(value)
     return less, eq, great
 
 
-# What is the time complexity of Quicksort, can you describe best and worst case scenarios?
-# Ans: O(nlog(n)) best case and O(n^2) worst case
-# Ans: Best case - pick good pivot every time so that less partition and greater partition are roughly equal
-# Worst case - pick bad pivot so every time all the other elements end up on one side
-###########################
+def write_letters(word, path="file.txt"):
+    """Validate the word before opening an output file."""
+    if not isinstance(word, str) or "\n" in word or "\r" in word:
+        raise ValueError("word must be a string without CR/LF")
+    with open(path, "w", encoding="utf-8", newline="\n") as output:
+        for letter in word:
+            output.write(letter + "\n")
 
-# FILE INPUT/OUTPUT
 
-###########################
+def read_letter_counts(path="file.txt"):
+    """Count exact characters without stripping meaningful spaces."""
+    counts = {}
+    with open(path, encoding="utf-8") as source:
+        for number, line in enumerate(source, 1):
+            letter = line.removesuffix("\n")
+            if len(letter) != 1:
+                raise ValueError("line " + str(number) + " must contain one character")
+            counts[letter] = counts.get(letter, 0) + 1
+    return counts
 
-# Ask the user to input a word. Then, write the word letter by letter into an external file.
-word = input("Please enter a word: ")
 
-o = open("file.txt", "w+")
+def main():
+    word = input("Please enter a word: ")
+    write_letters(word)
+    print(read_letter_counts())
 
-for i in word:
-    o.write(i + "\n")
 
-o.close()
-
-# Reading from the file that you just created, create a dictionary where the keys are the unique letters of your input and the values are how often those letters occur.
-
-d = {}
-
-f = open("file.txt")
-lines = f.readlines()
-lines = [line.strip() for line in lines]
-f.close()
-
-for letter in lines:
-    if letter in d:
-        d[letter] += 1
-    else:
-        d[letter] = 1
-print(d)
-
-# What's the difference between read() and readlines()?
-# Ans: read() grabs the entire contents of a file and stores it into a string. readlines() combines read() and split() functions into one by automatically storing the words in a list
+if __name__ == "__main__":
+    main()
