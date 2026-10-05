@@ -81,7 +81,15 @@ the former and timing project are core, the player-led game supplemental.
 The native suite now has 101 methods, including all default secrets, strict
 state/input domains, deterministic timer boundaries and bounded default runs.
 
-Seven placeholder roles remain open. Review each against its actual course
+The Crazy Name Tags follow-up supplies the missing incomplete coding starter and
+full learner brief. Core single-file output retains the original three orders
+and the extra LF after each section. The separate-file extension remains optional.
+Reference imports no longer prompt or overwrite files; literal Unicode/case/space
+semantics, UTF-8/LF writing, validation and input cancellation are explicit.
+All four original sample files remain unchanged. Seventeen independent methods
+bring the native suite to 118.
+
+Six placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a
 coding starter; do not invent source only to satisfy a file-count check.
 See SOURCE_PACK_REVIEW.md. These repairs do not complete the full source audit.

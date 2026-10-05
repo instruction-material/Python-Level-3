@@ -14,7 +14,7 @@ Canonical source repository: `Python-Level-3`
 - The verification gate checks for this manifest, the source backlog ledger, source-like files, removed Replit metadata, and any repo-specific readiness files.
 - Project-specific unit tests or build commands should still be run inside individual project folders when a project includes its own test harness.
 - The gate also runs the standard-library algorithm pack tests in `tests/`.
-  They verify thirty-five authored coding starters remain incomplete, import quietly, run with
+  They verify thirty-six authored coding starters remain incomplete, import quietly, run with
   exercise feedback, and match their reference function signatures. Reference
   checks cover boundaries, large integer conversion, search behavior, recursion,
   literal strings, bracket-only validation, console input/state, and AM2/AM3
@@ -90,13 +90,13 @@ Canonical source repository: `Python-Level-3`
 - Active linked folders: 44
 - Archived inactive/support folders: 8
 - Wrapper project folders: 44
-- Placeholder role folders awaiting assignment-specific material: 7
+- Placeholder role folders awaiting assignment-specific material: 6
 - Distinct migrated starter/reference pairs awaiting contract verification: 0
-- Authored incomplete coding starter/reference pairs verified by tests: 35
+- Authored incomplete coding starter/reference pairs verified by tests: 36
 - Hybrid coding reviews with preserved supplied problem functions: 3
 - Supplied-code analysis starter/reference pairs verified by tests: 1
 - Mathematical worksheet/reference pairs reviewed separately: 1
-- Active source-like files excluding archive: 188
+- Active source-like files excluding archive: 190
 
 Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -112,16 +112,20 @@ callable exercises, with the punctuation helper explicitly optional. That
 milestone had 80 native methods; original synthetic player records/file bytes
 remain unchanged. The interactive follow-up adds three full briefs and thirteen
 matching incomplete callables, including one optional recursive-search helper.
-The suite now has 101 methods; guessing outcomes and comparable measured search
+That milestone had 101 methods; guessing outcomes and comparable measured search
 batches are independently checked without claiming arbitrary guesses guarantee
-a win or one benchmark proves Big-O.
+a win or one benchmark proves Big-O. Crazy Name Tags adds four core incomplete
+callables and one optional separate-file callable, with complete file/console
+contracts. Seventeen new methods bring the native suite to 118; independent literal
+character oracles, exact UTF-8/LF writes, preserved sample blobs, validation before
+overwrite, quiet imports, cancellation and optional alias checks are covered.
 Completed
 references remain separate from coding starters. Analysis inputs are supplied
 code or a worksheet, not arbitrary unfinished algorithms.
 
 The Big-O starter intentionally has no Python file: its README is the complete
 mathematical task. Counting Python files alone would incorrectly label it as a
-missing coding implementation. The other 7 placeholder roles still require
+missing coding implementation. The other 6 placeholder roles still require
 assignment-specific review. No migrated pair remains outside these authored-pack
 contract checks; that does not certify the placeholder references, unrelated
 legacy files, unrestricted performance or the broader site/course audit.
