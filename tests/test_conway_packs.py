@@ -18,7 +18,49 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 SINGLE = "AM13-Conways-Game-of-Life"
 MULTI = "AM13-Two-Player-Conways"
-BASELINE = "efd0cdfb190a9110ec1a160786e13f724a60153f"
+# Frozen LF and configured CRLF digests from baseline efd0cdfb190a9110ec1a160786e13f724a60153f.
+ASSET_DIGESTS = {
+    "AM13-Conways-Game-of-Life/b-heptomino-shuttle.in": (
+        "7a36638a57420f796c466c4395b1231e61ba0404f29d88b309d33c56a225fbf4",
+        "ab3309cb01d9ff922be2574106ceaf9a119067570da54a3b2c8cf75bb5f5c6c1",
+    ),
+    "AM13-Conways-Game-of-Life/boat.in": (
+        "68fb15811ce8e5c1f3b118dd7d95b57fbf26bad89c6ea171261aa5c49c348013",
+        "96df9b8467c5a4a1f754af34a1c0fa5ed3d5a1070a348965ea0c387f4a6066c9",
+    ),
+    "AM13-Conways-Game-of-Life/design1.in": (
+        "7923908dd9291bf04ef3d3ca2b303d07ece53192dd8d5c148c9560ea175b1e8a",
+        "2e543fc99f8ebf87d29308fe25492f02eb6460b98bdcfa823d672cb8818f870c",
+    ),
+    "AM13-Conways-Game-of-Life/f-pentomino.in": (
+        "9869ce538ea1808027456e429a39a2997fe7f8852b36f7d79cbff89032cd9c70",
+        "a462f9ec31fae8af72f4e8204ceaf4039fc1ee3b00865fca8c8efa36c94a24d3",
+    ),
+    "AM13-Conways-Game-of-Life/hertz-oscillator.in": (
+        "600584759ce1122384b96c56b26be689af4b7906aa508477f5a80b9a05e3c345",
+        "b1e0e55a660baa77af76e1872ed91eca50d8b5597d1b496812d4c7c8529a6679",
+    ),
+    "AM13-Conways-Game-of-Life/repeat.in": (
+        "48e3ffa23891bc27613df3aa2ec73f5fc0542f34ecca3323261635e724433377",
+        "987c05f46519c516cf4140d53e128140b5380a393a44219d4647befdb0c4b961",
+    ),
+    "AM13-Conways-Game-of-Life/spaceship.in": (
+        "21eeb302c63a9d362add7b82e7fd146b7764fc320cff64e5cf13e0429008f654",
+        "f8a591afe7e7f7b07404dab0b812fc4a8be7fafaaaebc44128a371794c3cd9dc",
+    ),
+    "AM13-Conways-Game-of-Life/square.in": (
+        "4cb6c005cc3d39e44353c489a4dc13776903d270a50186e8fe05a018537fa6e7",
+        "661aecb29d2e59306f628be478c05441920533bbc423a53d2d32e2b4af18d5ed",
+    ),
+    "AM13-Two-Player-Conways/player1.in": (
+        "b0352395372fd463e6a0c9a2f10a8be4650978fa1bb0c4ef9865f18ef267683b",
+        "352173b777116ab32df5a3bb7ace2e9aef7529dce928badb10306d50d6c898fc",
+    ),
+    "AM13-Two-Player-Conways/player2.in": (
+        "43cd440da61a1ed7d770c2bdfa3dc552085337d1c866c1881cbe3e49c72932f3",
+        "c13377f8a56124aae81a3b89c5b003b7fc5bdaa5728022e0aef7d8c4a4ad31fa",
+    ),
+}
 
 
 def load(folder, role="solution", filename="main.py"):
@@ -114,12 +156,9 @@ class ConwayPacks(unittest.TestCase):
             assets = sorted((ROOT / folder / "solution").glob("*.in"))
             self.assertEqual(len(assets), expected_count)
             for asset in assets:
-                original = subprocess.check_output(["git", "show", f"{BASELINE}:{folder}/solution/{asset.name}"],
-                                                   cwd=ROOT)
                 local = asset.read_bytes()
-                self.assertIn(hashlib.sha256(local).digest(),
-                              (hashlib.sha256(original).digest(),
-                               hashlib.sha256(original.replace(b"\n", b"\r\n")).digest()))
+                self.assertIn(hashlib.sha256(local).hexdigest(),
+                              ASSET_DIGESTS[f"{folder}/{asset.name}"])
                 self.assertEqual((ROOT / folder / "starter" / asset.name).read_bytes(), local)
                 points = reference["read_coordinates"](asset)
                 self.assertGreater(len(points), 0)
