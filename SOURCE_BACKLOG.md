@@ -54,12 +54,22 @@ cutoff, and distinguish readlines from word splitting. The two-sort experiment
 uses all three shared input shapes and measured medians with fresh copies.
 Character-file contracts preserve meaningful spaces, reject malformed records
 deliberately, validate before overwriting, and protect input/output aliases.
-All 63 native test methods pass, including original-body preservation, independent
+At the check-in milestone, all 63 native test methods passed, including original-body preservation, independent
 bounded oracles, mutation/identity and exact file-byte regressions.
 
-Three migrated pairs still need assignment-specific verification:
+The record/file follow-up completes the remaining three migrated pairs:
 AM9-Baseball-Analytics, AM12-File-IO-and-Dictionaries and
-AM12-Juni-Latin-with-File-IO. These, plus ten coding placeholders, remain open.
+AM12-Juni-Latin-with-File-IO. Each has a complete learner brief and matching,
+incomplete callable starter. Baseball validates exact statistic fields, ranks
+descending with stable ties and does not change records. Dictionary parsing
+defines blank/odd/duplicate policies without inventing output writing. Juni Latin
+preserves the original character rule, separates its working optional punctuation
+path and validates/reads before output opening, including alias protection.
+All original input bytes and player records remain unchanged. Seventeen new
+methods bring the native suite to 80 passing methods, including independent
+bounded ranking/parser/translation oracles, import safety and real file workflows.
+Ten coding placeholders remain open; no migrated pair is still awaiting these
+assignment-specific contract checks.
 
 Ten placeholder roles remain open. Review each against its actual course
 brief and separate reference. A mathematical worksheet is intentionally not a

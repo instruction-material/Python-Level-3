@@ -95,7 +95,7 @@ A frozen fixture identifies source revision
 | Check-In 3 | Original bubble baseline stays available; the improved sort actually stops after one no-swap pass. Indexed stable merge and ordered pivot-value partitions preserve inputs. Unicode character files retain literal spaces, deliberate record errors and separate answers. |
 | Check-In 3 Additional | ASCII file sorting returns fresh lists, retains duplicates and rejects invalid records with line numbers. Validation precedes output opening; source bytes survive malformed input and path/symlink/hardlink output aliases. |
 
-The suite now has 63 methods. Eighteen added methods check incomplete signatures,
+At the check-in milestone the suite had 63 methods. Eighteen added methods check incomplete signatures,
 quiet imports and direct-run reminders; all 3280 small backspace strings; all
 364 small numeric lists; every binary boundary through length 128; and indexed
 virtual million-item sequences that forbid scanning, copying and slicing.
@@ -109,6 +109,38 @@ and one worksheet are checked. Three migrated pairs and ten coding placeholders
 remain open. The native gate inventories 191 source-like files including archive,
 180 excluding archive. These counts and bounded tests do not certify unrelated
 legacy files, unrestricted performance, or the broader site/course audit.
+
+## Record/file follow-up
+
+The last three migrated pairs now have complete learner briefs and twelve
+matching incomplete callable tasks, with the punctuation helper explicitly
+optional. Original filenames, ten synthetic player records, p1-p10, playerList
+and compatible player_list are preserved. Six original file copies are checked
+by exact SHA-256 fixtures for baseline Git LF bytes and the configured CRLF
+checkout variants, retaining the unterminated final records and dictionary key
+whitespace. The first Linux run exposed the Mac's core.autocrlf conversion; its
+initial Mac-only fixture was corrected against the baseline Git blobs, without
+normalizing arbitrary contents or changing any example/attribute file.
+
+| Pack | Checked assignment contract |
+| --- | --- |
+| Baseball Analytics | Exactly Average, Home Run and RBI; validated four-field records; fresh descending names with stable input-order ties and unchanged records; adjacent bubble comparisons, quiet imports and bounded leaderboards without sleeps. Stability and nonmutation are deliberate clarified policies. |
+| File IO and Dictionaries | Alternating physical keys/values, surrounding whitespace trimming, string values, valid empty values, nonblank keys, last-value-wins duplicates and line-numbered odd/delimiter errors; context-managed reading and no invented output-writing task. |
+| Juni Latin with File IO | Original first-character-to-end-plus-ay rule, literal case/Unicode, explicit line/whitespace normalization and exact LF output; empty-token/file behavior, validation before output opening and path/symlink/hardlink protection. Optional edge-punctuation clusters, punctuation-only tokens and internal straight/curly apostrophes use a separately selected path. |
+
+All 80 native methods pass. Seventeen added methods verify every new starter
+signature/body, import safety, direct-run reminders, exact original assets and
+guarded reference demonstrations. Independent oracles cover all 364 small keyed
+rankings, duplicate-key combinations and 364 small character-rule tokens. Further
+checks cover malformed records and domains, input identity, actual temporary-file
+reading/writing, blank/final/CRLF records, missing/undecodable input, context-manager
+closure and preservation of existing output on validation errors or input aliases.
+
+Thirty-two authored coding/review pairs, one supplied-code analysis and one
+worksheet are now checked. No distinct migrated pair remains open. Ten coding
+placeholder roles remain unverified. The native gate inventories 195 source-like
+files including archive, 184 excluding archive. Bounded tests do not certify
+unrelated legacy references, unrestricted performance or the broader site audit.
 
 ## Open placeholder roles
 
@@ -129,7 +161,7 @@ unverified. They are not marked ready merely because a solution file exists.
 | AM14-Tic-Tac-Toe-AI-Test | Strategy experiment | Deterministic adversaries and honest performance claims |
 | AM14-Tic-Tac-Toe-AI-with-Forks | Console strategy game | Fork logic, legal moves, termination |
 
-The remaining 3 distinct migrated pairs also need their own correctness review.
+The three remaining migrated pairs were reviewed in the record/file follow-up above.
 The broader site audit still includes other courses, supported environments,
 original-source identity reconciliation, delivery-purpose distinctions, and
 bridge extension language alignment. None is closed by this source-pack gate.

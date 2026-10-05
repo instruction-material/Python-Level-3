@@ -11,3 +11,25 @@ p9 = ["D. Lemahieu", 0.331, 22, 87]
 p10 = ["R. Acuna", 0.290, 36, 89]
 
 playerList = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+
+# Both original spellings remain available without copying the supplied records.
+player_list = playerList
+
+
+def bubble_baseball(players, stat):
+    """Rank validated records descending by stat; return fresh names, retaining ties."""
+    raise NotImplementedError("Implement bubble_baseball using adjacent comparisons")
+
+
+def print_list(names):
+    """Print one tab-indented name per line; return None."""
+    raise NotImplementedError("Implement print_list")
+
+
+def main():
+    """Display the three leaderboards without changing playerList."""
+    raise NotImplementedError("Implement main after checking the ranking helper")
+
+
+if __name__ == "__main__":
+    print("Implement the TODO functions in main.py; read README.md before running tests.")
